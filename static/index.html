@@ -9,7 +9,9 @@
         body {
             background-image: url("background-image.jpg");
             background-size: cover;
-            background-position: center;
+            background-position: bottom 30%;
+            background-repeat: no-repeat;
+            font-family: 'Conthrax', sans-serif; color: rgb(19, 18, 75);
         }
 
         .container {
@@ -21,6 +23,8 @@
         
         .textfield {
             border-radius: 5px;
+            border-width: 0.1cap;
+            height: 22px;
         }
 
         .login { 
@@ -31,12 +35,13 @@
         
         .background {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 300px;
-            background-color: rgb(255,102,50);
+            height: 350px;
+            background: linear-gradient(145deg, rgb(255, 102, 50), rgb(255, 125, 81));
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 2px 2px 2px 2px black;
         }
 
         .form-content {
@@ -44,21 +49,34 @@
             align-items: center;
             justify-content: space-between;
             gap: 10px;
-            font-family: "Conthrax", sans-serif;
-            color: rgb(19, 18, 75);
+            position: relative;
+            bottom: 30px
         }
 
         h1 {
-          font-family: "Conthrax", sans-serif;
           font-size: 40px;
-          color: rgb(19, 18, 75);
+          text-shadow: 
+            -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px  1px 0 white,
+            1px  1px 0 white;;
+        }
+
+        .logo {
+            z-index: 0;
+            height: 100px;
+            width: 100px; 
+            position: relative; 
+            bottom: 36px;
+            color: white;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the Inner Drive Hoops Coaches Database</h1>
-        <div class="background" style="width: 370px">
+        <div class="background" style="width: 470px">
+            <img class="logo "src="IDH svg.svg">
             <div class="login">
                 <div class="form-content">
                     <label>Username:</label>
@@ -68,10 +86,11 @@
                     <label>Password:</label>
                     <input type="text" class="textfield" placeholder="Enter your password." id="password" required>
                 </div>
-                <button type="submit" style="font-family: 'Conthrax', sans-serif; color: rgb(19, 18, 75); margin-top: 20px;">Login</button>
-                <label style="font-size: 12px; position: relative; top: 30px; font-family: 'Conthrax', sans-serif; color: rgb(19, 18, 75);">
+                <button type="submit" style="margin-top: 20px; position: relative; bottom: 45px;">Login</button>
+                <label style="font-size: 12px; position: relative; bottom: 40px;">
                     <input type="checkbox" name="remember"> Remember me
                 </label>
+                <a href="www.google.com" style="font-size: 12px;">Forgot your password? Click here.</a>
             </div>
         </div>    
     </div>
