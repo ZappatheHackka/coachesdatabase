@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
+import { Coach, Client, Stats } from "./models.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,6 +15,7 @@ app.use(express.static(path.join(__dirname, "static")));
 app.use(express.urlencoded ({ extended: true}));
 
 
+// Login page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "/static/index.html"));
     console.log(__filename);
