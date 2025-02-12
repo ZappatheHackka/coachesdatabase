@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url("background-image.jpg");
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            background-size: cover;
+            background-position: bottom 30%;
+            background-repeat: no-repeat;
+            font-family: 'Conthrax', sans-serif;
+            color: rgb(19, 18, 75);
+        }
+
+        h1 {
+          font-size: 40px;
+          text-shadow: 
+            -1px -1px 0 white,
+            1px -1px 0 white,
+            -1px  1px 0 white,
+            1px  1px 0 white;;
+        }
+    </style>
+    <title>You're In</title>
+</head>
+<body>
+    <h1>You have entered the website</h1>
+        <form action="/newcoach" method="POST">
+            <input type="text" name="fname" placeholder="First Name">
+            <input type="text" name="lname" placeholder="Last Name">
+            <button type="submit">Add Coach</button>
+        </form>
+    <h2>
+        <ul>
+            <% content.forEach(coach => { %>
+                <li> <%= coach.get("firstname") %> <%= coach.get("lastname") %></li>
+            <% }) %>
+        </ul>
+    </h2>
+</body>
+</html>

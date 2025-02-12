@@ -1,0 +1,115 @@
+body {
+    background-color: slategray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../images/idhoopslogo.png");
+    background-position: center top 170px;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid aliceblue;
+    min-height: 300px;
+    min-width: 800px;
+    position: relative;
+    bottom: 12px;
+}
+
+.client-block {
+    color: rgb(19, 18, 75);
+    border: 2px solid burlywood;
+    height: 300px;
+    min-width: 300px;
+}
+
+.addrm-block{
+    color: aqua;
+    border: 2px solid green;
+    display: flex;
+    justify-content: space-around;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.add {
+    color: aqua;
+    border: 2px solid blue;
+    display: flex;
+    justify-content: space-between;
+    min-height: 50px;
+    min-width: 120px;
+}
+
+.topblock {
+    color: yellow;
+    border: 2px solid yellow;
+    display: flex;
+    min-height: 25px;
+    min-width: 50px;
+    gap: 5px;
+}
+
+.navbar {
+    background-color: aliceblue;
+}
+
+/* Searchbar Stylings */
+.search-wrapper {
+    display: flex;
+    flex: 1;
+    min-height: 25px;
+    min-width: 80px;;
+    border: 1px solid black;
+}
+
+
+.search-icon {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 14px;
+}
+
+  .clear-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 10px;
+    cursor: pointer;
+}
+
+
+
+.search {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    padding: 2px 23px 2px 30px;
+    outline: 0;
+    background-color: #f5f5f5;
+}
+
+
+
+/* Table Stylings */
+.client-table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th {
+    border: 1px solid black;
+}
+
+table td {
+    border: 1px solid black;
+   
+}
