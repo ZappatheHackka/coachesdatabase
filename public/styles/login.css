@@ -59,8 +59,8 @@ h1 {
 
 .textfield {
     border-radius: 5px;
-    border-width: 0.1cap;
-    height: 22px;
+    border-width: 0;
+    height: 24px;
     outline: none;
 }
 
@@ -70,7 +70,7 @@ h1 {
     bottom: 38px;
     height: 30px;
     border-radius: 5px;
-    border-width: 0.1cap;
+    border-width: 0;
     font-family: 'Conthrax', sans-serif;
     background-color: rgb(19, 18, 75);
     color: white;
