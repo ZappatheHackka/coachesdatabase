@@ -1,5 +1,5 @@
 body {
-    background-color: slategray;
+    background-color: slategrey;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,49 +14,54 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 2px solid aliceblue;
     min-height: 300px;
     min-width: 800px;
     position: relative;
     bottom: 12px;
 }
 
-.client-block {
-    color: rgb(19, 18, 75);
-    border: 2px solid burlywood;
-    height: 300px;
-    min-width: 300px;
-}
-
-.addrm-block{
-    color: aqua;
-    border: 2px solid green;
-    display: flex;
-    justify-content: space-around;
-    min-height: 50px;
-    min-width: 50px;
-}
-
-.add {
-    color: aqua;
-    border: 2px solid blue;
-    display: flex;
-    justify-content: space-between;
-    min-height: 50px;
-    min-width: 120px;
-}
-
 .topblock {
-    color: yellow;
-    border: 2px solid yellow;
     display: flex;
+    align-items: flex-end;
     min-height: 25px;
     min-width: 50px;
     gap: 5px;
 }
 
-.navbar {
-    background-color: aliceblue;
+/* Add & Remove Button Stylings */
+.add {
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    width: 170px;
+}
+
+button {
+    background-color: rgb(255, 102, 50);
+    color: white;
+    font-family: 'Conthrax', sans-serif;
+    width: 115px;
+    border-radius: 6px 6px 0px 0px;
+    border-width: 0;
+    padding-right: 70px;
+}
+
+.add-user-logo {
+    position: relative;
+    height: 80%;
+    width: 77%;
+    left: 153px;
+    top: 5px;
+    z-index: 1;
+}
+
+.add-coach-logo {
+    position: relative;
+    height: 80%;
+    width: 80%;
+    left: 115px;
+    top: 5px;
+    z-index: 1;
 }
 
 /* Searchbar Stylings */
@@ -67,39 +72,48 @@ body {
     justify-content: center;
     height: 40px;
     width: 600px;
-    border: 1px solid green;
+    border-radius: 6px 6px 0px 0px;
+    background-color: rgb(19, 18, 75);
 }
-
 
 .search-icon {
     position: absolute;
     top: 12px;
-    left: 8px;
+    left: 13px;
     width: 14px;
 }
 
 .clear-icon {
     position: absolute;
-    top: 13px;
-    right: 6px;
+    top: 14px;
+    right: 11px;
     width: 10px;
     cursor: pointer;
 }
 
 .search {
-    border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 6px;
+    border-width: 0;
     height: 20px;
-    width: 100%;
+    width: 89%;
     padding: 2px 23px 2px 30px;
     outline: 0;
     background-color: #f5f5f5;
     
 }
 
-
+input::placeholder {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 15px;
+}
 
 /* Table Stylings */
+.client-block {
+    color: rgb(19, 18, 75);
+    height: 300px;
+    min-width: 300px;
+}
+
 .client-table {
     background-color: white;
     border-collapse: collapse;
@@ -108,6 +122,8 @@ body {
 
 table th {
     border: 1px solid black;
+    color: white;
+    background-color: rgb(19, 18, 75);
 }
 
 table td {
