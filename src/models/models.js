@@ -8,6 +8,8 @@ import initializeDatabase from "./db-sync.js";
 class Coach extends Model {}
 class Client extends Model {}
 class Stats extends Model {}
+class CoachClientTable extends Model {}
+class Comment extends Model {}
 
 // // Defining table fields for Coaches
 
@@ -28,6 +30,10 @@ Coach.init({
         allowNull: false,
         unique: true
     },
+    passwordHashed: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
 }, {
     sequelize,
     modelName: "Coaches",
@@ -107,6 +113,23 @@ Stats.init({
     freezeTableName: true
 });
 
+Comment.init({
+    commentid: {
+        type: DataTypes.INTEGER,
+        unique: true,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    text: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+}, {
+    sequelize,
+    modelName: "Client Comments",
+    freezeTableName: true
+});
+
 initializeDatabase();
 
-export { Coach, Client, Stats };
+export { Coach, Client, Stats, CoachClientTable, Comment };
