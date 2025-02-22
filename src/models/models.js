@@ -144,6 +144,6 @@ Stats.belongsTo(Client);
 Coach.hasMany(Stats);
 Client.hasMany(Stats);
 
-initializeDatabase();
+// initializeDatabase();
 
 export { Coach, Client, Stats, CoachClientTable, Comment };
