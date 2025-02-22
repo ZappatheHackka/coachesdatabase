@@ -11,7 +11,7 @@ class Stats extends Model {}
 class CoachClientTable extends Model {}
 class Comment extends Model {}
 
-// // Defining table fields for Coaches
+// Defining table fields for Coaches
 
 Coach.init({
     id: {
@@ -77,12 +77,12 @@ Client.init({
     }
 }, {
     sequelize,
-    modelName: "Clients",
+    modelName: "Client",
     freezeTableName: true
 });
 
 Stats.init({
-    clientid: {
+    ratingid: {
         type: DataTypes.INTEGER,
         unique: true,
         allowNull: false,
@@ -129,6 +129,20 @@ Comment.init({
     modelName: "Client Comments",
     freezeTableName: true
 });
+
+// Establishing relationships
+Coach.belongsToMany(Client, { through: 'CoachClient'});
+Client.belongsToMany(Coach, { through: 'CoachClient'});
+
+Coach.hasMany(Comment);
+Client.hasMany(Comment);
+Comment.belongsTo(Coach);
+Comment.belongsTo(Client);
+
+Stats.belongsTo(Coach);
+Stats.belongsTo(Client);
+Coach.hasMany(Stats);
+Client.hasMany(Stats);
 
 initializeDatabase();
 
