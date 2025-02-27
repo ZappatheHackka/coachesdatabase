@@ -12,7 +12,7 @@ async function initializeDatabase() {
         await connect.authenticate();
         console.log("Successfully connected to DB.");
 
-        await connect.sync({ force: true });
+        await connect.sync();
         console.log("DB Synchronized");
     } catch (error) {
         console.error("Process failed, error:", error);

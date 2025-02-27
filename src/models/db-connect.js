@@ -2,7 +2,7 @@ import sequelize, { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 
 // Configuring .env for credentials
-dotenv.config({ path : "../../.env"});
+dotenv.config();
 
 // Initiating JS connection to DB
 const connect = new Sequelize({

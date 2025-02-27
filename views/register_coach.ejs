@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/coach_reg.css">
+    <title>Coach Registration</title>
+</head>
+<body>
+    <% if (locals.content !== true) { %>
+    <div class="coach-reg-box">
+        <form action="/signup" method="POST">
+            <label>First Name:</label>
+            <input type="text" placeholder="Enter Coach's First Name..." name="fname" required>
+            <label>Last Name:</label>
+            <input type="text" placeholder="Enter Coach's Last Name..." name="lname" required>
+            <label>Email:</label>
+            <input type="text" placeholder="Enter Coach's Email..." name="email" required>
+            <label>Create Password</label>
+            <input type="text" placeholder="Create Coach's Password..." name="password" required>
+            <label>Make User an Admin</label><input type="checkbox" name="isAdmin">
+    
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <% } else if (locals.error) { %>
+        <h1><%= error %></h1>
+    <% } else { %>
+        <h1>Coach Added xD</h1>
+    <% } %>
+</body>
+</html>

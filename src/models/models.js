@@ -30,9 +30,18 @@ Coach.init({
         allowNull: false,
         unique: true
     },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
     passwordHashed: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    isAdmin: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false
     }
 }, {
     sequelize,
