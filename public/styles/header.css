@@ -4,8 +4,8 @@
    width: 100%;
    height: 35px;
    border-left: 20px solid rgb(19, 18, 75);;
-   position: relative;
-   bottom: 8px;
+   position: absolute;
+   top: 0px;
 }
 
 a {

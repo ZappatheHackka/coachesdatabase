@@ -3,22 +3,79 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url("../images/background-image.jpg");
+    background-size: cover;
+    background-position: bottom 30%;
+    background-repeat: no-repeat;
 }
 
+/* Styles for form */
+
 .coach-reg-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    bottom: 10%;
     padding: 20px;
-    min-height: 600px;
+    min-height: 200px;
     min-width: none;
+    background-color: rgb(255, 102, 50);
+    border-radius: 7px;
+    max-height: none;
 }
 
 form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 600px;
+    align-content: space-between;
+    position: relative;
+    bottom: 55px;
+    height: 460px;
     width: 500px;
+    gap: 6px;
+}
+
+.form-logo {
+    width: 130px;
+    height: 200px;
+    position: relative;
+    left: 37%;
+    top: 23px;
+}
+
+button {
+    border-radius: 7px;
+    border-width: 0;
+    position: relative;
+    top: 35px;
+    height: 45px;
+    font-family: 'Conthrax', sans-serif;
+    background-color: rgb(19, 18, 75);
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(36, 31, 177)
+}
+
+.textfield {
+    border-width: 0;
+    border-radius: 5px;
+    outline: none;
+    height: 40px;
+}
+
+/* Styles for successfull registration */
+
+.added-box {
+    background-color: rgb(255, 102, 50);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    width: 600px;
+    border-radius: 7px;
+}
+
+#add-succ {
+
 }

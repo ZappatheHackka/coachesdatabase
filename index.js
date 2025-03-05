@@ -96,7 +96,14 @@ app.post("/signup", isAuthenticated, async (req, res) => {
             passwordHashed: hash,
             isAdmin: adminStatus
         });
-        res.render("register_coach.ejs", { content: true });
+        res.render("register_coach.ejs", { 
+            content: true, 
+            fname: fname,
+            lname: lname,
+            email: email,
+            isAdmin: adminStatus,
+            password: password 
+        });
     }
     catch(error){
         console.log(`Coach creation process failed, error: ${error}`);

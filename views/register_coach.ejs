@@ -5,29 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/coach_reg.css">
+    <link rel="stylesheet" href="styles/header.css">
     <title>Coach Registration</title>
 </head>
 <body>
+    <%- include("header.ejs") %>
     <% if (locals.content !== true) { %>
     <div class="coach-reg-box">
         <form action="/signup" method="POST">
+            <img class="form-logo"src="/images/IDH svg.svg">
             <label>First Name:</label>
-            <input type="text" placeholder="Enter Coach's First Name..." name="fname" required>
+            <input class="textfield" type="text" placeholder="Enter Coach's First Name..." name="fname" required>
             <label>Last Name:</label>
-            <input type="text" placeholder="Enter Coach's Last Name..." name="lname" required>
+            <input class="textfield" type="text" placeholder="Enter Coach's Last Name..." name="lname" required>
             <label>Email:</label>
-            <input type="text" placeholder="Enter Coach's Email..." name="email" required>
-            <label>Create Password</label>
-            <input type="text" placeholder="Create Coach's Password..." name="password" required>
-            <label>Make User an Admin</label><input type="checkbox" name="isAdmin">
-    
+            <input class="textfield" type="text" placeholder="Enter Coach's Email..." name="email" required>
+            <label>Create Password:</label>
+            <input class="textfield" type="text" placeholder="Create Coach's Password..." name="password" required>
+            <label>Make User an Admin<input type="checkbox" name="isAdmin" style="position: relative; left: 20px; top: 2px;"></label>
             <button type="submit">Submit</button>
         </form>
     </div>
     <% } else if (locals.error) { %>
         <h1><%= error %></h1>
     <% } else { %>
-        <h1>Coach Added xD</h1>
+        <div class="added-box">
+            <div class="added-content">
+                <h1 id="add-succ">Coach Successfully Added.</h1>
+                <label>Coach: <%= fname + " " + lname %></label>
+                <label>Email: <%= email %></label>
+                <label>Admin Status: <%= isAdmin %></label>
+                <label>Password: <%= password %></label>
+            </div>
+        </div>
     <% } %>
 </body>
 </html>
