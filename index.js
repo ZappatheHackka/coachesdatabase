@@ -34,11 +34,25 @@ const isAuthenticated = (req, res, next) => {
     res.redirect('/');
 }
 
+const isAdmin = (req, res, next) => {
+    if (req.session.adminStatus) {
+        return next();
+    }
+    req.flash('error', 'You must have Admin permissions to view this page');
+    res.redirect('/home');
+}
+
 // Login page
 app.get('/', (req, res) => {
     res.render('login.ejs', { message: req.flash('error')});
     console.log(__filename);
 });
+
+app.get('/logout', (req, res) => {
+    req.session.userid = null;
+    req.session.adminStatus = null;
+    res.redirect('/');
+})
 
 app.post('/login', async (req, res) => {
     let givenEmail = req.body["email"];
@@ -55,6 +69,7 @@ app.post('/login', async (req, res) => {
             if (canEnter === true) 
                 {
                 req.session.userid = user.dataValues.id;
+                req.session.adminStatus = user.dataValues.isAdmin;
                 return res.redirect("/home");
                 }
             else {
@@ -74,14 +89,14 @@ app.post('/login', async (req, res) => {
 });
 
 app.get("/home", isAuthenticated, (req, res) => {
-    res.render("home.ejs");
+    res.render("home.ejs", { message: req.flash('error') });
 });
 
-app.get("/signup", isAuthenticated, async (req, res) => {
+app.get("/signup", isAuthenticated, isAdmin, async (req, res) => {
     res.render("register_coach.ejs");
 });
 
-app.post("/signup", isAuthenticated, async (req, res) => {
+app.post("/signup", isAuthenticated, isAdmin, async (req, res) => {
     let fname = req.body["fname"];
     let lname = req.body["lname"];
     let email = req.body['email'];

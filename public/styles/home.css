@@ -55,7 +55,7 @@ button {
     position: relative;
     height: 80%;
     width: 77%;
-    left: 153px;
+    left: 75px;
     top: 5px;
     z-index: 1;
 }
@@ -64,9 +64,36 @@ button {
     position: relative;
     height: 80%;
     width: 80%;
-    left: 115px;
+    left: 43px;
     top: 5px;
     z-index: 1;
+}
+
+#client-button {
+    position: absolute;
+    height: 49px;
+    bottom: 43px;
+    z-index: -1;
+    left: 690px;
+    bottom: 300px
+}
+
+#coach-button {
+    position: relative;
+    height: 49px;
+    bottom: 43px;
+    z-index: -1;
+    width: 110px;
+}
+
+.form-links {
+    border: 3px solid black;
+    display: inline-block;
+    width: 110px
+}
+
+#add-butt {
+    
 }
 
 /* Searchbar Stylings */
@@ -133,5 +160,4 @@ table th {
 
 table td {
     border: 1px solid black;
-   
 }

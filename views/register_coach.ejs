@@ -27,15 +27,18 @@
         </form>
     </div>
     <% } else if (locals.error) { %>
-        <h1><%= error %></h1>
+        <h1 style="color: red; background: black;"><%= error %></h1>
+        <img src="/images/sad.png">
     <% } else { %>
         <div class="added-box">
             <div class="added-content">
-                <h1 id="add-succ">Coach Successfully Added.</h1>
-                <label>Coach: <%= fname + " " + lname %></label>
-                <label>Email: <%= email %></label>
-                <label>Admin Status: <%= isAdmin %></label>
-                <label>Password: <%= password %></label>
+                <h1 id="add-succ">Coach Successfully Added!</h1>
+                <div class="labels">
+                    <label>Coach: <%= fname + " " + lname %></label>
+                    <label>Email: <%= email %></label>
+                    <label>Password: <%= password %></label>
+                    <label>Admin Status: <%= isAdmin %></label>
+                </div>
             </div>
         </div>
     <% } %>
