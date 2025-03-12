@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/add_client.css">
+    <title>Add A Client</title>
+</head>
+
+<body>
+    <%- include("header.ejs") %>
+    <% if (locals.content !== true) { %>
+    <h1 id="head-tag">Add A Client</h1>
+    <div class="client-reg-box">
+        <form action="/addclient" method="POST">
+            <img class="form-logo"src="/images/IDH svg.svg">
+            <label>First Name:</label>
+            <input class="textfield" type="text" placeholder="Enter Client's First Name..." name="fname" required>
+            <label>Last Name:</label>
+            <input class="textfield" type="text" placeholder="Enter Client's Last Name..." name="lname" required>
+            <label>Age:</label>
+            <input class="textfield" type="number" placeholder="Enter Client's Age..." name="age" min="5" max="113" required>
+            <label>Email:</label>
+            <input class="textfield" type="text" placeholder="Enter Client's Email..." name="email" required>
+            <label>Cellphone:</label>
+            <input class="textfield" type="text" placeholder="Enter Client's Cellphone..." name="cellphone" required>
+            <label>Parent(s)</label>
+            <input class="textfield" type="text" name="parents" placeholder="Enter Parent Name(s)..." required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="error">
+        <%  if (locals.error) { %>
+            <p style="color: red; background: black; text-align: center;" >A client with that name already exists in the database!</p>
+    </div>   
+    <% } %>
+    <% } else { %>
+        <div class="added-box">
+            <div class="added-content">
+                <h1 id="add-succ">Client Successfully Added!</h1>
+                <div class="labels">
+                    <label>Client: <%= fname + " " + lname %></label>
+                    <label>Age: <%= age %></label>
+                    <label>Email: <%= email %></label>
+                    <label>Cell: <%= cellphone %></label>
+                    <label>Parents: <%= parents %></label>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</body>
+
+</html>

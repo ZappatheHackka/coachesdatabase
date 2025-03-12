@@ -28,7 +28,6 @@ Coach.init({
     lastname: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
     email: {
         type: DataTypes.STRING,
@@ -59,19 +58,24 @@ Client.init({
         autoIncrement: true,
         primaryKey: true
     },
-    name: {
+    firstname: {
         type: DataTypes.STRING,
-        unique: true,
+        unique: false,
+        allowNull: false
+    },
+    lastname: {
+        type: DataTypes.STRING,
+        unique: false,
         allowNull: false
     },
     cellphone: {
-        type: DataTypes.INTEGER,
-        unique: true,
+        type: DataTypes.STRING,
+        unique: false,
         allowNull: false
     },
     email: {
         type: DataTypes.STRING,
-        unique: true,
+        unique: false,
         allowNull: false
     },
     age: {
@@ -84,10 +88,17 @@ Client.init({
         unique: false,
         allowNull: true
     }
-}, {
+},  
+{
     sequelize,
     modelName: "Client",
-    freezeTableName: true
+    freezeTableName: true,
+    indexes: [
+        {
+            unique: true,
+            fields: ['firstname', 'lastname']
+        }
+    ]
 });
 
 Stats.init({
@@ -128,6 +139,9 @@ Comment.init({
         unique: true,
         primaryKey: true,
         autoIncrement: true
+    },
+    clinic_class: {
+        type: DataTypes.STRING,
     },
     text: {
         type: DataTypes.TEXT,

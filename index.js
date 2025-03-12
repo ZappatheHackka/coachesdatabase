@@ -45,7 +45,6 @@ const isAdmin = (req, res, next) => {
 // Login page
 app.get('/', (req, res) => {
     res.render('login.ejs', { message: req.flash('error')});
-    console.log(__filename);
 });
 
 app.get('/logout', (req, res) => {
@@ -121,12 +120,61 @@ app.post("/signup", isAuthenticated, isAdmin, async (req, res) => {
         });
     }
     catch(error){
+        if (error.name === "SequelizeUniqueConstraintError") {
+            let violatedConstraints = error.errors.map(err => err.path);
+            res.render("register_coach.ejs", { 
+                content: false, 
+                error: violatedConstraints,
+                });
+            return;
+        }
         console.log(`Coach creation process failed, error: ${error}`);
-        res.render("register_coach.ejs", { content: true, error: error });
+        res.render("register_coach.ejs", { content: false, error: error });
+        return;
     }
 });
 
+app.get('/addclient', isAuthenticated, (req, res) => {
+    res.render("add_client.ejs");
+});
 
+app.post('/addclient', async (req, res) => {
+    let fname = req.body['fname'];
+    let lname = req.body['lname'];
+    let age = req.body["age"];
+    let email = req.body['email'];
+    let cellphone = req.body['cellphone'];
+    let parents = req.body['parents'];
+    try {
+        await Client.create({
+            firstname: fname,
+            lastname: lname,
+            age: age,
+            email: email,
+            cellphone: cellphone,
+            parent: parents
+        });
+        res.render("add_client.ejs", {
+            content: true,
+            fname: fname,
+            lname: lname,
+            age: age,
+            email: email,
+            cellphone: cellphone,
+            parents: parents
+        });
+    } catch (error) {
+        if (error.name === "SequelizeUniqueConstraintError") {
+            let violatedConstraints = error.errors.map(err => err.path);
+            res.render('add_client.ejs', { 
+                content: false, 
+                error: violatedConstraints,
+                });
+        }
+        console.log(`Client creation process failed, error: ${error}`);
+        res.render("add_client.ejs", { content: true, error: error });
+    }
+});
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);

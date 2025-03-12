@@ -53,9 +53,9 @@ button {
 
 .add-user-logo {
     position: relative;
-    height: 80%;
-    width: 77%;
-    left: 75px;
+    height: 79%;
+    width: 80%;
+    left: 55px;
     top: 5px;
     z-index: 1;
 }
@@ -63,8 +63,8 @@ button {
 .add-coach-logo {
     position: relative;
     height: 80%;
-    width: 80%;
-    left: 43px;
+    width: 53%;
+    left: 56px;
     top: 5px;
     z-index: 1;
 }
@@ -74,8 +74,9 @@ button {
     height: 49px;
     bottom: 43px;
     z-index: -1;
-    left: 690px;
-    bottom: 300px
+    left: 703px;
+    bottom: 300px;
+    width: 110px;
 }
 
 #coach-button {
@@ -87,13 +88,12 @@ button {
 }
 
 .form-links {
-    border: 3px solid black;
     display: inline-block;
     width: 110px
 }
 
 #add-butt {
-    
+    width: 45%;
 }
 
 /* Searchbar Stylings */
@@ -147,7 +147,7 @@ input::placeholder {
 }
 
 .client-table {
-    background-color: white;
+    background-color: rgba(255, 255, 255, .85);
     border-collapse: collapse;
     width: 100%;
 }

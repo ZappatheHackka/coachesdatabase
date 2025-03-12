@@ -11,6 +11,7 @@
 <body>
     <%- include("header.ejs") %>
     <% if (locals.content !== true) { %>
+    <h1 id="form-header">Add A Coach</h1>
     <div class="coach-reg-box">
         <form action="/signup" method="POST">
             <img class="form-logo"src="/images/IDH svg.svg">
@@ -26,9 +27,11 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-    <% } else if (locals.error) { %>
-        <h1 style="color: red; background: black;"><%= error %></h1>
-        <img src="/images/sad.png">
+    <div class="error">
+        <%  if (locals.error) { %>
+            <p style="color: red; background: black; text-align: center;" >The email you entered is already registered!</p>
+    </div>  
+    <% } %>
     <% } else { %>
         <div class="added-box">
             <div class="added-content">
