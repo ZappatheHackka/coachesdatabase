@@ -176,6 +176,10 @@ app.post('/addclient', async (req, res) => {
     }
 });
 
+app.get('/profiles', (req, res) => {
+    res.render("client_profile.ejs");
+})
+
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);
 });

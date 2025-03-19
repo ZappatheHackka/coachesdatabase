@@ -1,0 +1,77 @@
+body {
+    background-color: slategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../images/idhoopslogo.png");
+    background-position: center top 170px;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.container {
+    /* border: 3px solid red; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 40px;
+    height: 950px;
+    width: 1100px;
+    border-radius: 5px;;
+    background-color: rgba(255, 255, 255, .75);
+}
+
+/* Stylings for header  */
+
+.header {
+    border: 3px solid blue;
+    position: relative;
+    height: 230px;
+    width: 1095px;
+}
+
+.profile-div {
+    
+}
+
+.profile-pic {
+    height: 135px;
+    width: 130px;
+    border-radius: 5px;
+}
+
+/* --------- */
+
+.body {
+    border: 3px solid green;
+    height: 710px;
+    width: 1095px;
+    display: flex;
+}
+
+.comments {
+    border: 3px solid purple;
+    height: 703px;
+    width: 480px;;
+}
+
+.right-body {
+    border: 3px solid orange;
+    height: 703px;
+    width: 600px;
+    display: block;
+}
+
+.coaches {
+    border: 2px solid black;
+    height: 250px;
+    width: 595px;
+}
+
+.ratings {
+    border: 2px solid black;
+    height: 450px;
+    width: 595px;
+}
