@@ -6,22 +6,52 @@
     <link rel="stylesheet" href="./styles/global.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/client_profiles.css">
+    <!-- <script src="/scripts/image_select.js" defer></script> -->
     <title>Profile</title>
 </head>
 <body>
     <%- include("header.ejs") %>
     <div class="container">
         <div class="header">
-            <div class="profile-div">
-                <img class="profile-pic" src="images/empty_user.jpg"></div>
+            <div class="profile-pic-div">
+                <img class="profile-pic" src="images/fotor_empty.png">
+                <a href="www.google.com" class="update-pfp">Update Profile Picture</a>
             </div>
+            <div class="profile-info">
+                <h1>Client Name</h1>
+                <p>Age: 13</p>
+                <p>Parents: John Cena</p>
+                <p>Email: email@email.email</p>
+                <p>Cell: 11111111111</p>
+            </div>
+            <!-- <img src="" class="prof-div-img"> -->
+        </div>
         <div class="body">
             <div class="comments">
+                <h2 id="comment-header">Coach Comments</h2>
+                <div class="comment-display">
+                    <div class="comment">
+                        <h3 id="comment-content">Client is goated and dodwo dw dwndin vnvidnd  fndjsndioendoi v ieienoenioenve  denoejdienfe vneionec eiemeoi cc ienioeiocneinio  ioneiofnc eiofneiofemdmiomdenme ifieofne.</h3>
+                        <p id="comment-author">Posted By (Coach) on (Date)</p>
+                    </div>
+                </div>
             </div>
             <div class="right-body">
                 <div class="ratings">
-                </div>
-                <div class="coaches">
+                    <h2 id="ratings-header">Client Ratings</h2>
+                    <div class="ratings-display">
+                        <div class="rating">
+                            <h3 id="rating-author">Coach 1</h3>
+                            <ul class="actual-ratings">
+                                <li>Ball Handling: <span>4/10</span></li>
+                                <li>Finishing: <span>4/10</span></li>
+                                <li>Shooting: <span>4/10</span></li>
+                                <li>IQ: <span>4/10</span></li>
+                                <li>Defense: <span>4/10</span></li>
+                                <li> Passing: <span>4/10</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

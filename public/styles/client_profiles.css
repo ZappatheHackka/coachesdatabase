@@ -26,52 +26,202 @@ body {
 /* Stylings for header  */
 
 .header {
-    border: 3px solid blue;
     position: relative;
-    height: 230px;
+    height: 237px;
     width: 1095px;
-}
-
-.profile-div {
-    
+    display: flex;
+    border: 3px solid rgb(19, 18, 75);
+    background: linear-gradient(to right, rgba(240,248,255,0.5), rgba(230,230,250,0.5));
 }
 
 .profile-pic {
-    height: 135px;
-    width: 130px;
+    height: 175px;
+    width: 180px;
     border-radius: 5px;
+    position: relative;
+    bottom: 10px;
+    left: 18px;
+}
+
+.update-pfp {
+    font-size: 12px;
+    text-align: center;
+    color: blue
+}
+
+.client-name {
+    width: 40%;
+    height: 40%;
+    position: relative;
+    left: 25px;
+    top: 20px;
+    color: rgb(19, 18, 75);
+    text-align: center;
+    font-size: larger;
+}
+
+.profile-pic-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 220px;
+    height: 226px;
+    left: 20px;
+    border-radius: 5px;
+}
+
+.prof-div-img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 270px;
+    top: 15px;
+    filter: hue-rotate(180deg);
+}
+
+.profile-info {
+    position: relative;
+    left: 70px;
 }
 
 /* --------- */
 
 .body {
-    border: 3px solid green;
     height: 710px;
     width: 1095px;
     display: flex;
 }
 
+/* Comment body */
+
 .comments {
-    border: 3px solid purple;
+    border: 0px 3px 0px 0px solid purple;
     height: 703px;
-    width: 480px;;
+    width: 549px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#comment-header {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    text-decoration: underline;
+    position: relative;
+    bottom: 15px;
+}
+
+.comment-display {
+    height: 660px;
+    width: 510px;
+    background-color: rgba(255, 101, 50, 0.819);
+    position: relative;
+    left: 15px;
+    bottom: 31px;
+    border-radius: 8px;
+}
+
+.comment {
+    border: 1px solid gray;
+    border-radius: 8px;
+    background-color: rgb(19, 18, 75);
+    width: 490px;
+    position: relative;
+    left: 9px;
+    top: 10px;
+}
+
+#comment-content {
+    font-size: 18px;
+    position: relative;
+    left: 14px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+#comment-author {
+    font-size: 13px;
+    position: relative;
+    left: 14px;
+    text-decoration: underline;
+    color: white;
 }
 
 .right-body {
-    border: 3px solid orange;
+    /* border: 3px solid orange; */
     height: 703px;
-    width: 600px;
+    width: 567px;
     display: block;
-}
-
-.coaches {
-    border: 2px solid black;
-    height: 250px;
-    width: 595px;
+    position: relative;
+    left: 6px;
 }
 
 .ratings {
-    border: 2px solid black;
-    height: 450px;
-    width: 595px;
+    height: 703px;
+    width: 545px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#ratings-header {
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    position: relative;
+    bottom: 15px;
+}
+
+.ratings-display {
+    height: 620px;
+    width: 515px;
+    background-color: rgba(255, 101, 50, 0.819);
+    position: relative;
+    left: 20px;
+    bottom: 31px;
+    border-radius: 8px;
+}
+
+.rating {
+    border: 1px solid gray;
+    border-radius: 8px;
+    background-color: rgb(19, 18, 75);
+    width: 450px;
+    position: relative;
+    left: 33px;
+    top: 10px;
+    color: white;
+}
+
+li {
+    position: relative;
+    bottom: 33px;
+    right: 15px;
+    list-style-type: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+}
+
+span {
+    color: rgb(230, 110, 50);
+    font-weight: bold;
+    text-decoration: solid;
+}
+
+#rating-author {
+    text-decoration: underline;
+    font-size: 22px;
 }
