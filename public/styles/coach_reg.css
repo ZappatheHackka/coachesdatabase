@@ -40,13 +40,17 @@ form {
     gap: 10px;
     width: 100%;
     box-sizing: border-box;
+    position: relative;
+    bottom: 20px;
 }
 
 .form-logo {
-    width: 140px;
+    width: 170px;
     height: auto;
     display: block;
     margin: 0 auto 0 auto;
+    position: relative;
+    bottom: 15px;
 }
 
 .textfield {
@@ -102,6 +106,8 @@ button:hover {
     font-family: 'Conthrax', sans-serif;
 }
 
+
+/* .labels class for error message labels */
 .labels {
     background-color: rgba(19, 18, 75, 0.85);
     color: white;
@@ -133,7 +139,7 @@ button:hover {
     }
 
     .form-logo {
-        width: 100px;
+        width: 130px;
     }
 
     .labels {
@@ -155,7 +161,7 @@ button:hover {
     }
 
     .form-logo {
-        width: 80px;
+        width: 110px;
     }
 
     .labels {
