@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-position: bottom 30%;
     background-repeat: no-repeat;
+    height: 100%;
 }
 
 .container {
@@ -24,8 +25,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 350px;
-    background: linear-gradient(145deg, rgb(255, 102, 50), rgb(255, 125, 81));
+    height: 400px;
+    background-color: rgb(255, 102, 50);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
     border-radius: 10px;
 }
@@ -36,7 +37,8 @@ body {
     justify-content: space-between;
     gap: 10px;
     position: relative;
-    bottom: 19px
+    bottom: 15px;
+    width: 400px;
 }
 
 h1 {
@@ -50,8 +52,8 @@ h1 {
 
 .logo {
     z-index: 0;
-    height: 100px;
-    width: 100px; 
+    height: 120px;
+    width: 130px; 
     position: relative; 
     bottom: 31px;
     fill: white;
@@ -61,6 +63,7 @@ h1 {
     border-radius: 5px;
     border-width: 0;
     height: 24px;
+    width: 80%;
     outline: none;
 }
 

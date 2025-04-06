@@ -85,6 +85,12 @@ body {
     left: 70px;
 }
 
+.coaches-div {
+    position: relative;
+    left: 205px;
+    top: 10px;
+}
+
 /* --------- */
 
 .body {
@@ -204,6 +210,7 @@ body {
     left: 33px;
     top: 10px;
     color: white;
+    height: 34%;
 }
 
 li {
