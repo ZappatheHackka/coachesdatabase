@@ -6,7 +6,7 @@ import flash from "express-flash";
 import session from "express-session";
 import bodyParser from "body-parser";
 import "./src/models/db-connect.js";
-import { Coach, Client, Stats } from "./src/models/models.js";
+import { Coach, Client, Stats, Code,  } from "./src/models/models.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -191,12 +191,15 @@ app.get('/pass', (req, res) => {
 app.post('/resetpass', async (req, res) => {
     let givenEmail = req.body['email'];
     try {
-        let dbEmail = await Coach.findOne({
+        let user = await Coach.findOne({
             where: {
                 email: givenEmail
             }
         });
-        if (dbEmail) {
+        if (user) {
+            const code = Math.floor(100000 + Math.random() * 900000).toString(); // 6-digit numeric
+            const user_Id = user.dataValues.id;
+            await code.create
             console.log("thending email thir!!!!");
         }
         else {

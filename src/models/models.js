@@ -2,6 +2,7 @@ import { Model } from "sequelize";
 import { DataTypes } from "sequelize";
 import sequelize from "./db-connect.js";
 import initializeDatabase from "./db-sync.js";
+import { configDotenv } from "dotenv";
 
 // creating classes for Coaches and Clients based on sequelize's "Model" class--an abstraction of a SQL table
 
@@ -10,6 +11,7 @@ class Client extends Model {}
 class Stats extends Model {}
 class CoachClientTable extends Model {}
 class Comment extends Model {}
+class Code extends Model {}
 
 // Defining table fields for Coaches
 
@@ -91,7 +93,7 @@ Client.init({
 },  
 {
     sequelize,
-    modelName: "Client",
+    modelName: "Clients",
     freezeTableName: true,
     indexes: [
         {
@@ -153,6 +155,33 @@ Comment.init({
     freezeTableName: true
 });
 
+// creating password recovery table
+Code.init({
+    codeid: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        unique: true
+    },
+    code: {
+        type: DataTypes.STRING,
+        unique: true
+    },
+    coachID: {
+        type: DataTypes.INTEGER,
+    },
+    used: {
+        type: DataTypes.BOOLEAN
+    },
+    expiry: {
+        type: DataTypes.STRING
+    },
+}, {
+    sequelize,
+    modelName: "Reset_Codes"
+});
+
+
 // Establishing relationships
 Coach.belongsToMany(Client, { through: 'CoachClient'});
 Client.belongsToMany(Coach, { through: 'CoachClient'});
@@ -169,4 +198,4 @@ Client.hasMany(Stats);
 
 // initializeDatabase();
 
-export { Coach, Client, Stats, CoachClientTable, Comment };
+export { Coach, Client, Stats, CoachClientTable, Comment, Code };
