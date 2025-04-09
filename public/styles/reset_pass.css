@@ -1,0 +1,121 @@
+body {
+    background-image: url("../images/background-image.jpg");
+    background-size: cover;
+    background-position: bottom 30%;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.reset { 
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 10px;
+    margin-bottom: 80px;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: rgb(255, 102, 50);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.form-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    bottom: 15px;
+    width: 400px;
+}
+
+h1 {
+  font-size: 40px;
+  text-shadow: 
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px  1px 0 white,
+    1px  1px 0 white;
+}
+
+h2 {
+    text-align: center;
+    font-size: 17px;
+    position: relative;
+    bottom: 10%;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+}
+
+.logo {
+    height: 90%;
+    width: 34%; 
+}
+
+.textfield {
+    border-radius: 5px;
+    border-width: 0;
+    outline: none;
+    padding: 4px;
+    height: 100%;
+    width: 80%;
+    position: relative;
+    left: 5%;
+}
+
+label {
+    position: relative;
+    left: 5%;
+}
+
+.send-button {
+    padding: 10px;
+    width: 94%;
+    border-radius: 5px;
+    border-width: 0;
+    font-family: 'Conthrax', sans-serif;
+    background-color: rgb(19, 18, 75);
+    color: white;
+    position: relative;
+    left: 3%;
+}
+
+.send-button:hover{
+    background-color: rgb(36, 31, 177)
+}
+
+/* Div for err msg */
+.error {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 800px;
+    order: 1;
+}
+
+/* msg itself */
+#error {
+    position: absolute;
+}

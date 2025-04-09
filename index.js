@@ -169,16 +169,50 @@ app.post('/addclient', async (req, res) => {
             res.render('add_client.ejs', { 
                 content: false, 
                 error: violatedConstraints,
+                fname: " ",
+                lname: " ",
+                age: " ",
+                email: " ",
+                cellphone: " ",
+                parents: " "
                 });
+            return;
         }
         console.log(`Client creation process failed, error: ${error}`);
         res.render("add_client.ejs", { content: true, error: error });
+        return;
+    }
+});
+
+app.get('/pass', (req, res) => {
+    res.render("pass_reset.ejs", { message: req.flash('error') });
+});
+
+app.post('/resetpass', async (req, res) => {
+    let givenEmail = req.body['email'];
+    try {
+        let dbEmail = await Coach.findOne({
+            where: {
+                email: givenEmail
+            }
+        });
+        if (dbEmail) {
+            console.log("thending email thir!!!!");
+        }
+        else {
+            req.flash('error', 'Email not registered.');
+            res.redirect('/pass');
+        }
+    }
+    catch (error) {
+        console.log(`Error: ${error}`);
+        res.redirect('/pass');
     }
 });
 
 app.get('/profiles', (req, res) => {
     res.render("client_profile.ejs");
-})
+});
 
 app.listen(port, () => {
     console.log(`App listening on port ${port}`);

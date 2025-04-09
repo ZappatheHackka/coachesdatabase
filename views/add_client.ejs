@@ -23,7 +23,7 @@
             <label>Age:</label>
             <input class="textfield" type="number" placeholder="Enter Client's Age..." name="age" min="5" max="113" required>
             <label>Email:</label>
-            <input class="textfield" type="text" placeholder="Enter Client's Email..." name="email" required>
+            <input class="textfield" type="email" placeholder="Enter Client's Email..." name="email" required>
             <label>Cellphone:</label>
             <input class="textfield" type="text" placeholder="Enter Client's Cellphone..." name="cellphone" required>
             <label>Parent(s)</label>
@@ -33,9 +33,9 @@
     </div>
     <div class="error">
         <%  if (locals.error) { %>
-            <p style="color: red; background: black; text-align: center;" >A client with that name already exists in the database!</p>
-    </div>   
-    <% } %>
+            <p>A client with that name already exists in the database!</p>
+        <% } %>
+    </div>  
     <% } else { %>
         <div class="added-box">
             <div class="added-content">

@@ -8,7 +8,7 @@ body {
     padding: 20px;
     background-image: url("../images/background-image.jpg");
     background-size: cover;
-    background-position: bottom;
+    background-position: bottom 30%;
     background-repeat: no-repeat;
     box-sizing: border-box;
 }
@@ -22,7 +22,7 @@ body {
         1px -1px 0 white,
         -1px 1px 0 white,
         1px 1px 0 white;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /* ---------- Form Section ---------- */
@@ -33,7 +33,6 @@ body {
     width: 100%;
     max-width: 600px;
     box-sizing: border-box;
-    margin-bottom: 30px;
 }
 
 form {
@@ -58,6 +57,7 @@ form {
 
 .textfield {
     border: none;
+    outline: none;
     border-radius: 5px;
     height: 20px;
     padding: 8px;
@@ -82,29 +82,34 @@ button:hover {
 
 /* ---------- Success Display ---------- */
 .added-box {
-    background-color: rgb(255, 102, 50);
+   background-color: rgb(255, 102, 50);
     background-image: url("../images/IDH svg black.svg");
     background-position: center;
     background-size: 85%;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    align-items: center;
     border-radius: 7px;
     width: 100%;
     max-width: 600px;
     padding: 20px;
-    margin-bottom: 30px;
     box-sizing: border-box;
+    margin-bottom: 60px;
+    height: 400px;
 }
 
 #add-succ {
-    background-color: rgba(255, 255, 255, 0.85);
+     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 5px;
     font-size: 2rem;
     text-align: center;
     padding: 10px;
     width: 100%;
     margin-bottom: 15px;
+    font-family: 'Conthrax', sans-serif;
+    position: relative;
+    right: 2%;
+    bottom: 5%;
 }
 
 .labels {
@@ -112,20 +117,37 @@ button:hover {
     color: white;
     border-radius: 7px;
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    gap: 15px;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+    font-family: 'Conthrax', sans-serif;
+    height: 70%;
+    padding: 10px;
+    position: relative;
+    bottom: 5%;
 }
 
 /* ---------- Error Message ---------- */
 .error {
-    color: red;
     font-size: 1rem;
+    color: red;
     text-align: center;
-    margin-top: 15px;
+    padding: 10px;
     width: 100%;
     max-width: 800px;
+    border-radius: 5px;
+    margin-bottom: 80px;
+    font-family: 'Conthrax', sans-serif;
+}
+
+.error p {
+    margin-bottom: 0px; 
+    margin-top: 0px; 
 }
 
 /* ---------- Responsive Media Queries ---------- */

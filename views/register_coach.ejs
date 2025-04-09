@@ -20,7 +20,7 @@
             <label>Last Name:</label>
             <input class="textfield" type="text" placeholder="Enter Coach's Last Name..." name="lname" required>
             <label>Email:</label>
-            <input class="textfield" type="text" placeholder="Enter Coach's Email..." name="email" required>
+            <input class="textfield" type="email" placeholder="Enter Coach's Email..." name="email" required>
             <label>Create Password:</label>
             <input class="textfield" type="text" placeholder="Create Coach's Password..." name="password" required>
             <label>Make User an Admin<input type="checkbox" name="isAdmin" style="position: relative; left: 20px; top: 2px;"></label>
@@ -29,7 +29,7 @@
     </div>
     <div class="error">
         <%  if (locals.error) { %>
-            <p style="color: red; background: black; text-align: center;" >The email you entered is already registered!</p>
+            <p>The email you entered is already registered!</p>
     </div>  
     <% } %>
     <% } else { %>
@@ -37,10 +37,10 @@
             <div class="added-content">
                 <h1 id="add-succ">Coach Successfully Added!</h1>
                 <div class="labels">
-                    <label>Coach: <%= fname + " " + lname %></label>
-                    <label>Email: <%= email %></label>
-                    <label>Password: <%= password %></label>
-                    <label>Admin Status: <%= isAdmin %></label>
+                    <label><span>Coach:</span> <%= fname + " " + lname %></label>
+                    <label><span>Email:</span> <%= email %></label>
+                    <label><span>Password:</span> <%= password %></label>
+                    <label><span>Admin Status:</span> <%= isAdmin %></label>
                 </div>
             </div>
         </div>

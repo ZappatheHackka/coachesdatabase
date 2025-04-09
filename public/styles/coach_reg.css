@@ -8,7 +8,7 @@ body {
     padding: 20px;
     background-image: url("../images/background-image.jpg");
     background-size: cover;
-    background-position: center bottom;
+    background-position: bottom 30%;
     background-repeat: no-repeat;
     box-sizing: border-box;
 }
@@ -21,7 +21,7 @@ body {
         1px -1px 0 white,
         -1px 1px 0 white,
         1px 1px 0 white;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .coach-reg-box {
@@ -31,7 +31,6 @@ body {
     width: 100%;
     max-width: 600px;
     box-sizing: border-box;
-    margin-bottom: 30px;
 }
 
 form {
@@ -41,7 +40,7 @@ form {
     width: 100%;
     box-sizing: border-box;
     position: relative;
-    bottom: 20px;
+    bottom: 23px;
 }
 
 .form-logo {
@@ -86,13 +85,13 @@ button:hover {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    align-items: center;
     border-radius: 7px;
     width: 100%;
     max-width: 600px;
     padding: 20px;
     box-sizing: border-box;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    height: 400px;
 }
 
 #add-succ {
@@ -104,6 +103,9 @@ button:hover {
     width: 100%;
     margin-bottom: 15px;
     font-family: 'Conthrax', sans-serif;
+    position: relative;
+    right: 2%;
+    bottom: 5%;
 }
 
 
@@ -113,24 +115,41 @@ button:hover {
     color: white;
     border-radius: 7px;
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    gap: 15px;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
     font-family: 'Conthrax', sans-serif;
+    height: 70%;
+    padding: 10px;
+    position: relative;
+    bottom: 5%;
 }
 
 .error {
     font-size: 1rem;
     color: red;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.75);
     padding: 10px;
     width: 100%;
     max-width: 800px;
     margin-top: 20px;
     border-radius: 5px;
+    margin-bottom: 80px;
     font-family: 'Conthrax', sans-serif;
+}
+
+.error p {
+    margin-bottom: 40px; 
+    margin-top: 0px; 
+}
+
+span {
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
