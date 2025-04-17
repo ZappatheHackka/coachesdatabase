@@ -93,7 +93,7 @@ Client.init({
 },  
 {
     sequelize,
-    modelName: "Clients",
+    modelName: "Client",
     freezeTableName: true,
     indexes: [
         {

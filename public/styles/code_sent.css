@@ -1,0 +1,115 @@
+body {
+    background-image: url("../images/background-image.jpg");
+    background-size: cover;
+    background-position: bottom 30%;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.reset { 
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    margin-bottom: 80px;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 590px;
+    background-color: rgb(255, 102, 50);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+
+h1 {
+  font-size: 40px;
+  text-shadow: 
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px  1px 0 white,
+    1px  1px 0 white;
+}
+
+h2 {
+    text-align: center;
+    font-size: 17px;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+}
+
+.logo {
+    height: 40%;
+    width: 30%;
+    position: relative;
+    top: 4%;
+}
+
+.textfield {
+    border-radius: 5px;
+    border-width: 0;
+    outline: none;
+    padding: 10px;
+    width: 80%;
+    margin-left: 8%;
+    margin-bottom: 5%;
+}
+
+
+.send-button {
+    padding: 10px;
+    width: 85%;
+    border-radius: 5px;
+    border-width: 0;
+    font-family: 'Conthrax', sans-serif;
+    background-color: rgb(19, 18, 75);
+    color: white;
+    margin-left: 8%;
+    position: relative;
+    
+}
+
+.send-button:hover{
+    background-color: rgb(36, 31, 177)
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 3%;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+    text-decoration: underline;
+}
+
+label {
+    margin-left: 9%;
+    position: relative;
+    bottom: 1%;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+}
+
+#enter {
+    margin-right: 43%;
+    position: relative;
+    top: 3%;
+}
+
+#msg {
+    position: relative;
+    top: 3%;
+}
