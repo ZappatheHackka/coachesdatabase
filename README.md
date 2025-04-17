@@ -1,8 +1,8 @@
 # 🏀 Inner Drive Hoops Coaches Database App
 
-A full-stack web application for basketball coaches to view client information, track session feedback, and streamline client trainings. Built for Inner Drive Hoops with a focus on real-world functionality and custom design.
+A full-stack web application for basketball coaches to view client information, track session feedback, and streamline training progression. Built for Inner Drive Hoops from scratch with a focus on real-world functionality and a simple, easy-to-use user experience.
 
-> 🚧 This project is a work in progress — core features like authentication, permissions, and adding client info are functional, with more on the way.
+> 🚧 This project is a work in progress — core features like authentication, permissions, and adding client info are functional, with more actively being developed.
 
 ---
 
@@ -18,7 +18,7 @@ A full-stack web application for basketball coaches to view client information, 
 
 ---
 
-## 🛠 Tech Stack (for now)
+## 🛠 Tech Stack
 
 - **Backend**: Node.js, Express.js
 - **Frontend**: HTML5, CSS3, EJS
@@ -27,3 +27,14 @@ A full-stack web application for basketball coaches to view client information, 
 - **Email**: Nodemailer (SMTP-based password reset)
 - **Utilities**: crypto (token generation), dotenv (env config)
 
+---
+
+## 🙋‍♂️ About the Author
+
+Built and maintained by **Christopher Cottone**.  
+This app is actively being deployed to improve client tracking and coach collaboration — replacing scattered messages and spreadsheets with a centralized, secure dashboard.
+
+📫 [Email Me](mailto:chriscottone1@gmail.com)  
+💼 [LinkedIn](https://www.linkedin.com/in/christopher-cottone-b9820928a/?trk=opento_sprofile_topcard)  
+
+Currently seeking **junior/entry-level roles** in software development, automation, or technical support. Looking to build and learn as much as I can!
