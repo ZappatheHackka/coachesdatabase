@@ -2,7 +2,7 @@
 
 A full-stack web application for basketball coaches to view client information, track session feedback, and streamline client trainings. Built for Inner Drive Hoops with a focus on real-world functionality and custom design.
 
-> 🚧 This project is a work in progress — core features like authentication, password reset, and client tracking are functional, with more on the way.
+> 🚧 This project is a work in progress — core features like authentication, permissions, and adding client info are functional, with more on the way.
 
 ---
 
