@@ -18,7 +18,7 @@ A full-stack web application for basketball coaches to view client information, 
 
 ---
 
-## 🛠 Tech Stack
+## 🛠 Tech Stack (for now)
 
 - **Backend**: Node.js, Express.js
 - **Frontend**: HTML5, CSS3, EJS
