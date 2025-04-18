@@ -29,6 +29,15 @@ A full-stack web application for basketball coaches to view client information, 
 
 ---
 
+## Some UI Samples With Fake Data
+
+![Login Page](/samples/login-screen.png)
+
+![Home Page](/samples/homescreen.png)
+
+![Alpha v2 Profile Page](/samples/homescreen.png)
+---
+
 ## 🙋‍♂️ About the Author
 
 Built and maintained by **Christopher Cottone**.  
