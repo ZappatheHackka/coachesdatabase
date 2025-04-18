@@ -39,6 +39,16 @@ A full-stack web application for basketball coaches to view client information, 
 
 ---
 
+## Coming Soon...
+- Full password reset flow
+- Clients from PGSQL displayed on the homepage, with hyperlinks to their specific profiles
+- Profile comments & ratings from
+- Sleeker profile page UI
+- Profile pictures for clients
+- Client search functionality with filters (React integration?)
+- More front-end tweaks for a more modern look and robust UI
+
+
 ## 🙋‍♂️ About the Author
 
 Built and maintained by **Christopher Cottone**.  
