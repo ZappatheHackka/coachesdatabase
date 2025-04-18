@@ -52,8 +52,8 @@ h1 {
 
 .logo {
     z-index: 0;
-    height: 120px;
-    width: 130px; 
+    height: auto;
+    width: 21vh; 
     position: relative; 
     bottom: 31px;
     fill: white;
@@ -68,7 +68,7 @@ h1 {
 }
 
 .login-button {
-    margin-top: 20px;
+    margin-top: 25px;
     position: relative;
     bottom: 38px;
     height: 30px;

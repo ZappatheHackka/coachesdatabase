@@ -11,10 +11,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 
@@ -53,10 +49,10 @@ h2 {
 }
 
 .logo {
-    height: 40%;
-    width: 30%;
+    height: auto;
+    width: 35%;
     position: relative;
-    top: 4%;
+    top: 3%;
 }
 
 .textfield {
@@ -91,7 +87,7 @@ p {
     display: flex;
     justify-content: center;
     position: relative;
-    top: 3%;
+    top: 5%;
     text-shadow: 0 1px 1px rgba(255,255,255,0.5);
     text-decoration: underline;
 }

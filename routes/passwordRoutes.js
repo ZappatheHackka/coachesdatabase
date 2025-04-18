@@ -1,4 +1,6 @@
 import { Coach, Code } from '../src/models/models.js'
+import express from "express";
+
 const router = express.Router();
 
 router.get('/pass', (req, res) => {
@@ -42,3 +44,5 @@ router.get('/success', (req, res) => {
         email: email
     });
 });
+
+export default router;

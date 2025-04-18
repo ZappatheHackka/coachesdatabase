@@ -11,10 +11,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 
@@ -95,6 +91,7 @@ label {
     color: white;
     position: relative;
     left: 3%;
+    top: 1%;
 }
 
 .send-button:hover{

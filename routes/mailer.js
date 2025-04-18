@@ -11,7 +11,7 @@ let transporter = nodemailer.createTransport({
     secure: false, // use TLS, not SSL
     auth: {
       user: "chris@idhoops.com",
-      pass: process.env.MAIL_PASS
+      pass: process.env.NM_PASS
     },
     tls: {
         rejectUnauthorized: false
@@ -20,7 +20,7 @@ let transporter = nodemailer.createTransport({
   
 let message = {
     from: "chris@idhoops.com",
-    to: "chris@idhoops.com",
+    to: "chriscottone1@gmail.com",
     subject: "Testing Pals",
     text: "You are that guy"
   };
