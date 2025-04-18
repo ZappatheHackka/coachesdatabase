@@ -35,7 +35,8 @@ A full-stack web application for basketball coaches to view client information, 
 
 ![Home Page](/samples/homescreen.png)
 
-![Alpha v2 Profile Page](/samples/homescreen.png)
+![Alpha v2 Profile Page](/samples/profile-alpha.png)
+
 ---
 
 ## 🙋‍♂️ About the Author
