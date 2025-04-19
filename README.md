@@ -31,9 +31,15 @@ A full-stack web application for basketball coaches to view client information, 
 
 ## Some UI Samples With Fake Data
 
+- The login screen
+
 ![Login Page](/samples/login-screen.png)
 
+- Main dashboard once logged in 
+
 ![Home Page](/samples/homescreen.png)
+
+ - Early version of the clients' profile pages
 
 ![Alpha v2 Profile Page](/samples/profile-alpha.png)
 
