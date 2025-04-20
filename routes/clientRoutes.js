@@ -54,8 +54,17 @@ router.post('/addclient', async (req, res) => {
     }
 });
 
-router.get('/profiles', (req, res) => {
-    res.render("client_profile.ejs");
+router.get('/client/:id', async (req, res) => {
+    try { 
+        const clientId = req.params.id;
+        const client = await Client.findByPk(clientId);
+        if (!client) {
+            return res.status(404).send("Client not found.");
+        }
+        res.render("client_profile.ejs", { thisClient : client });
+    } catch (error) {
+        console.log(`Could not load client profile. Error: ${error}`);
+    } 
 });
 
 export default router;

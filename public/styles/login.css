@@ -53,9 +53,9 @@ h1 {
 .logo {
     z-index: 0;
     height: auto;
-    width: 21vh; 
+    width: 18vh; 
     position: relative; 
-    bottom: 31px;
+    bottom: 25px;
     fill: white;
 }
 

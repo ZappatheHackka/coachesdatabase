@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/client_profiles.css">
-    <!-- <script src="/scripts/image_select.js" defer></script> -->
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/client_profiles.css">
     <title>Profile</title>
 </head>
 <body>
@@ -14,22 +13,55 @@
     <div class="container">
         <div class="header">
             <div class="profile-pic-div">
-                <img class="profile-pic" src="images/fotor_empty.png">
+                <img class="profile-pic" src="/images/fotor_empty.png">
                 <a href="www.google.com" class="update-pfp">Update Profile Picture</a>
+                <div class="edit-box"> 
+                    <a id="edit-text">Edit Profile</a>
+                    <img id="editPencil" src="/images/pencil-svgrepo-com.svg"></img>
+                </div>  
+            </div>
+            <div id="popupform" class="popup-form hidden" style="display: none;">
+                <form action="/edit/<%= thisClient.clientid %>" method="POST">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" name="firstname" value="<%= thisClient.firstname %>">
+                
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" name="lastname" value="<%= thisClient.lastname %>">
+                
+                    <label for="age">Age:</label>
+                    <input type="number" name="age" value="<%= thisClient.age %>">
+                
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" value="<%= thisClient.email %>">
+                
+                    <label for="cellphone">Phone:</label>
+                    <input type="text" name="cellphone" value="<%= thisClient.cellphone %>">
+                
+                    <label for="parent">Parent:</label>
+                    <input type="text" name="parent" value="<%= thisClient.parent %>">
+                
+                    <div class="popup-buttons">
+                      <button type="submit">Save</button>
+                      <button type="button" id="cancelBtn">Cancel</button>
+                    </div>
+                </form>
             </div>
             <div class="profile-info">
-                <h1>Client Name</h1>
-                <p>Age: 13</p>
-                <p>Parents: John Cena</p>
-                <p>Email: email@email.email</p>
-                <p>Cell: 11111111111</p>
+                <h1><%= thisClient.firstname %> <%= thisClient.lastname %></h1>
+                <p>Age: <%= thisClient.age %></p>
+                <p>Parents: <%= thisClient.parent %></p>
+                <p>Email: <%= thisClient.email %></p>
+                <p>Cellphone: <%= thisClient.cellphone %></p>
             </div>
+
             <div class="coaches-div">
                 <h2 id="coach-title">Coached By:</h2>
                 <h3>Coach 1</h3>
                 <h3>Coach 2</h3>
                 <h3>Coach 3</h3>
             </div>
+
+            
         </div>
         <div class="body">
             <div class="comments">

@@ -22,6 +22,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 3000;
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 // Middleware
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
@@ -39,8 +42,17 @@ app.use(clientRoutes);
 app.use(passwordRoutes);
 
 // Sample protected route
-app.get("/home", isAuthenticated, (req, res) => {
-  res.render("home.ejs", { message: req.flash('error') });
+app.get("/home", isAuthenticated, async (req, res) => {
+  try {
+    const clients = await Client.findAll();
+    res.render("home.ejs", { 
+      clients,
+      message: req.flash('error')
+      });
+  } catch (error) {
+    req.flash('error', `Failed to fetch clients from database: ${error}`);
+    res.redirect('/');
+  }
 });
 
 

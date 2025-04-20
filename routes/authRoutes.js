@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
             let canEnter = await (bcrypt.compare(givenPass, dbPass));
             if (canEnter === true) 
                 {
-                req.session.userid = user.dataValues.id;
+                req.session.coachid = user.dataValues.id;
                 req.session.adminStatus = user.dataValues.isAdmin;
                 return res.redirect("/home");
                 }

@@ -44,78 +44,20 @@
                     <th>Phone</th>
                     <th>Parent(s)</th>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>John Cena</td>
-                    <td>13</td>
-                    <td>invisible@gmail.com</td>
-                    <td>1115556251</td>
-                    <td>Jonathan Cena</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Michael Jackson</td>
-                    <td>68</td>
-                    <td>magic@gmail.com</td>
-                    <td>9075555589</td>
-                    <td>John Cena</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Nathanael Greene</td>
-                    <td>284</td>
-                    <td>yankee12@boston.com</td>
-                    <td>6095558547</td>
-                    <td>John Cena</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Holly Wallace</td>
-                    <td>12</td>
-                    <td>davewallace@gmail.com</td>
-                    <td>3545550937</td>
-                    <td>John Cena</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Daniel Boone</td>
-                    <td>267</td>
-                    <td>pioneer@iowa.com</td>
-                    <td>5935553923</td>
-                    <td>John Cena</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Guy Husband</td>
-                    <td>9</td>
-                    <td>husbandry@gmail.com</td>
-                    <td>9065558960</td>
-                    <td>John Cena</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Kaylan Green</td>
-                    <td>16</td>
-                    <td>gnp@gmail.com</td>
-                    <td>3795556009</td>
-                    <td>John Cena</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Marty Thomas</td>
-                    <td>8</td>
-                    <td>artfulcarpet@hotmail.com</td>
-                    <td>4025552375</td>
-                    <td>Jonathan Cena</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Joe Schwarzenegger</td>
-                    <td>24</td>
-                    <td>bigjoe@gmail.com</td>
-                    <td>4435558907</td>
-                    <td>John Cena</td>
-                </tr>
+                <% clients.forEach(client => { %>
+                  <tr>
+                      <td><%= client.clientid %></td>
+                      <td>
+                        <a href="/client/<%=client.clientid %>">
+                            <%= client.firstname %> <%=client.lastname %>
+                        </a>
+                      </td>
+                      <td><%= client.age %></td>
+                      <td><%= client.email %></td>
+                      <td><%= client.cellphone %></td>
+                      <td><%= client.parent %></td>
+                  </tr>
+                <% }) %>
             </table>
         </div>
     </div>

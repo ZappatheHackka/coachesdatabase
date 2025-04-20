@@ -1,5 +1,5 @@
 export const isAuthenticated = (req, res, next) => {
-    if (req.session.userid) {
+    if (req.session.coachid) {
         return next();
     }
     req.flash('error', 'You must be logged in to view this page!');
