@@ -1,5 +1,5 @@
 import express from 'express';
-import { Client } from '../src/models/models.js';
+import { Client, Coach } from '../src/models/models.js';
 import { isAuthenticated } from './middleware.js';
 
 const router = express.Router();
@@ -8,7 +8,7 @@ router.get('/addclient', isAuthenticated, (req, res) => {
     res.render("add_client.ejs");
 });
 
-router.post('/addclient', async (req, res) => {
+router.post('/addclient', isAuthenticated, async (req, res) => {
     let fname = req.body['fname'];
     let lname = req.body['lname'];
     let age = req.body["age"];
@@ -54,17 +54,50 @@ router.post('/addclient', async (req, res) => {
     }
 });
 
-router.get('/client/:id', async (req, res) => {
+router.get('/client/:id', isAuthenticated, async (req, res) => {
     try { 
         const clientId = req.params.id;
         const client = await Client.findByPk(clientId);
+        const coaches = await Coach.findAll();
+        const clientCoaches = [];
         if (!client) {
             return res.status(404).send("Client not found.");
         }
-        res.render("client_profile.ejs", { thisClient : client });
+        res.render("client_profile.ejs", { thisClient : client, coaches, clientCoaches: clientCoaches });
     } catch (error) {
         console.log(`Could not load client profile. Error: ${error}`);
     } 
 });
+
+router.post('/edit/:id', isAuthenticated, async (req, res) => {
+    const clientId = req.params.id;
+    let { firstname, lastname, age, email, cellphone, parent } = req.body;
+    const client = await Client.findByPk(clientId);
+    if (firstname !== client.firstname) {
+        client.firstname = firstname;
+    }
+    if (lastname !== client.lastname) {
+        client.lastname = lastname;
+    }
+    if (age !== client.age) {
+        client.age = age;
+    }
+    if (email !== client.email) {
+        client.email = email;
+    }
+    if (cellphone !== client.cellphone) {
+        client.cellphone = cellphone;
+    }
+    if (parent !== client.parent) {
+        client.parent = parent;
+    }
+    await client.save();
+    res.redirect(`/client/${clientId}`);
+});
+
+router.post('/assign-coach/:id', isAuthenticated, async (req, res) => {
+
+});
+
 
 export default router;

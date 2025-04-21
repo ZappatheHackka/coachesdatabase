@@ -21,28 +21,45 @@
                     <img id="editPencil" src="/images/pencil-svgrepo-com.svg"></img>
                 </div>  
             </div>
+            
+            <div id="assignCoachPopup" class="assign-overlay" style="display: none;">
+                <form action="/assign-coach/<%= thisClient.clientid %>" method="POST" class="assign-coach-form">
+                  <label for="coachId" class="assign-label">Assign a Coach:</label>
+                  <select name="coachId" id="coachId" class="popup-select" required>
+                    <% coaches.forEach(coach => { %>
+                      <option value="<%= coach.id %>"><%= coach.firstname %> <%= coach.lastname %></option>
+                    <% }) %>
+                  </select>
+                  <div class="assign-buttons">
+                    <button type="submit" id="assign-button">Assign</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                  </div>
+                </form>
+            </div>
+              
+              
             <div id="popupform" class="popup-form hidden" style="display: none;">
-                <form action="/edit/<%= thisClient.clientid %>" method="POST">
+                <form action="/edit/<%= thisClient.clientid %>" id="form-element" method="POST">
                     <label for="firstname">First Name:</label>
-                    <input type="text" name="firstname" value="<%= thisClient.firstname %>">
+                    <input class="editfields" type="text" name="firstname" value="<%= thisClient.firstname %>">
                 
                     <label for="lastname">Last Name:</label>
-                    <input type="text" name="lastname" value="<%= thisClient.lastname %>">
+                    <input class="editfields" type="text" name="lastname" value="<%= thisClient.lastname %>">
                 
                     <label for="age">Age:</label>
-                    <input type="number" name="age" value="<%= thisClient.age %>">
+                    <input class="editfields" type="number" name="age" value="<%= thisClient.age %>">
                 
                     <label for="email">Email:</label>
-                    <input type="email" name="email" value="<%= thisClient.email %>">
+                    <input class="editfields" type="email" name="email" value="<%= thisClient.email %>">
                 
                     <label for="cellphone">Phone:</label>
-                    <input type="text" name="cellphone" value="<%= thisClient.cellphone %>">
+                    <input class="editfields" type="text" name="cellphone" value="<%= thisClient.cellphone %>">
                 
                     <label for="parent">Parent:</label>
-                    <input type="text" name="parent" value="<%= thisClient.parent %>">
+                    <input class="editfields" type="text" name="parent" value="<%= thisClient.parent %>">
                 
                     <div class="popup-buttons">
-                      <button type="submit">Save</button>
+                      <button type="submit" id="saveBtn">Save</button>
                       <button type="button" id="cancelBtn">Cancel</button>
                     </div>
                 </form>
@@ -56,13 +73,12 @@
             </div>
 
             <div class="coaches-div">
-                <h2 id="coach-title">Coached By:</h2>
-                <h3>Coach 1</h3>
-                <h3>Coach 2</h3>
-                <h3>Coach 3</h3>
+                <h2 id="coach-title">Trainer(s)</h2>
+                <% clientCoaches.forEach(trainer => { %>
+                    <h3><%= trainer %></h3>
+                <% }) %>
             </div>
-
-            
+            <img id="addCoach" src="/images/plus-svgrepo-com.svg">
         </div>
         <div class="body">
             <div class="comments">

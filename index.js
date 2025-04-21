@@ -44,7 +44,9 @@ app.use(passwordRoutes);
 // Sample protected route
 app.get("/home", isAuthenticated, async (req, res) => {
   try {
-    const clients = await Client.findAll();
+    const clients = await Client.findAll({
+      order: [['clientid', 'DESC']]
+    });
     res.render("home.ejs", { 
       clients,
       message: req.flash('error')
