@@ -96,7 +96,9 @@ router.post('/edit/:id', isAuthenticated, async (req, res) => {
 });
 
 router.post('/assign-coach/:id', isAuthenticated, async (req, res) => {
-
+    let clientId = req.params.id;
+    let coachId = req.session.coachid;
+    console.log(coachId, clientId);
 });
 
 
