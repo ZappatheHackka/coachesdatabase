@@ -74,11 +74,11 @@
 
             <div class="coaches-div">
                 <h2 id="coach-title">Trainer(s)</h2>
+                <img id="addCoach" src="/images/plus-svgrepo-com.svg" style="display: inline-block;">
                 <% clientCoaches.forEach(trainer => { %>
-                    <h3><%= trainer %></h3>
+                    <h3><%= trainer.firstname %> <%= trainer.lastname %> <form name="coachId" action="/delete-coach/<%= trainer.id %>/ <%= thisClient.clientid %>" method="POST"><button type="submit">Delete</button></form></h3>
                 <% }) %>
             </div>
-            <img id="addCoach" src="/images/plus-svgrepo-com.svg">
         </div>
         <div class="body">
             <div class="comments">

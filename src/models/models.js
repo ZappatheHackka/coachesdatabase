@@ -9,7 +9,6 @@ import { configDotenv } from "dotenv";
 class Coach extends Model {}
 class Client extends Model {}
 class Stats extends Model {}
-class CoachClientTable extends Model {}
 class Comment extends Model {}
 class Code extends Model {}
 
@@ -183,8 +182,8 @@ Code.init({
 
 
 // Establishing relationships
-Coach.belongsToMany(Client, { through: 'CoachClient'});
-Client.belongsToMany(Coach, { through: 'CoachClient'});
+Coach.belongsToMany(Client, { through: 'CoachClient', foreignKey: 'CoachId', otherKey: 'ClientId'});
+Client.belongsToMany(Coach, { through: 'CoachClient', foreignKey: 'ClientId', otherKey: 'CoachId'});
 
 Coach.hasMany(Comment);
 Client.hasMany(Comment);
@@ -198,4 +197,4 @@ Client.hasMany(Stats);
 
 // initializeDatabase();
 
-export { Coach, Client, Stats, CoachClientTable, Comment, Code };
+export { Coach, Client, Stats, Comment, Code };

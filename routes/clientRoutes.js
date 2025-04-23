@@ -57,9 +57,14 @@ router.post('/addclient', isAuthenticated, async (req, res) => {
 router.get('/client/:id', isAuthenticated, async (req, res) => {
     try { 
         const clientId = req.params.id;
-        const client = await Client.findByPk(clientId);
+        const client = await Client.findByPk(clientId, {
+            include: {
+                model: Coach,
+                as: "Coaches"
+            }
+        });
+        const clientCoaches = client.Coaches;
         const coaches = await Coach.findAll();
-        const clientCoaches = [];
         if (!client) {
             return res.status(404).send("Client not found.");
         }
@@ -95,11 +100,37 @@ router.post('/edit/:id', isAuthenticated, async (req, res) => {
     res.redirect(`/client/${clientId}`);
 });
 
-router.post('/assign-coach/:id', isAuthenticated, async (req, res) => {
+// Trainer info routes
+
+router.post('/assign-coach/:id/', isAuthenticated, async (req, res) => {
     let clientId = req.params.id;
-    let coachId = req.session.coachid;
-    console.log(coachId, clientId);
+    let coachId = req.body.coachId;
+    if (!coachId || !clientId) {
+        console.error("Missing coachId or clientId!");
+        return res.status(400).send("Invalid assignment data.");
+    }
+    try {
+        const coach = await Coach.findByPk(coachId);
+        const client = await Client.findByPk(clientId);
+        await client.addCoach(coach);
+
+        res.redirect(`/client/${clientId}`);
+    } catch (error) {
+        console.log(`Could not update trainer list, error: ${error}`);
+    }
 });
 
+router.post('/delete-coach/:id/:cid', isAuthenticated, async (req, res) => {
+    var delcoachId = req.params.id;
+    var clientId = req.params.cid;
+    try {
+        let clientObj = await Client.findByPk(clientId);
+        let delCoach = await Coach.findByPk(delcoachId);
+        await clientObj.removeCoach(delCoach);
+        res.redirect(`/client/${clientId}`);
+    } catch (error) {
+        console.log(`Cannot delete coach, error: ${error}`);
+    }
+});
 
 export default router;

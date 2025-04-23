@@ -306,10 +306,12 @@ span {
 
 #addCoach {
     width: 1.75%;
-    margin-left: .5rem;
-    margin-top: 1rem;
+    margin-left: 10rem;
     cursor: pointer;
     height: 10%;
+    position: absolute;
+    top: 5rem;
+    z-index: 5;
 }
 
 .assign-overlay {
@@ -343,5 +345,11 @@ span {
 #assign-button {
     width: 30%;
     height: 1.5rem;
+}
+
+form > span {
+    color: firebrick;
+    font-size: .95rem;
+    padding-left: .65rem;
 }
   
