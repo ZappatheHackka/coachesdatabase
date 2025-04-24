@@ -82,8 +82,8 @@ body {
 }
 
 .coaches-div {
-    margin-left: 105px;
-    margin-top: 10px;
+    margin-left: 6.5rem;
+    margin-top: .4rem;
 }
 
 #coach-title {
@@ -200,7 +200,6 @@ body {
     background-color: rgb(19, 18, 75);
     width: 450px;
     position: relative;
-    margin-left: 33px;
     margin-top: 10px;
     color: white;
     height: 34%;
@@ -208,11 +207,11 @@ body {
 
 li {
     position: relative;
-    bottom: 33px;
-    right: 15px;
+    bottom: 1rem;
+    right: 1rem;
     list-style-type: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 span {
@@ -305,12 +304,11 @@ span {
 }
 
 #addCoach {
-    width: 1.75%;
     margin-left: 10rem;
     cursor: pointer;
     height: 10%;
-    position: absolute;
-    top: 5rem;
+    position: relative;
+    bottom: 3.75rem;
     z-index: 5;
 }
 
@@ -352,4 +350,93 @@ form > span {
     font-size: .95rem;
     padding-left: .65rem;
 }
+
+.trainerNameDiv {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    position: relative;
+    bottom: 2.5rem;
+}
+  
+.trainer-pair {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+  
+.trainers {
+    min-width: 200px;
+    margin: 0;
+}
+  
+.ratings > div {
+    display: flex;
+    justify-content: center;
+}
+
+#addRatingBtn {
+    width: 4.2%;
+    margin-bottom: 2.3rem;
+    position: relative;
+    left: .3rem;
+    cursor: pointer;
+}
+  
+.rating-popup {
+    position: absolute;
+    top: 7rem;
+    left: 22.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+  
+#rating-form {
+    background-color: rgb(19, 18, 75);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+}
+  
+#rating-form label {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: white;
+}
+  
+#rating-form input {
+    margin-top: 0.25rem;
+    padding: 0.45rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+  
+.popup-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+#saveBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+  
+#cancelBtn {
+    background-color: #f44336;
+    color: white;
+}
+  
+  
   

@@ -37,6 +37,50 @@
                 </form>
             </div>
               
+            <div id="rating-popup" class="rating-popup hidden" style="display: none;">
+                <form action="/rate/<%= thisClient.clientid %>" id="rating-form" method="POST">
+                    <div style="display: inline-block;">
+                        <label for="ball-handling">Ball Handling:</label>
+                        <input class="ratefields" type="text" name="ballhandling">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="finishing">Finishing:</label>
+                        <input class="ratefields" type="text" name="finishing">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="shooting">Shooting:</label>
+                        <input class="ratefields" type="number" name="shooting">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="iq">IQ:</label>
+                        <input class="ratefields" type="email" name="iq">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="defense">Defense:</label>
+                        <input class="ratefields" type="text" name="defense">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="passing">Passing:</label>
+                        <input class="ratefields" type="text" name="passing">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div class="popup-buttons">
+                      <button type="submit" id="saveBtn">Save</button>
+                      <button type="button" id="cancelBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
               
             <div id="popupform" class="popup-form hidden" style="display: none;">
                 <form action="/edit/<%= thisClient.clientid %>" id="form-element" method="POST">
@@ -75,9 +119,17 @@
             <div class="coaches-div">
                 <h2 id="coach-title">Trainer(s)</h2>
                 <img id="addCoach" src="/images/plus-svgrepo-com.svg" style="display: inline-block;">
-                <% clientCoaches.forEach(trainer => { %>
-                    <h3><%= trainer.firstname %> <%= trainer.lastname %> <form name="coachId" action="/delete-coach/<%= trainer.id %>/ <%= thisClient.clientid %>" method="POST"><button type="submit">Delete</button></form></h3>
-                <% }) %>
+                <div class="trainerNameDiv">
+                    <% clientCoaches.forEach(trainer => { %>
+                      <div class="trainer-pair">
+                        <h3 class="trainers"><%= trainer.firstname %> <%= trainer.lastname %></h3>
+                        <form name="coachId" action="/delete-coach/<%= trainer.id %>/<%= thisClient.clientid %>" method="POST">
+                          <button type="submit">Delete</button>
+                        </form>
+                      </div>
+                    <% }) %>
+                  </div>
+                  
             </div>
         </div>
         <div class="body">
@@ -92,18 +144,24 @@
             </div>
             <div class="right-body">
                 <div class="ratings">
-                    <h2 id="ratings-header">Client Ratings</h2>
+                    <div>
+                        <h2 id="ratings-header">Client Ratings</h2>
+                        <img id="addRatingBtn" src="/images/plus-svgrepo-com.svg">
+                    </div>
+                    
                     <div class="ratings-display">
                         <div class="rating">
-                            <h3 id="rating-author">Coach 1</h3>
-                            <ul class="actual-ratings">
-                                <li>Ball Handling: <span>4/10</span></li>
-                                <li>Finishing: <span>4/10</span></li>
-                                <li>Shooting: <span>4/10</span></li>
-                                <li>IQ: <span>4/10</span></li>
-                                <li>Defense: <span>4/10</span></li>
-                                <li> Passing: <span>4/10</span></li>
-                            </ul>
+                            <div class="rating-text">
+                                <h3 id="rating-author">Coach 1</h3>
+                                <ul class="actual-ratings">
+                                    <li>Ball Handling: <span>4/10</span></li>
+                                    <li>Finishing: <span>4/10</span></li>
+                                    <li>Shooting: <span>4/10</span></li>
+                                    <li>IQ: <span>4/10</span></li>
+                                    <li>Defense: <span>4/10</span></li>
+                                    <li> Passing: <span>4/10</span></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
