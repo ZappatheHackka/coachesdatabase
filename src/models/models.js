@@ -8,7 +8,7 @@ import { configDotenv } from "dotenv";
 
 class Coach extends Model {}
 class Client extends Model {}
-class Stats extends Model {}
+class ClientRatings extends Model {}
 class Comment extends Model {}
 class Code extends Model {}
 
@@ -102,7 +102,7 @@ Client.init({
     ]
 });
 
-Stats.init({
+ClientRatings.init({
     ratingid: {
         type: DataTypes.INTEGER,
         unique: true,
@@ -130,7 +130,7 @@ Stats.init({
     }
 }, {
     sequelize,
-    modelName: "Client Ratings",
+    modelName: "ClientRatings",
     freezeTableName: true
 });
 
@@ -150,7 +150,7 @@ Comment.init({
     },
 }, {
     sequelize,
-    modelName: "Client Comments",
+    modelName: "ClientComments",
     freezeTableName: true
 });
 
@@ -190,11 +190,12 @@ Client.hasMany(Comment);
 Comment.belongsTo(Coach);
 Comment.belongsTo(Client);
 
-Stats.belongsTo(Coach);
-Stats.belongsTo(Client);
-Coach.hasMany(Stats);
-Client.hasMany(Stats);
+ClientRatings.belongsTo(Client, { foreignKey: 'ClientId' });
+ClientRatings.belongsTo(Coach, { foreignKey: 'CoachId' });
+
+Client.hasMany(ClientRatings, { foreignKey: 'ClientId' });
+Coach.hasMany(ClientRatings, { foreignKey: 'CoachId' });
 
 // initializeDatabase();
 
-export { Coach, Client, Stats, Comment, Code };
+export { Coach, Client, ClientRatings, Comment, Code };

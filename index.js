@@ -7,11 +7,12 @@ import flash from "express-flash";
 import bodyParser from "body-parser";
 
 import "./src/models/db-connect.js";
-import { Coach, Client, Stats, Code } from "./src/models/models.js";
+import { Client } from "./src/models/models.js";
 
 import authRoutes from './routes/authRoutes.js';
 import clientRoutes from './routes/clientRoutes.js';
 import passwordRoutes from './routes/passwordRoutes.js';
+import feedbackRoutes from './routes/feedbackRoutes.js';
 import { isAuthenticated } from './routes/middleware.js';
 
 dotenv.config();
@@ -40,6 +41,7 @@ app.use(flash());
 app.use(authRoutes);
 app.use(clientRoutes);
 app.use(passwordRoutes);
+app.use(feedbackRoutes);
 
 // Sample protected route
 app.get("/home", isAuthenticated, async (req, res) => {

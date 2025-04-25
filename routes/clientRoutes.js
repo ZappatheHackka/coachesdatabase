@@ -1,5 +1,5 @@
 import express from 'express';
-import { Client, Coach } from '../src/models/models.js';
+import { Client, Coach, ClientRatings } from '../src/models/models.js';
 import { isAuthenticated } from './middleware.js';
 
 const router = express.Router();
@@ -65,10 +65,18 @@ router.get('/client/:id', isAuthenticated, async (req, res) => {
         });
         const clientCoaches = client.Coaches;
         const coaches = await Coach.findAll();
+        const ratings = await ClientRatings.findAll({
+            where: {
+                ClientId: clientId 
+            },
+            include: { 
+                model: Coach,
+            }
+        }); 
         if (!client) {
             return res.status(404).send("Client not found.");
         }
-        res.render("client_profile.ejs", { thisClient : client, coaches, clientCoaches: clientCoaches });
+        res.render("client_profile.ejs", { thisClient : client, coaches, ratings, clientCoaches: clientCoaches });
     } catch (error) {
         console.log(`Could not load client profile. Error: ${error}`);
     } 

@@ -1,7 +1,6 @@
 import connect from "./db-connect.js";
 import dotenv from "dotenv";
 import "./models.js";
-import { Coach, Client, Stats, Comment } from "./models.js";
 
 // Accessing env variables
 dotenv.config();
