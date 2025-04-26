@@ -155,7 +155,7 @@
                                 <div class="rating-text">
                                     <div>
                                         <h3 id="rating-author"><%= rating.Coach.firstname %> <%= rating.Coach.lastname %></h3>
-                                        <img id="deleteRatingBtn" src="/images/x_icon.png">
+                                        <img class="deleteRatingBtn" src="/images/x_icon.png">
                                     </div>
                                         <ul class="actual-ratings">
                                             <li>Ball Handling: <span><%= rating.ball_handling %>/10</span></li>
@@ -167,11 +167,22 @@
                                         </ul>
                                 </div>
                             </div>
+                            <div class="confirmDeleteRating" style="display: none;">
+                                <div class="delete-rating-box">
+                                  <p>Are you sure you want to delete this rating?</p>
+                                  <form  method="POST" action="/deleteRating/<%=rating.ratingid%>/<%=thisClient.clientid%>" class="popup-actions">
+                                    <button id="confirmDelete" type="submit">Yes</button>
+                                    <button class="cancelDelete" type="reset">Cancel</button>
+                                  </form>
+                                </div>
+                            </div>
                         <% }) %>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+      
 </body>
 </html>

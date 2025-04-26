@@ -197,15 +197,16 @@ body {
     left: 1.35rem;
 }
 
-#deleteRatingBtn {
+.deleteRatingBtn {
     height: 37px;
     width: 37px;
     position: relative;
-    left: 3.97rem;
-    bottom: .01rem;
+    left: 3.98rem;
+    bottom: .07rem;
     background-color: red;
     border-radius: 8px;
     border: 1px solid red;
+    cursor: pointer;
 }
 
 .ratings-display {
@@ -400,7 +401,7 @@ form > span {
     height: 20px;
     cursor: pointer;
     position: relative;
-    top: 4px;
+    top: 5px;
 }
 
 .header-and-butt {
@@ -465,4 +466,15 @@ form > span {
 }
   
   
-  
+.delete-rating-box {
+    margin-bottom: 1rem;
+    border: 3px solid gray;
+    border-radius: 8px;
+    background-color: lightgrey;
+    padding: 6px;
+}
+
+.delete-rating-box > button {
+    display: flex;
+    justify-content: space-between;
+} 

@@ -25,4 +25,17 @@ router.post('/rate/:id', isAuthenticated, async (req, res) => {
     }
 });
 
+router.post('/deleteRating/:id/:cid', isAuthenticated, async (req, res) => {
+    let ratingId = req.params.id;
+    let clientId = req.params.cid;
+    try {
+        const thisRating = await ClientRatings.findByPk(ratingId);
+        await thisRating.destroy();
+        res.redirect(`/client/${clientId}`);
+    } catch (error) {
+        console.log(`Could not delete rating, error: ${error}`);
+        res.redirect(`/client/${clientId}`);
+    }
+});
+
 export default router;
