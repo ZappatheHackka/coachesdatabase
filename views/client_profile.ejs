@@ -59,7 +59,7 @@
 
                     <div style="display: inline-block;">
                         <label for="iq">IQ:</label>
-                        <input class="ratefields" type="number" name="iq">
+                        <input id="iq" class="ratefields" type="number" name="iq">
                         <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
                     </div>
 
@@ -129,12 +129,17 @@
                       </div>
                     <% }) %>
                   </div>
-                  
             </div>
         </div>
+
+
         <div class="body">
             <div class="comments">
-                <h2 id="comment-header">Coach Comments</h2>
+                <div class="comment-header-and-butt">
+                    <h2 id="comment-header">Coach Comments</h2>
+                    <img id="addCommentBtn" src="/images/plus-svgrepo-com.svg">
+                </div>
+
                 <div class="comment-display">
                     <div class="comment">
                         <h3 id="comment-content">Client is goated and dodwo dw dwndin vnvidnd  fndjsndioendoi v ieienoenioenve  denoejdienfe vneionec eiemeoi cc ienioeiocneinio  ioneiofnc eiofneiofemdmiomdenme ifieofne.</h3>
@@ -142,6 +147,9 @@
                     </div>
                 </div>
             </div>
+
+
+
             <div class="right-body">
                 <div class="ratings">
                     <div class="header-and-butt">
