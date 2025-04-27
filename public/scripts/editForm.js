@@ -75,7 +75,7 @@ addCommentBtn.addEventListener('click', () => {
 // Cancel adding comment
 if (cancelComment) {
     cancelComment.addEventListener('click', () => {
-        commentForm.style.display = "none";
+        commentForm.style.display="none";
     });
 }
 
