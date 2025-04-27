@@ -4,6 +4,7 @@ import { isAuthenticated } from './middleware.js';
 
 const router = express.Router();
 
+// add and delete client ratings
 router.post('/rate/:id', isAuthenticated, async (req, res) => {
     let clientid = req.params.id;
     let coachid = req.session.coachid;
@@ -34,6 +35,25 @@ router.post('/deleteRating/:id/:cid', isAuthenticated, async (req, res) => {
         res.redirect(`/client/${clientId}`);
     } catch (error) {
         console.log(`Could not delete rating, error: ${error}`);
+        res.redirect(`/client/${clientId}`);
+    }
+});
+
+// add, edit, delete comments
+
+router.post('/comment/:id', isAuthenticated, async (req, res) => {
+    let clientid = req.params.id;
+    let coachid = req.session.coachid;
+    const textContent = req.body['textcontent'];
+    try {
+        await Comment.create({
+            CoachId: coachid,
+            ClientId: clientid,
+            text: textContent
+        });
+        res.redirect(`/client/${clientid}`);
+    } catch (error) {
+        console.log(`Could not add comment, error: ${error}`);
         res.redirect(`/client/${clientId}`);
     }
 });

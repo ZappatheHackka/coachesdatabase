@@ -141,9 +141,6 @@ Comment.init({
         primaryKey: true,
         autoIncrement: true
     },
-    clinic_class: {
-        type: DataTypes.STRING,
-    },
     text: {
         type: DataTypes.TEXT,
         allowNull: false
@@ -185,10 +182,10 @@ Code.init({
 Coach.belongsToMany(Client, { through: 'CoachClient', foreignKey: 'CoachId', otherKey: 'ClientId'});
 Client.belongsToMany(Coach, { through: 'CoachClient', foreignKey: 'ClientId', otherKey: 'CoachId'});
 
-Coach.hasMany(Comment);
-Client.hasMany(Comment);
-Comment.belongsTo(Coach);
-Comment.belongsTo(Client);
+Coach.hasMany(Comment, { foreignKey: 'CoachId'});
+Client.hasMany(Comment, { foreignKey: 'ClientId'});
+Comment.belongsTo(Coach, { foreignKey: 'CoachId'});
+Comment.belongsTo(Client, { foreignKey: 'ClientId'});
 
 ClientRatings.belongsTo(Client, { foreignKey: 'ClientId' });
 ClientRatings.belongsTo(Coach, { foreignKey: 'CoachId' });

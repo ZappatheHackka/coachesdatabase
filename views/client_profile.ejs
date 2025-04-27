@@ -12,6 +12,9 @@
 <body>
     <%- include("header.ejs") %>
     <div class="container">
+
+<!-- PROFILE CLIENT PERSONAL INFO -->
+
         <div class="header">
             <div class="profile-pic-div">
                 <img class="profile-pic" src="/images/fotor_empty.png">
@@ -21,7 +24,32 @@
                     <img id="editPencil" src="/images/pencil-svgrepo-com.svg"></img>
                 </div>  
             </div>
-            
+
+            <div class="profile-info">
+                <h1><%= thisClient.firstname %> <%= thisClient.lastname %></h1>
+                <p>Age: <%= thisClient.age %></p>
+                <p>Parents: <%= thisClient.parent %></p>
+                <p>Email: <%= thisClient.email %></p>
+                <p>Cellphone: <%= thisClient.cellphone %></p>
+            </div>
+
+            <div class="coaches-div">
+                <h2 id="coach-title">Trainer(s)</h2>
+                <img id="addCoach" src="/images/plus-svgrepo-com.svg" style="display: inline-block;">
+                <div class="trainerNameDiv">
+                    <% clientCoaches.forEach(trainer => { %>
+                      <div class="trainer-pair">
+                        <h3 class="trainers"><%= trainer.firstname %> <%= trainer.lastname %></h3>
+                        <form name="coachId" action="/delete-coach/<%= trainer.id %>/<%= thisClient.clientid %>" method="POST">
+                          <button type="submit">Delete</button>
+                        </form>
+                      </div>
+                    <% }) %>
+                  </div>
+            </div>
+
+<!-- POPUP FORMS FOR EDITING AND CREATION -->
+
             <div id="assignCoachPopup" class="assign-overlay" style="display: none;">
                 <form action="/assign-coach/<%= thisClient.clientid %>" method="POST" class="assign-coach-form">
                   <label for="coachId" class="assign-label">Assign a Coach:</label>
@@ -108,31 +136,10 @@
                     </div>
                 </form>
             </div>
-            <div class="profile-info">
-                <h1><%= thisClient.firstname %> <%= thisClient.lastname %></h1>
-                <p>Age: <%= thisClient.age %></p>
-                <p>Parents: <%= thisClient.parent %></p>
-                <p>Email: <%= thisClient.email %></p>
-                <p>Cellphone: <%= thisClient.cellphone %></p>
-            </div>
-
-            <div class="coaches-div">
-                <h2 id="coach-title">Trainer(s)</h2>
-                <img id="addCoach" src="/images/plus-svgrepo-com.svg" style="display: inline-block;">
-                <div class="trainerNameDiv">
-                    <% clientCoaches.forEach(trainer => { %>
-                      <div class="trainer-pair">
-                        <h3 class="trainers"><%= trainer.firstname %> <%= trainer.lastname %></h3>
-                        <form name="coachId" action="/delete-coach/<%= trainer.id %>/<%= thisClient.clientid %>" method="POST">
-                          <button type="submit">Delete</button>
-                        </form>
-                      </div>
-                    <% }) %>
-                  </div>
-            </div>
+            
         </div>
 
-
+<!-- COMMENTS SECTION -->
         <div class="body">
             <div class="comments">
                 <div class="comment-header-and-butt">
@@ -141,15 +148,26 @@
                 </div>
 
                 <div class="comment-display">
-                    <div class="comment">
-                        <h3 id="comment-content">Client is goated and dodwo dw dwndin vnvidnd  fndjsndioendoi v ieienoenioenve  denoejdienfe vneionec eiemeoi cc ienioeiocneinio  ioneiofnc eiofneiofemdmiomdenme ifieofne.</h3>
-                        <p id="comment-author">Posted By (Coach) on (Date)</p>
-                    </div>
+                    <% comments.forEach(comment => { %>
+                        <div class="comment">
+                            <img class="deleteComments" src="/images/x_icon.png">
+                            <h3 id="comment-content"><%= comment.text %></h3>
+                            <p id="comment-author">Posted By <%= comment.Coach.firstname %> on <%= comment.updatedAt %></p>
+                        </div>
+                        <div class="confirmDeleteComment" style="display: none;">
+                            <div class="delete-comment-box">
+                              <p>Are you sure you want to delete this comment?</p>
+                              <form  method="POST" action="/deleteComment/<%=comment.commentid%>/<%=thisClient.clientid%>" class="popup-actions">
+                                <button id="confirmDelete" type="submit">Yes</button>
+                                <button class="cancelDelete" type="button">Cancel</button>
+                              </form>
+                            </div>
+                        </div>
+                    <% }) %>
                 </div>
             </div>
 
-
-
+<!-- RATINGS SECTION -->
             <div class="right-body">
                 <div class="ratings">
                     <div class="header-and-butt">
@@ -173,6 +191,7 @@
                                             <li>Defense: <span><%= rating.defense %>/10</span></li>
                                             <li>Passing: <span><%= rating.passing %>/10</span></li>
                                         </ul>
+                                        <p style="font-size: small; text-decoration: underline; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; position: relative; bottom: 1.5rem;">Created on: <%= rating.createdAt %></p>
                                 </div>
                             </div>
                             <div class="confirmDeleteRating" style="display: none;">
@@ -190,7 +209,14 @@
             </div>
         </div>
     </div>
-    
+    <div id="commentPopup" style="display: none;">
+        <form id="popupContent" action="/comment/<%= thisClient.clientid %>" method="POST">
+          <textarea name="textcontent" id="commentInput" placeholder="Write your comment here..."></textarea>
+          <br>
+          <button type="submit" id="submitComment">Submit</button>
+          <button type="button" id="cancelComment">Cancel</button>
+        </form>
+    </div>
       
 </body>
 </html>
