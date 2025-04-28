@@ -12,17 +12,22 @@ body {
 
 h1 {
     position: relative;
-    top: 27px;
+    top: 1.3rem;
+    text-shadow: 
+        -1px -1px 0 rgb(255, 102, 50),
+        1px -1px 0 rgb(255, 102, 50),
+        -1px 1px 0 rgb(255, 102, 50),
+        1px 1px 0 rgb(255, 102, 50);
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    position: relative;
+    top: 1rem;
     min-height: 300px;
     min-width: 800px;
-    position: relative;
-    top: 12px;
 }
 
 .topblock {
@@ -72,10 +77,8 @@ button {
 #client-button {
     position: absolute;
     height: 49px;
-    bottom: 43px;
     z-index: -1;
-    left: 703px;
-    bottom: 300px;
+    left: 44rem;
     width: 110px;
 }
 
@@ -142,8 +145,10 @@ input::placeholder {
 /* Table Stylings */
 .client-block {
     color: rgb(19, 18, 75);
-    height: 300px;
+    height: auto;
+    max-height: 800px;
     min-width: 300px;
+    overflow-y: auto;
 }
 
 .client-table {
