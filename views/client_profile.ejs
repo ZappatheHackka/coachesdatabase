@@ -67,6 +67,7 @@
               
             <div id="rating-popup" class="rating-popup hidden" style="display: none;">
                 <form action="/rate/<%= thisClient.clientid %>" method="POST" id="rating-form">
+                    <h2>Add a New Rating</h2>
                     <div style="display: inline-block;">
                         <label for="ball-handling">Ball Handling:</label>
                         <input class="ratefields" type="number" name="ballhandling">
@@ -152,17 +153,31 @@
                         <div class="comment">
                             <img class="deleteComments" src="/images/x_icon.png">
                             <h3 id="comment-content"><%= comment.text %></h3>
-                            <p id="comment-author">Posted By <%= comment.Coach.firstname %> on <%= comment.updatedAt %></p>
+                            <div style="display: flex;">
+                                <p id="comment-author">Posted By <%= comment.Coach.firstname %> on <%= comment.formattedDate %></p>
+                                <img class="commentPencil" src="/images/pencil-svgrepo-com.svg"></img>
+                            </div>
+                            
                         </div>
                         <div class="confirmDeleteComment" style="display: none;">
                             <div class="delete-comment-box">
                               <p>Are you sure you want to delete this comment?</p>
                               <form  method="POST" action="/deleteComment/<%=comment.commentid%>/<%=thisClient.clientid%>" class="popup-actions">
-                                <button id="confirmDelete" type="submit">Yes</button>
-                                <button class="cancelDelete" type="button">Cancel</button>
+                                <button class="confirmComDelete" type="submit">Yes</button>
+                                <button class="cancelComDelete" type="button">Cancel</button>
                               </form>
                             </div>
                         </div>
+                        <div class="edit-comment-popup" style="display: none;">
+                            <form action="/editComment/<%= comment.commentid %>/<%= thisClient.clientid %>" method="POST">
+                                <h2>Edit Comment</h2>
+                              <textarea name="textcontent" required><%= comment.text %></textarea>
+                              <div class="popup-buttons">
+                                <button type="submit">Save</button>
+                                <button type="button" class="cancelEditComment">Cancel</button>
+                              </div>
+                            </form>
+                          </div>
                     <% }) %>
                 </div>
             </div>
@@ -191,7 +206,11 @@
                                             <li>Defense: <span><%= rating.defense %>/10</span></li>
                                             <li>Passing: <span><%= rating.passing %>/10</span></li>
                                         </ul>
-                                        <p style="font-size: small; text-decoration: underline; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; position: relative; bottom: 1.5rem;">Created on: <%= rating.createdAt %></p>
+                                    <div style="display: flex;">
+                                        <p style="font-size: small; text-decoration: underline; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; position: relative; bottom: 1.7rem;">Created on: <%= rating.formattedDate %></p>
+                                        <img class="ratingPencil" src="/images/pencil-svgrepo-com.svg"></img>
+                                    </div>
+                                        
                                 </div>
                             </div>
                             <div class="confirmDeleteRating" style="display: none;">
@@ -203,6 +222,53 @@
                                   </form>
                                 </div>
                             </div>
+
+                            <div class="edit-rating-popup" style="display: none;">
+                                <h2>Edit Current Rating</h2>
+                                <form action="/editRating/<%= rating.ratingid %>/<%= thisClient.clientid %>" method="POST">
+                                  <div style="display: inline-block;">
+                                    <label for="ballhandling">Ball Handling:</label>
+                                    <input class="ratefields" type="number" name="ballhandling" value="<%= rating.ball_handling %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="finishing">Finishing:</label>
+                                    <input class="ratefields" type="number" name="finishing" value="<%= rating.finishing %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="shooting">Shooting:</label>
+                                    <input class="ratefields" type="number" name="shooting" value="<%= rating.shooting %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="iq">IQ:</label>
+                                    <input id="iq" class="ratefields" type="number" name="iq" value="<%= rating.iq %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="defense">Defense:</label>
+                                    <input class="ratefields" type="number" name="defense" value="<%= rating.defense %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="passing">Passing:</label>
+                                    <input class="ratefields" type="number" name="passing" value="<%= rating.passing %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div class="popup-buttons">
+                                    <button type="submit">Save</button>
+                                    <button type="button" class="cancelEditRating">Cancel</button>
+                                  </div>
+                                </form>
+                              </div>
+                              
                         <% }) %>
                     </div>
                 </div>
@@ -211,6 +277,7 @@
     </div>
     <div id="commentPopup" style="display: none;">
         <form id="popupContent" action="/comment/<%= thisClient.clientid %>" method="POST">
+          <h2 class="comment-form-header">Add a New Comment</h2>
           <textarea name="textcontent" id="commentInput" placeholder="Write your comment here..."></textarea>
           <br>
           <button type="submit" id="submitComment">Submit</button>

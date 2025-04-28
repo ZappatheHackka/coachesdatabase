@@ -138,6 +138,7 @@ body {
     border-radius: 8px;
     background-color: rgb(19, 18, 75);
     max-width: 490px;
+    min-width: 490px;
     height: auto;
     gap: 5px;
     margin-top: 5px;
@@ -151,16 +152,22 @@ body {
 #comment-content {
     font-size: 18px;
     margin-left: 15px;
+    max-width: 462px;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    margin-bottom: 0px;
+    position: relative;
+    bottom: .5rem;
 }
 
 #comment-author {
     font-size: 13px;
-    margin-left: 15px;
+    margin-left: 1.02rem;
+    position: relative;
+    bottom: .3rem;
     text-decoration: underline;
     color: white;
 }
@@ -212,14 +219,14 @@ body {
 }
 
 .deleteRatingBtn {
-    height: 37px;
-    width: 37px;
+    height: 22px;
+    width: 22px;
     position: relative;
-    left: 4.07rem;
-    bottom: .07rem;
-    background-color: red;
+    left: 4.55rem;
+    bottom: .08rem;
+    background-color: rgba(255, 0, 0, 0.671);
     border-radius: 8px;
-    border: 1px solid red;
+    border: 1px solid rgba(255, 0, 0, 0.671);
     cursor: pointer;
 }
 
@@ -437,9 +444,16 @@ form > span {
     background-color: rgb(19, 18, 75);
     padding: 2rem;
     border-radius: 10px;
+    border: 2px solid gray;
     width: 380px;
     display: flex;
     flex-direction: column;
+}
+
+#rating-form h2 {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
 }
   
 #rating-form label {
@@ -509,11 +523,18 @@ form > span {
     background: rgb(19, 18, 75);
     padding: 20px;
     border-radius: 8px;
+    border: 2px solid gray;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
     width: 24rem;
     min-height: 12rem;
     max-width: 90vw;
     text-align: center;
+}
+
+.comment-form-header {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
 }
 
 #commentInput {
@@ -537,14 +558,14 @@ form > span {
 }
 
 .deleteComments {
-    height: 37px;
-    width: 37px;
+    height: 22px;
+    width: 22px;
     position: relative;
-    left: 28.25rem;
-    bottom: .07rem;
-    background-color: red;
+    left: 29.2rem;
+    bottom: .05rem;
+    background-color: rgba(255, 0, 0, 0.671);
     border-radius: 8px;
-    border: 1px solid red;
+    border: 1px solid rgba(255, 0, 0, 0.671);
     cursor: pointer;
 }
 
@@ -553,5 +574,81 @@ form > span {
     border: 3px solid gray;
     border-radius: 8px;
     background-color: lightgrey;
-    padding: 6px;
+    padding: 4px;
+    margin-top: 5px;
+}
+
+.commentPencil {
+    cursor: pointer;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 4.5px;
+}
+
+.ratingPencil {
+    cursor: pointer;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: -16px;
+}
+
+.edit-rating-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* real centering */
+    display: flex;
+    color: white;
+    align-items: center;
+    border: 2px solid gray;
+    z-index: 9999;
+    background-color: rgb(19, 18, 75);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 380px;
+    flex-direction: column;
+}
+
+.edit-rating-popup h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.edit-rating-popup input { 
+    margin-top: 0.25rem;
+    padding: 0.45rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-comment-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* real centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    border: 2px solid gray;
+    background-color: rgb(19, 18, 75);
+    width: 24rem;
+    min-height: 12rem;
+    max-width: 90vw;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.edit-comment-popup textarea {
+    width: 99%;
+    height: 11rem;
+    margin-bottom: 10px;
+    outline: none;
+    resize: none;
+}
+
+.edit-comment-popup h2 {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
 }

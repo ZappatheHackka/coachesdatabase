@@ -73,6 +73,14 @@ router.get('/client/:id', isAuthenticated, async (req, res) => {
                 model: Coach,
             }
         });
+        ratings.forEach(rating => {
+            const postedDate = new Date(rating.updatedAt);
+            rating.formattedDate = postedDate.toLocaleDateString('en-us', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            });
+        });
         const comments = await Comment.findAll({
             where: {
                 ClientId: clientId
@@ -80,7 +88,16 @@ router.get('/client/:id', isAuthenticated, async (req, res) => {
             include: {
                 model: Coach,
             }
-        }); 
+        });
+        comments.forEach(comment => {
+            const updatedAtDate = new Date(comment.updatedAt);
+            comment.formattedDate = updatedAtDate.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            });
+        });
+
         if (!client) {
             return res.status(404).send("Client not found.");
         }
