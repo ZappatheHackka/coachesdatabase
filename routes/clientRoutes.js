@@ -101,7 +101,7 @@ router.get('/client/:id', isAuthenticated, async (req, res) => {
         if (!client) {
             return res.status(404).send("Client not found.");
         }
-        res.render("client_profile.ejs", { thisClient : client, coaches, ratings, comments, clientCoaches: clientCoaches });
+        res.render("client_profile.ejs", { thisClient : client, coaches, messages: req.flash(), ratings, comments, clientCoaches: clientCoaches });
     } catch (error) {
         console.log(`Could not load client profile. Error: ${error}`);
     } 

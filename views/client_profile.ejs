@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="/styles/header.css">
     <link rel="stylesheet" href="/styles/client_profiles.css">
     <script src="/scripts/editForm.js" defer></script>
+    <script src="/scripts/errorScript.js" defer></script>
     <title>Profile</title>
 </head>
 <body>
     <%- include("header.ejs") %>
     <div class="container">
-
+        <% if (messages.error && messages.error.length > 0) { %>
+            <div class="flash-error" id="flashError">
+              <%= messages.error[0] %>
+            </div>
+          <% } %>
+          
 <!-- PROFILE CLIENT PERSONAL INFO -->
 
         <div class="header">

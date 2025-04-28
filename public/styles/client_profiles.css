@@ -141,7 +141,7 @@ body {
     min-width: 490px;
     height: auto;
     gap: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
     overflow-wrap: break-word;
     word-break: break-word;
     display: flex;
@@ -625,7 +625,7 @@ form > span {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* real centering */
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -652,3 +652,21 @@ form > span {
     text-align: center;
     text-decoration: underline;
 }
+
+.flash-error {
+    background-color: #ffcccc;
+    color: #990000;
+    padding: 10px;
+    border: 1px solid #990000;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px auto;
+    width: 50%;
+    font-weight: bold;
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
