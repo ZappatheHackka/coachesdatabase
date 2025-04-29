@@ -33,10 +33,10 @@
 
             <div class="profile-info">
                 <h1><%= thisClient.firstname %> <%= thisClient.lastname %></h1>
-                <p>Age: <%= thisClient.age %></p>
-                <p>Parents: <%= thisClient.parent %></p>
-                <p>Email: <%= thisClient.email %></p>
-                <p>Cellphone: <%= thisClient.cellphone %></p>
+                <p>Age: <span><%= thisClient.age %></span></p>
+                <p>Parents: <span><%= thisClient.parent %></span></p>
+                <p>Email: <span><%= thisClient.email %></span></p>
+                <p>Cellphone: <span><%= thisClient.cellphone %></span></p>
             </div>
 
             <div class="coaches-div">
@@ -94,8 +94,8 @@
 
                     <div style="display: inline-block;">
                         <label for="iq">IQ:</label>
-                        <input id="iq" class="ratefields" type="number" name="iq">
-                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                        <input style="position: relative; left: 2.3rem;" id="iq" class="ratefields" type="number" name="iq">
+                        <h3 style="color: white; display: inline; position: relative; left: 2.3rem;">/10</h3>
                     </div>
 
                     <div style="display: inline-block;">
@@ -180,8 +180,8 @@
                                 <h2>Edit Comment</h2>
                               <textarea name="textcontent" required><%= comment.text %></textarea>
                               <div class="popup-buttons">
-                                <button type="submit">Save</button>
-                                <button type="button" class="cancelEditComment">Cancel</button>
+                                <button type="submit" id="saveCommentEdit">Save</button>
+                                <button type="button" id="cancelCommentEdit" class="cancelEditComment">Cancel</button>
                               </div>
                             </form>
                           </div>

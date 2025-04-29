@@ -57,6 +57,7 @@ body {
     color: rgb(19, 18, 75);
     text-align: center;
     font-size: larger;
+    
 }
 
 .profile-pic-div {
@@ -81,6 +82,29 @@ body {
     margin-left: 30px;
 }
 
+.profile-info > h1 {
+    text-shadow: 
+        -1px -1px 2px rgb(255, 102, 50),
+        0px -1px 0 rgb(255, 102, 50),
+        -1px 1px 0 rgb(255, 102, 50),
+        0px 0px 0 rgb(255, 102, 50);
+    text-decoration: underline;
+}
+
+.profile-info > p {
+    font-size: 1.1rem;
+}
+
+.profile-info > p > span {
+    color: rgb(19, 18, 75);
+    text-shadow: 
+        -1px -1px 0 rgb(255, 102, 50),
+        0px -1px 0 rgb(255, 102, 50),
+        -1px 1px 0 rgb(255, 102, 50),
+        0px 0px 0 rgb(255, 102, 50);
+}
+
+
 .coaches-div {
     margin-left: 6.5rem;
     margin-top: .4rem;
@@ -88,6 +112,7 @@ body {
 
 #coach-title {
     text-decoration: underline;
+    
 }
 
 /* --------- */
@@ -303,17 +328,17 @@ span {
 
 .popup-form {
     position: absolute;
-    top: 150px; /* adjust as needed */
+    top: 8rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
     background-color: rgb(19, 18, 75);;
     border: 1px solid #ccc;
-    padding: 1.5rem;
+    padding: 1.6rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 6rem;
     width: 300px;
     border-radius: 8px;
 }
@@ -329,12 +354,13 @@ span {
 .popup-form label {
     position: relative;
     bottom: .9rem;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
+    padding-top: 2px;
 }
 
 .editfields{
-    padding: 6px;
-    margin: 3px;
+    padding: 5px;
+    margin: .1rem;
     border-radius: 5px;
     outline: none;
     border-width: 0;
@@ -475,6 +501,11 @@ form > span {
 .trainers {
     min-width: 200px;
     margin: 0;
+    text-shadow: 
+        -1px -1px 0 rgb(255, 102, 50),
+        0px -1px 0 rgb(255, 102, 50),
+        -1px 1px 0 rgb(255, 102, 50),
+        0px 0px 0 rgb(255, 102, 50);
 }
   
 .ratings > div {
@@ -520,7 +551,7 @@ form > span {
     text-align: center;
     text-decoration: underline;
     position: relative;
-    bottom: .7rem;
+    bottom: 1.1rem;
 }
   
 #rating-form label {
@@ -528,7 +559,7 @@ form > span {
     margin-top: 0.5rem;
     color: white;
     position: relative;
-    bottom: 0.6rem;
+    bottom: 1.1rem;
 }
   
 #rating-form input {
@@ -537,12 +568,12 @@ form > span {
     border: 1px solid #ccc;
     border-radius: 5px;
     position: relative;
-    bottom: 0.6rem;
+    bottom: 1.1rem;
 }
 
 #rating-form h3 {
     position: relative;
-    bottom: 0.6rem;
+    bottom: 1.1rem;
 }
 
 #cancelBtn {
@@ -647,6 +678,8 @@ form > span {
     color: white;
     text-align: center;
     text-decoration: underline;
+    position: relative;
+    bottom: 1rem;
 }
 
 #commentInput {
@@ -655,18 +688,35 @@ form > span {
     margin-bottom: 10px;
     outline: none;
     resize: none;
+    position: relative;
+    bottom: 1rem;
 }
 
 #submitComment {
-    padding: 6px;
-    position: relative;
-    right: 3rem;
+    width: 30%;
+    height: 1.5rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 9rem;
 }
 
 #cancelComment {
-    padding: 6px;
+    width: 30%;
+    height: 1.5rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
     position: relative;
-    left: 3rem;
+    left: .5rem;
 }
 
 .deleteComments {
@@ -806,4 +856,87 @@ form > span {
     padding-right: 10px;
     border-radius: 8px;
     cursor: pointer;
+}
+
+#saveCommentEdit {
+    width: 30%;
+    height: 2rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 9rem;
+}
+
+#cancelCommentEdit {
+    width: 30%;
+    height: 2rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    left: .5rem;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.confirmComDelete {
+    width: 20%;
+    height: 1.3rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cancelComDelete {
+    width: 20%;
+    height: 1.3rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative; 
+}
+
+#confirmDelete {
+   width: 20%;
+    height: 1.3rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+.cancelDelete {
+    width: 20%;
+    height: 1.3rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative; 
 }

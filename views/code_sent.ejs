@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/code_sent.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/code_sent.css">
     <title>Code Sent</title>
 </head>
 <body>
@@ -13,14 +13,14 @@
         <h1>Code Successfully Sent!</h1>
         <form action="/newpass" method="POST">
             <div class="background" style="width: 470px;">
-                <img class="logo "src="./images/IDH svg.svg">
+                <img class="logo "src="/images/IDH svg.svg">
                 <div class="reset">
                     <h2 id="msg">A 6-digit reset code has been sent to: <%= email %>.</h2>
                     <h2 id="enter">Enter your code:</h2>
                     <input class="textfield" type="text" placeholder="Enter your code" name="newcode" required> 
                     <label>Enter New Password:</label>
                     <input class="textfield" type="password" placeholder="Enter your new password" name="pass1" required>
-                    <label>Confirm :</label>
+                    <label>Confirm:</label>
                     <input class="textfield" type="password" placeholder="Confirm your new password" name="pass2" required>
                     <button class="send-button" type="submit">Reset Password</button>
                     <p>Note: Codes expire after 20 minutes.</p>
