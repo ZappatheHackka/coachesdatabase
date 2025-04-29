@@ -19,14 +19,17 @@
                     <h2 id="enter">Enter your code:</h2>
                     <input class="textfield" type="text" placeholder="Enter your code" name="newcode" required> 
                     <label>Enter New Password:</label>
-                    <input class="textfield" type="text" placeholder="Enter your new password" name="pass1" required>
+                    <input class="textfield" type="password" placeholder="Enter your new password" name="pass1" required>
                     <label>Confirm :</label>
-                    <input class="textfield" type="text" placeholder="Confirm your new password" name="pass2" required>
+                    <input class="textfield" type="password" placeholder="Confirm your new password" name="pass2" required>
                     <button class="send-button" type="submit">Reset Password</button>
-                    <p>Note: Codes expire after 15 minutes.</p>
+                    <p>Note: Codes expire after 20 minutes.</p>
                 </div>
             </div>
         </form>
     </div>
+    <% if (error) { %>
+        <p style="color: red;"><%= error %></p>
+    <% } %>
 </body>
 </html>

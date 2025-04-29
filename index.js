@@ -26,7 +26,7 @@ const port = 3000;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Middleware
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -37,30 +37,18 @@ app.use(session({
 }));
 app.use(flash());
 
-// Routers
+
 app.use(authRoutes);
 app.use(clientRoutes);
 app.use(passwordRoutes);
 app.use(feedbackRoutes);
 
-// Sample protected route
-app.get("/home", isAuthenticated, async (req, res) => {
-  try {
-    const clients = await Client.findAll({
-      order: [['clientid', 'DESC']]
-    });
-    res.render("home.ejs", { 
-      clients,
-      message: req.flash('error')
-      });
-  } catch (error) {
-    req.flash('error', `Failed to fetch clients from database: ${error}`);
-    res.redirect('/');
-  }
+
+app.get('/', (req, res) => {
+  res.render('login.ejs', { message: req.flash('error'), success: req.flash('success')});
 });
 
 
-// Start server
 app.listen(port, () => {
   console.log(`\n🚀 App listening on port ${port}`);
 });

@@ -170,7 +170,8 @@ Code.init({
         type: DataTypes.BOOLEAN
     },
     expiry: {
-        type: DataTypes.STRING
+        type: DataTypes.DATE,
+        allowNull: false
     },
 }, {
     sequelize,

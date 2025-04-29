@@ -47,7 +47,7 @@
                       <div class="trainer-pair">
                         <h3 class="trainers"><%= trainer.firstname %> <%= trainer.lastname %></h3>
                         <form name="coachId" action="/delete-coach/<%= trainer.id %>/<%= thisClient.clientid %>" method="POST">
-                          <button type="submit">Delete</button>
+                          <button class="delCoachBtn" type="submit">Delete</button>
                         </form>
                       </div>
                     <% }) %>
@@ -118,6 +118,7 @@
             </div>
               
             <div id="popupform" class="popup-form hidden" style="display: none;">
+              <h2>Edit Client Info</h2>
                 <form action="/edit/<%= thisClient.clientid %>" id="form-element" method="POST">
                     <label for="firstname">First Name:</label>
                     <input class="editfields" type="text" name="firstname" value="<%= thisClient.firstname %>">
@@ -252,8 +253,8 @@
                               
                                   <div style="display: inline-block;">
                                     <label for="iq">IQ:</label>
-                                    <input id="iq" class="ratefields" type="number" name="iq" value="<%= rating.iq %>" required>
-                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                    <input style="position: relative; left: 2.3rem;"id="iq" class="ratefields" type="number" name="iq" value="<%= rating.iq %>" required>
+                                    <h3 style="color: white; display: inline; position: relative; left: 2.3rem;">/10</h3>
                                   </div>
                               
                                   <div style="display: inline-block;">
@@ -269,8 +270,8 @@
                                   </div>
                               
                                   <div class="popup-buttons">
-                                    <button type="submit">Save</button>
-                                    <button type="button" class="cancelEditRating">Cancel</button>
+                                    <button id="confirmEditRating" type="submit">Save</button>
+                                    <button id="cancelEditRating" type="button" class="cancelEditRating">Cancel</button>
                                   </div>
                                 </form>
                               </div>

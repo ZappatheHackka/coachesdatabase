@@ -1,14 +1,27 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import { Coach } from '../src/models/models.js';
+import { Coach, Client } from '../src/models/models.js';
 import { isAuthenticated, isAdmin } from './middleware.js';
 
 const router = express.Router();
 const saltRounds = 10;
 
 // Login page
-router.get('/', (req, res) => {
-    res.render('login.ejs', { message: req.flash('error')});
+
+
+router.get("/home", isAuthenticated, async (req, res) => {
+    try {
+      const clients = await Client.findAll({
+        order: [['clientid', 'DESC']]
+      });
+      res.render("home.ejs", { 
+        clients,
+        message: req.flash('error'),
+        });
+    } catch (error) {
+      req.flash('error', `Failed to fetch clients from database: ${error}`);
+      res.redirect('/');
+    }
 });
 
 
@@ -16,7 +29,7 @@ router.get('/logout', (req, res) => {
     req.session.userid = null;
     req.session.adminStatus = null;
     res.redirect('/');
-})
+});
 
 
 router.post('/login', async (req, res) => {
