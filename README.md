@@ -46,9 +46,10 @@ A full-stack web application for basketball coaches to view client information, 
 ---
 
 ## Coming Soon...
-- Full password reset flow
-- Clients from PGSQL displayed on the homepage, with hyperlinks to their specific profiles
-- Profile comments & ratings from
+- Full Password Reset Flow [DONE]
+- Clients from PGSQL displayed on the homepage, with hyperlinks to their specific profiles [DONE]
+- Profile comments & ratings from coaches [DONE]
+- DOCKERIZE AND LAUNCH ON AWS
 - Sleeker profile page UI
 - Profile pictures for clients
 - Client search functionality with filters (React integration?)
