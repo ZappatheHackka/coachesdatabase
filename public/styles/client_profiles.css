@@ -269,7 +269,7 @@ span {
 .edit-box {
     display: flex;
     flex-direction: row;
-    gap: 7px;
+    gap: 5px;
     margin-left: 24%;
     position: relative;
     top: 5%;
@@ -316,7 +316,31 @@ span {
     gap: 0.5rem;
     width: 300px;
     border-radius: 8px;
-  }
+}
+
+.popup-form h2 {
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+    position: relative;
+    bottom: .9rem;
+}
+
+.popup-form label {
+    position: relative;
+    bottom: .9rem;
+    padding-bottom: 4px;
+}
+
+.editfields{
+    padding: 6px;
+    margin: 3px;
+    border-radius: 5px;
+    outline: none;
+    border-width: 0;
+    position: relative;
+    bottom: .9rem;
+}
 
 #form-element {
     display: flex;
@@ -338,6 +362,18 @@ span {
     width: 30%;
     padding-top: 2%;
     padding-bottom: 2%;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#cancelEdit {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 30%;
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 #cancelBtn {
@@ -375,8 +411,18 @@ span {
     color: white;
 }
 
+#coachId {
+    outline: none;
+    border-radius: 6px;
+    width: 40%;
+    height: 1.5rem;
+    border-width: 0;
+    position: relative;
+    left: .5rem;
+}
+
 .assign-buttons {
-    padding-top: 7%;
+    padding-top: 9%;
     display: flex;
     justify-content: space-around;
     transform: translateY(19%)
@@ -385,6 +431,25 @@ span {
 #assign-button {
     width: 30%;
     height: 1.5rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cancel-btn {
+    width: 30%;
+    height: 1.5rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 form > span {
@@ -454,19 +519,42 @@ form > span {
     color: white;
     text-align: center;
     text-decoration: underline;
+    position: relative;
+    bottom: .7rem;
 }
   
 #rating-form label {
     font-weight: bold;
     margin-top: 0.5rem;
     color: white;
+    position: relative;
+    bottom: 0.6rem;
 }
   
 #rating-form input {
-    margin-top: 0.25rem;
+    margin-top: 0.3rem;
     padding: 0.45rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    position: relative;
+    bottom: 0.6rem;
+}
+
+#rating-form h3 {
+    position: relative;
+    bottom: 0.6rem;
+}
+
+#cancelBtn {
+    width: 30%;
+    height: 2rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
 }
   
 .popup-buttons {
@@ -474,11 +562,35 @@ form > span {
     justify-content: space-between;
     margin-top: 1rem;
 }
+
+#cancelEditRating {
+    width: 30%;
+    height: 2rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#confirmEditRating {
+    width: 30%;
+    height: 2rem;
+    border: 0;
+    outline: none;
+    border-radius: 8px;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
   
 .popup-buttons button {
     padding: 0.5rem 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
   
@@ -612,6 +724,8 @@ form > span {
 .edit-rating-popup h2 {
     text-align: center;
     text-decoration: underline;
+    position: relative;
+    bottom: 1rem;
 }
 
 .edit-rating-popup input { 
@@ -619,6 +733,18 @@ form > span {
     padding: 0.45rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    position: relative;
+    bottom: 1rem;
+}
+
+.edit-rating-popup label {
+    position: relative;
+    bottom: 1rem;
+}
+
+.edit-rating-popup h3 {
+    position: relative;
+    bottom: 1rem;
 }
 
 .edit-comment-popup {
@@ -669,4 +795,15 @@ form > span {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-  
+
+.delCoachBtn {
+    background-color: rgb(243 127 127);
+    font-family: sans-serif;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
