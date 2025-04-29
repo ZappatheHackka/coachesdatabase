@@ -84,9 +84,9 @@ body {
 
 .profile-info > h1 {
     text-shadow: 
-        -1px -1px 2px rgb(255, 102, 50),
         0px -1px 0 rgb(255, 102, 50),
-        -1px 1px 0 rgb(255, 102, 50),
+        0px -1px 0 rgb(255, 102, 50),
+        -1px -1px 0 rgb(255, 102, 50),
         0px 0px 0 rgb(255, 102, 50);
     text-decoration: underline;
 }
@@ -98,9 +98,9 @@ body {
 .profile-info > p > span {
     color: rgb(19, 18, 75);
     text-shadow: 
-        -1px -1px 0 rgb(255, 102, 50),
+        -1px 0px 0 rgb(255, 102, 50),
+        0px 0px 0 rgb(255, 102, 50),
         0px -1px 0 rgb(255, 102, 50),
-        -1px 1px 0 rgb(255, 102, 50),
         0px 0px 0 rgb(255, 102, 50);
 }
 
@@ -502,9 +502,9 @@ form > span {
     min-width: 200px;
     margin: 0;
     text-shadow: 
-        -1px -1px 0 rgb(255, 102, 50),
         0px -1px 0 rgb(255, 102, 50),
-        -1px 1px 0 rgb(255, 102, 50),
+        0px -1px 0 rgb(255, 102, 50),
+        -1px -1px 0 rgb(255, 102, 50),
         0px 0px 0 rgb(255, 102, 50);
 }
   
@@ -939,4 +939,9 @@ form > span {
     font-weight: bold;
     cursor: pointer;
     position: relative; 
+}
+
+.ratefields {
+    outline: none;
+    border-width: 0;
 }
