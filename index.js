@@ -49,6 +49,10 @@ app.get('/', (req, res) => {
 });
 
 
+app.get('/about', isAuthenticated, (req, res)  => {
+  res.render('about.ejs');
+});
+
 app.listen(port, () => {
   console.log(`\n🚀 App listening on port ${port}`);
 });
