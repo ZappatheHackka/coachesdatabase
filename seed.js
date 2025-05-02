@@ -1,4 +1,4 @@
-import connect from '../src/models/index.js'; // or wherever your Sequelize instance is
+import connect from '../src/models/db-connect.js'; // or wherever your Sequelize instance is
 import { Coach } from '../src/models/models.js'; // or your User model
 import bcrypt from 'bcrypt';
 
