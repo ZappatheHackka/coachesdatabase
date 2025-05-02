@@ -1,6 +1,9 @@
 import connect from './src/models/db-connect.js'; // or wherever your Sequelize instance is
 import { Coach } from './src/models/models.js'; // or your User model
 import bcrypt from 'bcrypt';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const email = process.env.SEED_EMAIL
 const password = process.env.SEED_PASS 
