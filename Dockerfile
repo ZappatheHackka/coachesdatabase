@@ -32,4 +32,5 @@ EXPOSE 3000
 ENV NODE_ENV production
 USER node
 # Run the application.
+COPY .env .env
 CMD node index.js

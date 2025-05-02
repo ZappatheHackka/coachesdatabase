@@ -15,7 +15,7 @@ async function seedUser() {
 
     if (!existing) {
       const hash = await bcrypt.hash(password, 10);
-      await Coach.create({ email, password: hash, isAdmin: true });
+      await Coach.create({ email, password: hash, isAdmin: true, firstname: "Chris", lastname: "Cottone", });
       console.log(`✅ Seeded user: ${email} / ${password}`);
     } else {
       console.log('ℹ️ Seed user already exists');
