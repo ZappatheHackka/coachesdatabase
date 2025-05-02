@@ -7,7 +7,6 @@ import flash from "express-flash";
 import bodyParser from "body-parser";
 
 import "./src/models/db-connect.js";
-import { Client } from "./src/models/models.js";
 
 import authRoutes from './routes/authRoutes.js';
 import clientRoutes from './routes/clientRoutes.js';
