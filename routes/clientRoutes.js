@@ -64,7 +64,9 @@ router.get('/client/:id', isAuthenticated, async (req, res) => {
             }
         });
         const clientCoaches = client.Coaches;
-        const coaches = await Coach.findAll();
+        const coaches = await Coach.findAll({
+            order: [['clientid', 'DESC']]
+        });
         const ratings = await ClientRatings.findAll({
             where: {
                 ClientId: clientId 
