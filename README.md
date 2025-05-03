@@ -2,7 +2,13 @@
 
 A full-stack web application for basketball coaches to view client information, track session feedback, and streamline training progression. Built for Inner Drive Hoops from scratch with a focus on real-world functionality and a simple, easy-to-use user experience.
 
-> 🚧 This project is a work in progress — core features like authentication, permissions, and adding client info are functional, with more actively being developed.
+## Want to give it a go?
+- Visit: https://sample.idhoops.com
+- Login with username: admin@example.com, and password: adminPass321!.
+  
+Feel free to tinker to your heart's content.
+
+> 🚧 The project is complete and live in production! More updates and fine touches are to be added soon.
 
 ---
 
@@ -49,7 +55,7 @@ A full-stack web application for basketball coaches to view client information, 
 - Full Password Reset Flow [DONE]
 - Clients from PGSQL displayed on the homepage, with hyperlinks to their specific profiles [DONE]
 - Profile comments & ratings from coaches [DONE]
-- DOCKERIZE AND LAUNCH ON AWS
+- DOCKERIZE AND LAUNCH ON AWS [DONE] 5/2/25
 - Sleeker profile page UI
 - Profile pictures for clients
 - Client search functionality with filters (React integration?)
