@@ -2,9 +2,10 @@
 
 A full-stack web application for basketball coaches to view client information, track session feedback, and streamline training progression. Built for Inner Drive Hoops from scratch with a focus on real-world functionality and a simple, easy-to-use user experience.
 
-Want to give it a go?
-Visit: https://www.sample.idhoops.com
-Login with username: admin@example.com, and password: adminPass321!.
+## Want to give it a go?
+- Visit: https://www.sample.idhoops.com
+- Login with username: admin@example.com, and password: adminPass321!.
+  
 Feel free to tinker to your heart's content.
 
 > 🚧 The project is complete and live in production! More updates and fine touches are to be added soon.
