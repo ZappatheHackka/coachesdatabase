@@ -12,7 +12,7 @@ body {
 
 h1 {
     position: relative;
-    top: 1.3rem;
+    top: 1.5rem;
     text-shadow: 
         -1px -1px 0 rgb(255, 102, 50),
         1px -1px 0 rgb(255, 102, 50),
@@ -61,7 +61,7 @@ button {
     height: 79%;
     width: 80%;
     left: 55px;
-    top: 5px;
+    top: 6px;
     z-index: 1;
 }
 
@@ -80,6 +80,7 @@ button {
     z-index: -1;
     left: 44rem;
     width: 110px;
+    top: 1px;
 }
 
 #coach-button {
