@@ -38,15 +38,15 @@ body {
     height: 155px;
     width: 160px;
     border-radius: 5px;
-    margin-left: 18px;
+    margin-left: 1.65rem;
 }
 
 .update-pfp {
     font-size: 14px;
     color: blue;
+    text-align: center;
     position: relative;
     top: 3%;
-    left: 2%;
 }
 
 .client-name {
@@ -175,7 +175,7 @@ body {
 }
 
 #comment-content {
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 15px;
     max-width: 462px;
     color: white;
@@ -305,7 +305,7 @@ span {
     position: relative;
     width: 32%;
     height: 80%;
-    right: 10%;
+    right: 7%;
 }
 
 #editPencil:hover {
@@ -318,6 +318,7 @@ span {
     font-size: 14px;
     position: relative;
     top: 12%;
+    left: 3%;
 }
 
 #edit-text:hover {

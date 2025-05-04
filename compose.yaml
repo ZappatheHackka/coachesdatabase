@@ -1,0 +1,37 @@
+
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgres://postgres:${DB_PASSWORD}@db:5432/${DB_NAME}
+      SESSION_SECRET: ${SESSION_SECRET}
+      NM_PASS: ${NM_PASS}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    expose:
+      - "5432"
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db-data:

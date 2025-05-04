@@ -67,11 +67,11 @@ router.post('/login', async (req, res) => {
 });
 
 
-router.get("/signup", isAdmin, isAuthenticated, async (req, res) => {
+router.get("/signup", isAuthenticated, isAdmin, async (req, res) => {
     res.render("register_coach.ejs");
 });
 
-router.post("/signup", isAdmin, isAuthenticated, async (req, res) => {
+router.post("/signup", isAuthenticated, isAdmin, async (req, res) => {
     let fname = req.body["fname"];
     let lname = req.body["lname"];
     let email = req.body['email'];

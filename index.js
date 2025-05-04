@@ -7,7 +7,6 @@ import flash from "express-flash";
 import bodyParser from "body-parser";
 
 import "./src/models/db-connect.js";
-import { Client } from "./src/models/models.js";
 
 import authRoutes from './routes/authRoutes.js';
 import clientRoutes from './routes/clientRoutes.js';
@@ -48,6 +47,10 @@ app.get('/', (req, res) => {
   res.render('login.ejs', { message: req.flash('error'), success: req.flash('success')});
 });
 
+
+app.get('/about', isAuthenticated, (req, res)  => {
+  res.render('about.ejs');
+});
 
 app.listen(port, () => {
   console.log(`\n🚀 App listening on port ${port}`);
