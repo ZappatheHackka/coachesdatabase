@@ -32,7 +32,7 @@ Feel free to tinker to your heart's content.
 
 - Main dashboard once logged in 
 
-![Home Page](/samples/homesceen.png)
+![Home Page](/samples/homescreen.png)
 
  - Launch version of Client profile page
 
