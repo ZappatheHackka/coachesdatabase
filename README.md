@@ -32,9 +32,9 @@ Feel free to tinker to your heart's content.
 
 - Main dashboard once logged in 
 
-![Home Page](/samples/homescreen.png)
+![Home Page](/samples/homesceen.png)
 
- - Early version of the clients' profile pages
+ - Launch version of Client profile page
 
 ![Alpha v2 Profile Page](/samples/profile-alpha.png)
 
