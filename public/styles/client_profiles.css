@@ -289,6 +289,7 @@ span {
 #rating-author {
     text-decoration: underline;
     font-size: 22px;
+    margin-right: 2rem;
 }
 
 .edit-box {
