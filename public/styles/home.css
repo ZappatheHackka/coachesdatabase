@@ -46,6 +46,10 @@ h1 {
     width: 170px;
 }
 
+.mobile-buttons {
+    display: none;
+}
+
 button {
     background-color: rgb(255, 102, 50);
     color: white;
@@ -166,4 +170,102 @@ table th {
 
 table td {
     border: 1px solid black;
+}
+
+@media (max-width: 430px) {
+    body {
+     position: relative;   
+    }
+
+    .wrapper {
+        position: relative;
+    }
+    
+    h1 {
+        margin-top: 30px;
+        font-size: 40px;
+    }
+
+   .search-wrapper {
+       width: 240px;
+       height: 39px;
+       position: absolute;
+       left: 200px;
+       top: 15px;
+       border-radius: 8px;
+       border: 1px solid white;
+   }
+
+    .search {
+        height: 20px;
+        width: 180px;
+    }
+
+    .add-coach-logo {
+        display: none;
+    }
+
+    .add-user-logo {
+        display: none;
+    }
+
+    .mobile-buttons {
+        display: inline;
+        position: absolute;
+        width: 85px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid white;
+        bottom: 245px;
+        right: 205px;
+        background-color: rgb(19, 18, 75);
+    }
+
+    .mobile-buttons > a {
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 20px;
+        position: relative;
+        right: 4px;
+    }
+    
+    .add {
+        display: none;
+    }
+    .client-block {
+        position: absolute;
+        width: 400px;
+        top: 0;
+        right: 25%;
+        top: 60px;
+        border-radius: 8px;
+        border: 1px solid white;
+    }
+
+    td {
+        font-size: 14px
+    }
+
+    .cName {
+        font-size: 19px;
+    }
+
+   .hID {
+       display: none;
+   }
+   .cId {
+       display: none;
+   }
+    .hEmail {
+        display: none;
+    }
+    .cEmail {
+        display: none;
+    }
+    .hParent {
+        display: none;
+    }
+    .cParent {
+        display: none;
+    }
 }

@@ -26,6 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 400px;
+    width: 470px;
     background-color: rgb(255, 102, 50);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -83,3 +84,54 @@ h1 {
     background-color: rgb(36, 31, 177)
 }
 
+/* Mobile Responsiveness MQs */
+
+@media (max-width: 430px) {
+    body {
+        background-image: none;
+        background-color: black;
+    }
+
+    h1 {
+        text-align:center;
+        font-size: 29px;
+        margin-bottom: 25px;
+    }
+
+    label {
+        position: relative;
+        top: 60px;
+    }
+
+    .background {
+        height: 400px;
+        width: 370px;
+        position: relative;
+    }
+
+    .form-content {
+        width: 350px;
+        position: relative;
+        bottom: 0px;
+    }
+
+    .logo {
+        width: 13.5vh;
+        position: absolute;
+        top: 1px
+    }
+    
+    .textfield {
+        height: 40px;
+        padding: 5px;
+        position: relative;
+        top: 60px;
+    
+    }
+
+    .login-button {
+        height: 40px;
+        position: relative;
+        top: 35px;
+    }
+}

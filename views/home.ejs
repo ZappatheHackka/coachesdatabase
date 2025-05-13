@@ -32,30 +32,35 @@
                 <button id="coach-button"style="cursor: pointer;">Add Coach</button>
             </a> 
         </div>
+
+        <div class="mobile-buttons">
+            <a href="/addclient">+Client</a>
+            <a href="/signup">+Coach</a>
+        </div>
          
     </div>
         <div class="client-block">
             <table class="client-table">
                 <tr>
-                    <th>ID</th>
+                    <th class="hID">ID</th>
                     <th>Name</th>
-                    <th>Age</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Parent(s)</th>
+                    <th class="hAge">Age</th>
+                    <th class="hEmail">Email</th>
+                    <th class="hPhone">Phone</th>
+                    <th class="hParent">Parent(s)</th>
                 </tr>
                 <% clients.forEach(client => { %>
                   <tr>
-                      <td><%= client.clientid %></td>
+                      <td class="cId"><%= client.clientid %></td>
                       <td>
-                        <a href="/client/<%=client.clientid %>">
+                        <a class="cName" href="/client/<%=client.clientid %>">
                             <%= client.firstname %> <%=client.lastname %>
                         </a>
                       </td>
-                      <td><%= client.age %></td>
-                      <td><%= client.email %></td>
-                      <td><%= client.cellphone %></td>
-                      <td><%= client.parent %></td>
+                      <td class="cAge"><%= client.age %></td>
+                      <td class="cEmail"><%= client.email %></td>
+                      <td class="cPhone"><%= client.cellphone %></td>
+                      <td class="cParent"><%= client.parent %></td>
                   </tr>
                 <% }) %>
             </table>
