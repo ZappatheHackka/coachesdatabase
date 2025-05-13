@@ -1,4 +1,4 @@
-# 🏀 Inner Drive Hoops Coaches Database App
+# 🏀 Inner Drive Hoops Coach's Database App
 
 A full-stack web application for basketball coaches to view client information, track session feedback, and streamline training progression. Built for Inner Drive Hoops from scratch with a focus on real-world functionality and a simple, easy-to-use user experience.
 
@@ -56,10 +56,10 @@ Feel free to tinker to your heart's content.
 - Clients from PGSQL displayed on the homepage, with hyperlinks to their specific profiles [DONE]
 - Profile comments & ratings from coaches [DONE]
 - DOCKERIZE AND LAUNCH ON AWS [DONE] 5/2/25
-- Sleeker profile page UI
-- Profile pictures for clients
-- Client search functionality with filters (React integration?)
-- More front-end tweaks for a more modern look and robust UI
+- Updating responsiveness for usability on mobile
+- Client search functionality with filters (React integration)
+- Client profile pictures
+  
 
 
 ## 🙋‍♂️ About the Author
