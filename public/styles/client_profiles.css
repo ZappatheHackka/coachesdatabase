@@ -10,940 +10,263 @@ body {
     z-index: -1;
 }
 
-.container {
-    display: flex;
-    border: 3px solid rgb(19, 18, 75);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 63px;
-    height: 950px;
-    width: 1100px;
-    border-radius: 5px;;
-    background-color: rgba(255, 255, 255, .75);
-}
-
-/* Stylings for header  */
-
-.header {
+h1 {
     position: relative;
-    height: 237px;
-    width: 1095px;
-    display: flex;
-    border-bottom: 3px solid rgb(19, 18, 75);
-    background: linear-gradient(to right, rgba(240,248,255,0.5), rgba(230,230,250,0.5));
-}
-
-.profile-pic {
-    height: 155px;
-    width: 160px;
-    border-radius: 5px;
-    margin-left: 1.65rem;
-}
-
-.update-pfp {
-    font-size: 14px;
-    color: blue;
-    text-align: center;
-    position: relative;
-    top: 3%;
-}
-
-.client-name {
-    width: 40%;
-    height: 40%;
-    margin-left: 25px;
-    margin-top: 20px;
-    color: rgb(19, 18, 75);
-    text-align: center;
-    font-size: larger;
-    
-}
-
-.profile-pic-div {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 220px;
-    height: 226px;
-    margin-left: 12px;
-    border-radius: 5px;
-}
-
-.prof-div-img {
-    width: 170px;
-    height: 170px;
-    margin-left: 270px;
-    margin-top: 15px;
-    filter: hue-rotate(180deg);
-}
-
-.profile-info {
-    margin-left: 30px;
-}
-
-.profile-info > h1 {
+    top: 1.5rem;
     text-shadow: 
-        0px -1px 0 rgb(255, 102, 50),
-        0px -1px 0 rgb(255, 102, 50),
         -1px -1px 0 rgb(255, 102, 50),
-        0px 0px 0 rgb(255, 102, 50);
-    text-decoration: underline;
+        1px -1px 0 rgb(255, 102, 50),
+        -1px 1px 0 rgb(255, 102, 50),
+        1px 1px 0 rgb(255, 102, 50);
 }
 
-.profile-info > p {
-    font-size: 1.1rem;
-}
-
-.profile-info > p > span {
-    color: rgb(19, 18, 75);
-    text-shadow: 
-        -1px 0px 0 rgb(255, 102, 50),
-        0px 0px 0 rgb(255, 102, 50),
-        0px -1px 0 rgb(255, 102, 50),
-        0px 0px 0 rgb(255, 102, 50);
-}
-
-
-.coaches-div {
-    margin-left: 6.5rem;
-    margin-top: .4rem;
-}
-
-#coach-title {
-    text-decoration: underline;
-    
-}
-
-/* --------- */
-
-.body {
-    height: 710px;
-    width: 1095px;
+.wrapper {
     display: flex;
-}
-
-/* Comment body */
-
-.comments {
-    height: 703px;
-    width: 549px;
-    display: flex;
-    justify-content: center;
     flex-direction: column;
-}
-
-#comment-header {
-    text-decoration: underline;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    margin-top: 10px;
-}
-
-.comment-display {
-    max-height: 800px;
-    min-height: 641.5px;
-    overflow-y: auto;
-    width: 519px;
-    background-color: rgba(255, 101, 50, 0.819);
-    margin-left: 15px;
-    border-radius: 8px;
-    margin-top: -9px;
-    position: relative;
-    bottom: .6rem;
-    display: flex;
     justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
+    top: 1rem;
+    min-height: 300px;
+    min-width: 800px;
 }
 
-.comment {
-    border: 1px solid gray;
-    border-radius: 8px;
-    background-color: rgb(19, 18, 75);
-    max-width: 490px;
-    min-width: 490px;
-    height: auto;
+.topblock {
+    display: flex;
+    align-items: flex-end;
+    min-height: 25px;
+    min-width: 50px;
     gap: 5px;
-    margin-top: 10px;
-    overflow-wrap: break-word;
-    word-break: break-word;
+}
+
+/* Add & Remove Button Stylings */
+.add {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    height: 50px;
+    width: 170px;
 }
 
-#comment-content {
-    font-size: 16px;
-    margin-left: 15px;
-    max-width: 462px;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    margin-bottom: 0px;
-    position: relative;
-    bottom: .5rem;
-}
-
-#comment-author {
-    font-size: 13px;
-    margin-left: 1.02rem;
-    position: relative;
-    bottom: .3rem;
-    text-decoration: underline;
-    color: white;
-}
-
-.right-body {
-    /* border: 3px solid orange; */
-    height: 703px;
-    width: 567px;
-    display: block;
-    margin-left: 5px;
-}
-
-.ratings {
-    height: 703px;
-    width: 545px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.rating {
-    display: flex;
-    border: 1px solid gray;
-    justify-content: flex-start;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: -5px;
-    background-color: rgb(19, 18, 75);
-    color: white;
-    border-radius: 8px;
-    width: 80%;
-    height: 46%;
-}
-
-#ratings-header {
-    text-decoration: underline;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    margin-top: 10px;
-}
-  
-.rating-text > div {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    left: 1.35rem;
-}
-
-.deleteRatingBtn {
-    height: 22px;
-    width: 22px;
-    position: absolute;
-    top: -0.05rem;
-    right: 1.3rem;
-    background-color: rgba(255, 0, 0, 0.671);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 0, 0, 0.671);
-    cursor: pointer;
-}
-
-.ratings-display {
-  max-height: 800px;
-  min-height: 610px;               
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;  
-  background-color: rgba(255, 101, 50, 0.819);
-  border-radius: 8px;
-  position: relative;
-  bottom: 10px;
-  margin-top: -9px;
-  width: 510px;
-}
-
-li {
-    position: relative;
-    bottom: 1.75rem;
-    right: 1rem;
-    list-style-type: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.3rem;
-}
-
-span {
-    color: rgb(230, 110, 50);
-    font-weight: bold;
-    text-decoration: solid;
-}
-
-#rating-author {
-    text-decoration: underline;
-    font-size: 22px;
-    margin-right: 2rem;
-}
-
-.edit-box {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    margin-left: 24%;
-    position: relative;
-    top: 5%;
-    height: 10%;
-}
-
-#editPencil {
-    position: relative;
-    width: 32%;
-    height: 80%;
-    right: 7%;
-}
-
-#editPencil:hover {
-    cursor: pointer;
-}
-
-#edit-text {
-    text-decoration: underline;
-    color: blue;
-    font-size: 14px;
-    position: relative;
-    top: 12%;
-    left: 3%;
-}
-
-#edit-text:hover {
-    cursor: pointer;
-}
-
-/* Edit form styles */
-
-.popup-form {
-    position: absolute;
-    top: 8rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    background-color: rgb(19, 18, 75);;
-    border: 1px solid #ccc;
-    padding: 1.6rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
-    width: 300px;
-    border-radius: 8px;
-}
-
-.popup-form h2 {
-    color: white;
-    text-decoration: underline;
-    text-align: center;
-    position: relative;
-    bottom: .9rem;
-}
-
-.popup-form label {
-    position: relative;
-    bottom: .9rem;
-    padding-bottom: 3px;
-    padding-top: 2px;
-}
-
-.editfields{
-    padding: 5px;
-    margin: .1rem;
-    border-radius: 5px;
-    outline: none;
-    border-width: 0;
-    position: relative;
-    bottom: .9rem;
-}
-
-#form-element {
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
-
-.hidden {
+.mobile-buttons {
     display: none;
 }
-  
-.popup-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-}
-  
-#saveBtn {
-    width: 30%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    background-color: lightgreen;
-    font-family: sans-serif;
-    font-weight: bold;
-}
 
-#cancelEdit {
-    padding-top: 3%;
-    padding-bottom: 3%;
-    width: 30%;
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
-}
-
-#cancelBtn {
-    width: 22%;
-}
-
-#addCoach {
-    margin-left: 10rem;
-    cursor: pointer;
-    height: 20px;
-    width: 20px;
-    position: relative;
-    bottom: 3.75rem;
-    right: .23rem;
-}
-
-.assign-overlay {
-    position: absolute;
-    top: 150px; /* adjust as needed */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    background-color: rgb(19, 18, 75);;
-    border: 1px solid #ccc;
-    padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 300px;
-    border-radius: 8px;
-}
-  
-.assign-label{
+button {
+    background-color: rgb(255, 102, 50);
     color: white;
+    font-family: 'Conthrax', sans-serif;
+    width: 115px;
+    border-radius: 6px 6px 0px 0px;
+    border-width: 0;
+    padding-right: 70px;
 }
 
-#coachId {
-    outline: none;
+.add-user-logo {
+    position: relative;
+    height: 79%;
+    width: 80%;
+    left: 55px;
+    top: 6px;
+    z-index: 1;
+}
+
+.add-coach-logo {
+    position: relative;
+    height: 80%;
+    width: 53%;
+    left: 56px;
+    top: 5px;
+    z-index: 1;
+}
+
+#client-button {
+    position: absolute;
+    height: 49px;
+    z-index: -1;
+    left: 44rem;
+    width: 110px;
+    top: 1px;
+}
+
+#coach-button {
+    position: relative;
+    height: 49px;
+    bottom: 43px;
+    z-index: -1;
+    width: 110px;
+}
+
+.form-links {
+    display: inline-block;
+    width: 110px
+}
+
+#add-butt {
+    width: 45%;
+}
+
+/* Searchbar Stylings */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 600px;
+    border-radius: 6px 6px 0px 0px;
+    background-color: rgb(19, 18, 75);
+}
+
+.search-icon {
+    position: absolute;
+    top: 12px;
+    left: 13px;
+    width: 14px;
+}
+
+.clear-icon {
+    position: absolute;
+    top: 14px;
+    right: 11px;
+    width: 10px;
+    cursor: pointer;
+}
+
+.search {
     border-radius: 6px;
-    width: 40%;
-    height: 1.5rem;
     border-width: 0;
-    position: relative;
-    left: .5rem;
-}
-
-.assign-buttons {
-    padding-top: 9%;
-    display: flex;
-    justify-content: space-around;
-    transform: translateY(19%)
-}
-
-#assign-button {
-    width: 30%;
-    height: 1.5rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: lightgreen;
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#cancel-btn {
-    width: 30%;
-    height: 1.5rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-form > span {
-    color: firebrick;
-    font-size: .95rem;
-    padding-left: .65rem;
-}
-
-.trainerNameDiv {
-    display: flex;
-    flex-direction: column;
-    gap: .25rem;
-    position: relative;
-    bottom: 2.5rem;
-}
-  
-.trainer-pair {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-  
-.trainers {
-    min-width: 200px;
-    margin: 0;
-    text-shadow: 
-        0px -1px 0 rgb(255, 102, 50),
-        0px -1px 0 rgb(255, 102, 50),
-        -1px -1px 0 rgb(255, 102, 50),
-        0px 0px 0 rgb(255, 102, 50);
-}
-  
-.ratings > div {
-    display: flex;
-}
-
-#addRatingBtn {
-    width: 20px;
     height: 20px;
-    cursor: pointer;
-    position: relative;
-    top: 5px;
+    width: 89%;
+    padding: 2px 23px 2px 30px;
+    outline: 0;
+    background-color: #f5f5f5;
+    
 }
 
-.header-and-butt {
-    display: flex;
-    justify-content: center;
-}
-  
-  
-.rating-popup {
-    position: absolute;
-    top: 7rem;
-    left: 22.3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 6;
-}
-  
-#rating-form {
-    background-color: rgb(19, 18, 75);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 2px solid gray;
-    width: 380px;
-    display: flex;
-    flex-direction: column;
+input::placeholder {
+    font-family: 'Conthrax', sans-serif;
+    font-size: 15px;
 }
 
-#rating-form h2 {
-    color: white;
-    text-align: center;
-    text-decoration: underline;
-    position: relative;
-    bottom: 1.1rem;
-}
-  
-#rating-form label {
-    font-weight: bold;
-    margin-top: 0.5rem;
-    color: white;
-    position: relative;
-    bottom: 1.1rem;
-}
-  
-#rating-form input {
-    margin-top: 0.3rem;
-    padding: 0.45rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    position: relative;
-    bottom: 1.1rem;
+/* Table Stylings */
+.client-block {
+    color: rgb(19, 18, 75);
+    height: auto;
+    max-height: 800px;
+    min-width: 300px;
+    overflow-y: auto;
 }
 
-#rating-form h3 {
-    position: relative;
-    bottom: 1.1rem;
-}
-
-#cancelBtn {
-    width: 30%;
-    height: 2rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-}
-  
-.popup-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-}
-
-#cancelEditRating {
-    width: 30%;
-    height: 2rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#confirmEditRating {
-    width: 30%;
-    height: 2rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: lightgreen;
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-}
-  
-.popup-buttons button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-  
-.delete-rating-box {
-    margin-bottom: 1rem;
-    border: 3px solid gray;
-    border-radius: 8px;
-    background-color: lightgrey;
-    padding: 6px;
-}
-
-.delete-rating-box > button {
-    display: flex;
-    justify-content: space-between;
-}
-
-#addCommentBtn {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    position: relative;
-    top: 5px;
-}
-
-.comment-header-and-butt{
-    display: flex;
-    justify-content: center;
-}
-
-#commentPopup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* real centering */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-#popupContent {
-    background: rgb(19, 18, 75);
-    padding: 20px;
-    border-radius: 8px;
-    border: 2px solid gray;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-    width: 24rem;
-    min-height: 12rem;
-    max-width: 90vw;
-    text-align: center;
-}
-
-.comment-form-header {
-    color: white;
-    text-align: center;
-    text-decoration: underline;
-    position: relative;
-    bottom: 1rem;
-}
-
-#commentInput {
+.client-table {
+    background-color: rgba(255, 255, 255, .85);
+    border-collapse: collapse;
     width: 100%;
-    height: 11rem;
-    margin-bottom: 10px;
-    outline: none;
-    resize: none;
-    position: relative;
-    bottom: 1rem;
 }
 
-#submitComment {
-    width: 30%;
-    height: 1.5rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: lightgreen;
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 9rem;
-}
-
-#cancelComment {
-    width: 30%;
-    height: 1.5rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative;
-    left: .5rem;
-}
-
-.deleteComments {
-    height: 22px;
-    width: 22px;
-    position: relative;
-    left: 29.2rem;
-    bottom: .05rem;
-    background-color: rgba(255, 0, 0, 0.671);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 0, 0, 0.671);
-    cursor: pointer;
-}
-
-.confirmDeleteComment {
-    margin-bottom: 1rem;
-    border: 3px solid gray;
-    border-radius: 8px;
-    background-color: lightgrey;
-    padding: 4px;
-    margin-top: 5px;
-}
-
-.commentPencil {
-    cursor: pointer;
-    height: 20px;
-    margin-left: 10px;
-    margin-top: 4.5px;
-}
-
-.ratingPencil {
-    cursor: pointer;
-    height: 20px;
-    margin-left: 10px;
-    margin-top: -16px;
-}
-
-.edit-rating-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* real centering */
-    display: flex;
-    color: white;
-    align-items: center;
-    border: 2px solid gray;
-    z-index: 9999;
-    background-color: rgb(19, 18, 75);
-    padding: 2rem;
-    border-radius: 10px;
-    width: 380px;
-    flex-direction: column;
-}
-
-.edit-rating-popup h2 {
-    text-align: center;
-    text-decoration: underline;
-    position: relative;
-    bottom: 1rem;
-}
-
-.edit-rating-popup input { 
-    margin-top: 0.25rem;
-    padding: 0.45rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    position: relative;
-    bottom: 1rem;
-}
-
-.edit-rating-popup label {
-    position: relative;
-    bottom: 1rem;
-}
-
-.edit-rating-popup h3 {
-    position: relative;
-    bottom: 1rem;
-}
-
-.edit-comment-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    border: 2px solid gray;
-    background-color: rgb(19, 18, 75);
-    width: 24rem;
-    min-height: 12rem;
-    max-width: 90vw;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.edit-comment-popup textarea {
-    width: 99%;
-    height: 11rem;
-    margin-bottom: 10px;
-    outline: none;
-    resize: none;
-}
-
-.edit-comment-popup h2 {
-    color: white;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.flash-error {
-    background-color: #ffcccc;
-    color: #990000;
-    padding: 10px;
-    border: 1px solid #990000;
-    border-radius: 5px;
-    text-align: center;
-    margin: 10px auto;
-    width: 50%;
-    font-weight: bold;
-    z-index: 999;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.delCoachBtn {
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
+table th {
     border: 1px solid black;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 8px;
-    cursor: pointer;
+    color: white;
+    background-color: rgb(19, 18, 75);
 }
 
-#saveCommentEdit {
-    width: 30%;
-    height: 2rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: lightgreen;
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 9rem;
+table td {
+    border: 1px solid black;
 }
 
-#cancelCommentEdit {
-    width: 30%;
-    height: 2rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative;
-    left: .5rem;
-}
+@media (max-width: 430px) {
+    body {
+     position: relative;   
+    }
 
-.popup-actions {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-}
+    .wrapper {
+        position: relative;
+    }
+    
+    h1 {
+        margin-top: 45px;
+        font-size: 40px;
+        margin-bottom: 35px;
+    }
 
-.confirmComDelete {
-    width: 20%;
-    height: 1.3rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: lightgreen;
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-}
+   .search-wrapper {
+       width: 240px;
+       height: 39px;
+       position: absolute;
+       left: 210px;
+       top: 15px;
+       border-radius: 8px;
+       border: 1px solid white;
+   }
 
-.cancelComDelete {
-    width: 20%;
-    height: 1.3rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative; 
-}
+    .search {
+        height: 20px;
+        width: 180px;
+    }
 
-#confirmDelete {
-   width: 20%;
-    height: 1.3rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: lightgreen;
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer; 
-}
+    .add-coach-logo {
+        display: none;
+    }
 
-.cancelDelete {
-    width: 20%;
-    height: 1.3rem;
-    border: 0;
-    outline: none;
-    border-radius: 8px;
-    background-color: rgb(243 127 127);
-    font-family: sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative; 
-}
+    .add-user-logo {
+        display: none;
+    }
 
-.ratefields {
-    outline: none;
-    border-width: 0;
+    .mobile-buttons {
+        display: inline;
+        position: absolute;
+        width: 85px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid white;
+        bottom: 245px;
+        right: 212px;
+        background-color: rgb(19, 18, 75);
+    }
+
+    .mobile-buttons > a {
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 20px;
+        position: relative;
+        right: 4px;
+    }
+    
+    .add {
+        display: none;
+    }
+    .client-block {
+        position: absolute;
+        width: 380px;
+        top: 0;
+        right: 26%;
+        top: 60px;
+        border-radius: 8px;
+        border: 1px solid white;
+    }
+
+    td {
+        font-size: 14px
+    }
+
+    .cName {
+        font-size: 19px;
+    }
+
+   .hID {
+       display: none;
+   }
+   .cId {
+       display: none;
+   }
+    .hEmail {
+        display: none;
+    }
+    .cEmail {
+        display: none;
+    }
+    .hParent {
+        display: none;
+    }
+    .cParent {
+        display: none;
+    }
 }
