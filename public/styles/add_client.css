@@ -183,7 +183,7 @@ button:hover {
     }
 
     .labels {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     #add-succ {
@@ -205,5 +205,13 @@ button:hover {
 
     .error {
         font-size: 0.85rem;
+    }
+    
+    .added-box {
+        margin-top: -19rem;
+    }
+    
+    #add-succ {
+        font-size: 1.5rem;
     }
 }
