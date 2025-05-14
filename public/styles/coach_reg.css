@@ -174,9 +174,14 @@ span {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
+    body {
+        background: black;
+    }
+    
     #form-header {
-        font-size: 1.5rem;
+        font-size: 2.3rem;
+        margin-top: 3.5rem;
     }
 
     .form-logo {
@@ -184,11 +189,11 @@ span {
     }
 
     .labels {
-        font-size: 1rem;
+        font-size: 1.6rem;
     }
 
     #add-succ {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     button {
@@ -196,8 +201,12 @@ span {
     }
 
     .textfield {
-        height: 18px;
+        height: 28px;
         font-size: 0.9rem;
+    }
+
+    .added-box {
+        margin-bottom: 17rem;
     }
 
     .error {

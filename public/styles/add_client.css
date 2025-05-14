@@ -177,17 +177,18 @@ button:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
+    body {
+        background: black;
+    }
+    
     #head-tag {
-        font-size: 1.6rem;
+        font-size: 2.5rem;
+        margin-top: 4rem;
     }
 
     .labels {
-        font-size: 1.3rem;
-    }
-
-    #add-succ {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     button {
@@ -195,11 +196,11 @@ button:hover {
     }
 
     .form-logo {
-        width: 80px;
+        width: 110px;
     }
 
     .textfield {
-        height: 18px;
+        height: 28px;
         font-size: 0.9rem;
     }
 
@@ -208,10 +209,10 @@ button:hover {
     }
     
     .added-box {
-        margin-top: -19rem;
+        margin-top: -16rem;
     }
     
     #add-succ {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 }
