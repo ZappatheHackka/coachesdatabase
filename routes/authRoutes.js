@@ -1,5 +1,6 @@
 import express from "express";
 import bcrypt from "bcrypt";
+import { Op, literal } from "sequelize";
 import { Coach, Client } from '../src/models/models.js';
 import { isAuthenticated, isAdmin } from './middleware.js';
 
@@ -10,17 +11,67 @@ const saltRounds = 10;
 
 
 router.get("/home", isAuthenticated, async (req, res) => {
-    try {
-      const clients = await Client.findAll({
-        order: [['clientid', 'DESC']]
-      });
-      res.render("home.ejs", { 
-        clients,
-        message: req.flash('error'),
+    let query = req.query.query;
+    if (query) {
+        try {
+            const clients = await Client.findAll({
+                where: {
+                    [Op.or]: [
+                        { firstname: { [Op.iLike]: `%${query}%`} },
+                        { lastname: { [Op.iLike]: `%${query}%`} },
+                        { email: { [Op.iLike]: `%${query}%`} },
+                        { cellphone: { [Op.iLike]: `%${query}%`} },
+                        { parent: { [Op.iLike]: `%${query}%`} },
+                        literal(`CAST(age AS TEXT) ILIKE '%${query}%'`)
+                    ]
+                },
+                order: [
+                    [
+                        literal(`
+                            LEAST(
+                                CASE WHEN POSITION('${query}' IN firstname) > 0 THEN POSITION('${query}' IN firstname)
+                                    ELSE 9999 END,
+                                CASE WHEN POSITION('${query}' IN lastname) > 0 THEN POSITION('${query}' IN lastname) + 5
+                                    ELSE 9999 END,
+                                CASE WHEN POSITION('${query}' IN parent) > 0 THEN POSITION('${query}' IN parent) + 10
+                                    ELSE 9999 END,
+                                CASE WHEN POSITION('${query}' IN email) > 0 THEN POSITION('${query}' IN email) + 15
+                                    ELSE 9999 END,
+                                CASE WHEN POSITION('${query}' IN cellphone) > 0 THEN POSITION('${query}' IN cellphone) + 20
+                                    ELSE 9999 END,
+                                CASE WHEN POSITION('${query}' IN CAST(age AS TEXT)) > 0 THEN POSITION('${query}' IN CAST(age AS TEXT)) + 25
+                                    ELSE 9999 END
+                                )
+                            `),
+                        
+                        'ASC'
+                    ]
+                ]
+            });
+            res.render("home.ejs", {
+                clients,
+                query,
+                message: req.flash('error')
+            });
+        } catch (error) {
+        req.flash('error', `Failed to fetch clients from database: ${error}`);
+        res.redirect('/');
+        }
+    } else {
+        let query;
+        try {
+        const clients = await Client.findAll({
+            order: [['clientid', 'DESC']]
         });
-    } catch (error) {
-      req.flash('error', `Failed to fetch clients from database: ${error}`);
-      res.redirect('/');
+        res.render("home.ejs", { 
+            clients,
+            query,
+            message: req.flash('error'),
+            });
+        } catch (error) {
+        req.flash('error', `Failed to fetch clients from database: ${error}`);
+        res.redirect('/');
+        }
     }
 });
 
