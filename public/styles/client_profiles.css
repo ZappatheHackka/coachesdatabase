@@ -1282,7 +1282,7 @@ form > span {
     #mobile-popup-form{
         position: fixed;
         color: white;
-        top: 7rem;
+        top: 5rem;
         left: 13rem;
         transform: translateX(-50%);
         z-index: 5;
@@ -1303,15 +1303,15 @@ form > span {
     }
     
     .mobile-editfields {
-        margin-top: 6px;
-        margin-bottom: 6px;
-        height: 40px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        height: 30px;
         border-radius: 8px;
         border: none;
     }
     
     .mobile-popup-buttons {
-        margin-top: 25px;
+        margin-top: 20px;
         display: flex;
         justify-content: space-between;
     }
@@ -1323,6 +1323,7 @@ form > span {
         border: none;
         border-radius: 8px;
         cursor: pointer;
+        color: black;
     }
     
     #mobileCancelEdit {
