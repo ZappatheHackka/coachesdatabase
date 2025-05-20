@@ -948,6 +948,19 @@ form > span {
     border-width: 0;
 }
 
+.mobileRatings {
+    display: none;
+}
+
+.mobileRatings h1 {
+    display: none;
+}
+
+#mobileAddRating {
+    display: none; 
+}
+
+
 /* Mobile MQs and Divs */
 .mobileContainer {
     display: none;
@@ -1012,6 +1025,7 @@ form > span {
         -1px -1px 0 rgb(255, 102, 50),
         0px 0px 0 rgb(255, 102, 50);
         text-decoration: underline;
+        text-align: center;
     }
     
     .mobile-coaches-header-div {
@@ -1076,6 +1090,7 @@ form > span {
     .mobile-comment-header {
         display: flex;
         justify-content: center;
+        margin-left: 30px;
     }
     
     .mobile-comment-header > h1 {
@@ -1123,6 +1138,7 @@ form > span {
 /*   Ratings stylings   */
     
     .mobileRatings {
+        display: block;
         margin-top: 15px;
         background-color: rgba(255, 101, 50, 0.819);
         padding: 5px;
@@ -1135,19 +1151,24 @@ form > span {
         max-height: 400px;
     }
     
+    .mobileRatings h1 {
+        display: block;
+    }
+    
     .mobile-rating {
         background-color: rgb(19, 18, 75);
         color: white;
         padding: 5px;
         border-radius: 8px;
-        width: 340px;
-        margin-left: 15px;
+        width: 330px;
+        margin-left: 3px;
         
     }
     
     .mobileRatingsHeader {
         display: flex;
         justify-content: center;
+        margin-left: 30px;
     }
     
     .mobileRatingsHeader > h1 {
@@ -1165,12 +1186,13 @@ form > span {
         background-color: rgba(255, 0, 0, 0.671);
         border-radius: 8px;
         position: relative;
-        left: 2.69rem;
+        left: 2.4rem;
         bottom: .3rem;
         cursor: pointer;
     }
     
     #mobileAddRating {
+        display: block;
         width: 12%;
         position: relative;
         left: 15px;
