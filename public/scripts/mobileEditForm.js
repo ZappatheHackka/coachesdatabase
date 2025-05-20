@@ -15,9 +15,9 @@ const addNewCommentForm =document.getElementById('mobileCommentPopup');
 const mobileCancelComment = document.getElementById('mobileCancelComment');
 
 
-const editCommentPencil = document.querySelector('.mobilecommentPencil');
+const editCommentPencils = document.querySelectorAll('.mobilecommentPencil');
 const editCommentForm = document.querySelector('.mobile-edit-comment-popup');
-const cancelCommentEdit = document.getElementById('mobileCancelCommentEdit');
+const cancelCommentEdit = document.querySelectorAll('#mobileCancelCommentEdit');
 
 
 const deleteCommentBtn = document.querySelectorAll('.mobiledeleteComments');
@@ -26,9 +26,16 @@ const cancelCommentDelete = document.querySelectorAll('.mobilecancelComDelete');
 
 // Edit Rating contents
 
+const mobileAddRatingBtn = document.getElementById('mobileAddRating');
+const addRatingField = document.getElementById('mobile-rating-popup');
+const cancelAddRating = document.getElementById('mobilecancelBtn');
+
 const deleteRating = document.querySelectorAll('.mobileDeleteRatingBtn');
 const deleteRatingWaring = document.querySelector('.mobileCnfirmDeleteRating');
 const cancelRatingDelete = document.querySelectorAll('.mobileCancelDelete');
+
+const mobileEditRatingPencil = document.querySelectorAll('.mobileRatingPencil');
+const mobileCancelEditRatingBtns = document.querySelectorAll('.mobileCancelEditRating');
 
 // DOM Manipulation 
 
@@ -54,18 +61,27 @@ cancelEditButton.addEventListener('click', () => {
 
 // Edit comment contents
 
-if (editCommentPencil) {
-        editCommentPencil.addEventListener('click', () => {
-        editCommentForm.style.display="block";
-    });
+if (editCommentPencils) {
+        editCommentPencils.forEach(pencil => {
+            pencil.addEventListener('click', function() {
+                let thisComment = this.closest('.mobileComment');
+                let nextOne = thisComment.nextElementSibling;
+                let editThisComment = nextOne.nextElementSibling;
+                editThisComment.style.display='block';
+            });
+        });
 };
 
 
 if (cancelCommentEdit) {
-        cancelCommentEdit.addEventListener('click', () => {
-        editCommentForm.style.display='none';
+        cancelCommentEdit.forEach(comment => {
+            comment.addEventListener('click', function() {
+                let thisEditComment = this.closest('.mobile-edit-comment-popup');
+                thisEditComment.style.display='none';
+            });
     });
 };
+
 
 
 addNewCommentBtn.addEventListener('click', () => {
@@ -86,8 +102,8 @@ deleteCommentBtn.forEach(button => {
 
 cancelCommentDelete.forEach(btn => {
     btn.addEventListener('click', function() {
-        var form = this.closest('.mobileconfirmDeleteComment');
-        form.style.display='none';
+        var mobileForm = this.closest('.mobileconfirmDeleteComment');
+        mobileForm.style.display='none';
     });
 });
 
@@ -107,3 +123,33 @@ cancelRatingDelete.forEach(button => {
         thisForm.style.display='none';
     });
 });
+
+mobileAddRatingBtn.addEventListener('click', () => {
+    addRatingField.style.display='block';
+});
+
+if (cancelAddRating) {
+    cancelAddRating.addEventListener('click', () => {
+        addRatingField.style.display='none';
+    });
+};
+
+if (mobileEditRatingPencil) {
+    mobileEditRatingPencil.forEach(pencil => {
+        pencil.addEventListener('click', function() {
+            var thisMobileRating = this.closest('.mobile-rating');
+            var notThisOne = thisMobileRating.nextElementSibling;
+            var thisMobileRatingEdit = notThisOne.nextElementSibling;
+            thisMobileRatingEdit.style.display='block';
+        });
+    });
+};
+
+if (mobileCancelEditRatingBtns) {
+    mobileCancelEditRatingBtns.forEach(button => {
+        button.addEventListener('click', function() {
+            let thisMobileeditRatingForm = this.closest('.mobile-edit-rating-popup');
+            thisMobileeditRatingForm.style.display='none';
+        });
+    });
+}

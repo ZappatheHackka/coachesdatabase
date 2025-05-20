@@ -2,10 +2,11 @@
     display: flex;
     background-color: rgb(19, 18, 75);
     width: 100%;
-    height: 35px;
+    height: 1.75rem;
     border-left: 20px solid rgb(19, 18, 75);;
     position: absolute;
-    top: 0px;
+    top: -.5rem;
+    padding-top: .5rem;
  }
  
  a {
@@ -36,7 +37,7 @@
  .header-right {
      position: absolute;
      right: 19.5rem;
-     top: .45rem;
+     top: 1.1rem;
  }
 
 /* Mobile MQs */

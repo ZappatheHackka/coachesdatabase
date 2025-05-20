@@ -25,7 +25,7 @@
         <div class="header">
             <div class="profile-pic-div">
                 <img class="profile-pic" src="/images/fotor_empty.png">
-                <a class="update-pfp">Update Profile Picture (coming soon!)</a>
+                <a style="display:none;" class="update-pfp">Update Profile Picture (coming soon!)</a>
                 <div class="edit-box"> 
                     <a id="edit-text">Edit Profile</a>
                     <img id="editPencil" src="/images/pencil-svgrepo-com.svg"></img>
@@ -427,6 +427,53 @@
                 <h1>Ratings</h1>
                 <img id="mobileAddRating" src="/images/plus-svgrepo-com.svg">
             </div>
+
+            <div id="mobile-rating-popup" class="mobile-rating-popup hidden" style="display: none;">
+                <form action="/rate/<%= thisClient.clientid %>" method="POST" id="mobile-rating-form">
+                    <h2>Add a New Rating</h2>
+                    <div style="display: inline-block;">
+                        <label for="ball-handling">Ball Handling:</label>
+                        <input class="mobile-ratefields" type="number" name="ballhandling">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="finishing">Finishing:</label>
+                        <input class="mobile-ratefields" type="number" name="finishing">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="shooting">Shooting:</label>
+                        <input class="mobile-ratefields" type="number" name="shooting">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="iq">IQ:</label>
+                        <input style="position: relative; left: 2.3rem;" id="iq" class="mobile-ratefields" type="number" name="iq">
+                        <h3 style="color: white; display: inline; position: relative; left: 2.3rem;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="defense">Defense:</label>
+                        <input class="mobile-ratefields" type="number" name="defense">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div style="display: inline-block;">
+                        <label for="passing">Passing:</label>
+                        <input class="mobile-ratefields" type="number" name="passing">
+                        <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                    </div>
+
+                    <div class="mobile-popup-buttons">
+                      <button type="submit" id="mobilesaveBtn">Save</button>
+                      <button type="button" id="mobilecancelBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
                         <% ratings.forEach(rating => { %>
                             <div class="mobile-rating">
                                 <div class="mobile-rating-text">

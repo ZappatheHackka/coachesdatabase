@@ -1076,10 +1076,12 @@ form > span {
         width: 20px;
         cursor: pointer;
         margin-left: 5px;
+        margin-bottom: 8px;
     }
     
     #mobile-coach-title {
         text-decoration: underline;
+        padding-bottom: 5px;
     }
     
 /*  Comments Section */
@@ -1172,6 +1174,7 @@ form > span {
         padding: 5px;
         border-radius: 8px;
         min-width: 358px;
+        margin-bottom: 15px;
     }
     
     .mobileRatingsHeader {
@@ -1195,13 +1198,13 @@ form > span {
         border-radius: 8px;
         position: absolute;
         top: -0.3rem;
-        right: -.35rem;
+        right: -.34rem;
         cursor: pointer;
     }
     
     #mobileAddRating {
         display: block;
-        width: 45px;
+        width: 40px;
         position: relative;
         left: 15px;
         cursor: pointer;
@@ -1544,8 +1547,91 @@ form > span {
         color: black;
     }
     
+    #mobile-rating-popup {
+        position: absolute;
+        top: .5rem;
+        right: 0.15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 6;
+        color: white;
+        background-color: rgb(19, 18, 75);
+        padding: 10px;
+        border-radius: 8px;
+        border: 2px solid gray;
+        min-width: 340px;
+        text-align: center;
+    }
     
+    .mobile-ratefields {
+        height: 25px;
+        border: none;
+        border-radius: 8px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
     
+    #mobilesaveBtn {
+        height: 50px;
+        width: 100px;
+        background-color: lightgreen;
+        border: 2px solid black;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: sans-serif;
+        color: black;
+    }
+    
+    #mobilecancelBtn {
+        height: 50px;
+        width: 100px;
+        border-radius: 8px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        border: 2px solid black;
+        cursor: pointer;
+        color: black; 
+    }
+    
+    .mobile-edit-rating-popup {
+        position: absolute;
+        top: .5rem;
+        right: 0.15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 6;
+        color: white;
+        background-color: rgb(19, 18, 75);
+        padding: 10px;
+        border-radius: 8px;
+        border: 2px solid gray;
+        min-width: 340px;
+        text-align: center;
+    }
+    
+    #mobileConfirmEditRating {
+        height: 50px;
+        width: 100px;
+        background-color: lightgreen;
+        border: 2px solid black;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: sans-serif;
+        color: black;
+    }
+    
+    #mobileCancelEditRating {
+         height: 50px;
+        width: 100px;
+        border-radius: 8px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        border: 2px solid black;
+        cursor: pointer;
+        color: black; 
+    }
     
     
     
