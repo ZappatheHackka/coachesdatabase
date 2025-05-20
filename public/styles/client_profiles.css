@@ -1114,6 +1114,10 @@ form > span {
         margin-bottom: 15px;
     }
     
+    #mobile-comment-content {
+        margin-top: 40px;
+    }
+    
     .mobiledeleteComments{
         background-color: rgba(255, 0, 0, 0.671);
         border-radius: 8px;
@@ -1126,7 +1130,7 @@ form > span {
     
     .mobilecommentPencil {
         width: 9%;
-        padding-left: 10px;
+        margin-left: 10px;
         margin-bottom: 6px;
         cursor: pointer;
     }
@@ -1134,6 +1138,7 @@ form > span {
     #mobile-comment-author {
         text-decoration: underline;
         font-size: 14px;
+        text-align: center;
     }
     
 /*   Ratings stylings   */
@@ -1219,7 +1224,7 @@ form > span {
     }
     
     #mobile-rating-author {
-        margin-left: 35px;
+        text-align: center;
         font-size: 22px;
     }
     
@@ -1478,6 +1483,8 @@ form > span {
         border: 2px solid black;
         border-radius: 8px;
         cursor: pointer;
+        color: black;
+        font-family: sans-serif;
     }
     
     .mobilecancelComDelete {
@@ -1488,6 +1495,8 @@ form > span {
         font-family: sans-serif;
         border: 2px solid black;
         cursor: pointer;
+        color: black;
+        font-family: sans-serif;
     }
 
 /* Ratings */
@@ -1514,6 +1523,8 @@ form > span {
         border: 2px solid black;
         border-radius: 8px;
         cursor: pointer;
+        font-family: sans-serif;
+        color: black;
     }
     
     .mobileCancelDelete {
@@ -1524,6 +1535,7 @@ form > span {
         font-family: sans-serif;
         border: 2px solid black;
         cursor: pointer;
+        color: black;
     }
     
     
