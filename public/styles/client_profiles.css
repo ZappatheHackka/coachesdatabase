@@ -958,8 +958,552 @@ form > span {
        display: none;
     }
     
+    
+    /*   Profile Info   */
+    
     .mobileContainer {
         display: block;
-        margin-top: 40px;
+        margin-top: 60px;
     }
+    
+    .mobileInfo > p {
+        margin-left: 20px;
+        position: relative;
+        bottom: .75rem;
+    }
+    
+    .mobileInfo > p span{
+        color: rgb(19, 18, 75);
+        text-shadow: 
+        0px -1px 0 rgb(255, 102, 50),
+        0px -1px 0 rgb(255, 102, 50),
+        -1px -1px 0 rgb(255, 102, 50),
+        0px 0px 0 rgb(255, 102, 50);
+    }
+    
+    .mobile-edit-pencil {
+        display: flex;
+        margin-left: 20px;
+        margin-top: -10px;
+    }
+    
+    .mobile-edit-pencil > p {
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 22px;
+    }
+    
+    .mobileprofilePencil {
+        width: 8%;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+    
+    .mobileInfo {
+        background-color: rgba(255, 255, 255, .75);
+        padding: 5px;
+        border-radius: 8px;
+    }
+    
+    .mobileInfo> h1 {
+        text-shadow: 
+        0px -1px 0 rgb(255, 102, 50),
+        0px -1px 0 rgb(255, 102, 50),
+        -1px -1px 0 rgb(255, 102, 50),
+        0px 0px 0 rgb(255, 102, 50);
+        text-decoration: underline;
+    }
+    
+    .mobile-coaches-header-div {
+        display: flex;
+        margin-left: 20px;
+        margin-top: -15px;
+        font-size: 17px;
+    }
+    
+    .mobileTrainerNameDiv {
+        margin-left: 20px;
+        margin-top: -25px;
+        text-shadow: 
+        0px -1px 0 rgb(255, 102, 50),
+        0px -1px 0 rgb(255, 102, 50),
+        -1px -1px 0 rgb(255, 102, 50),
+        0px 0px 0 rgb(255, 102, 50);
+    }
+    
+    .mobile-trainer-pair {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -15px;
+    }
+    
+    .mobileDelCoachBtn {
+        position: relative;
+        top: .7rem;
+        right: .7rem;
+        height: 35px;
+        width: 80px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    #mobileAddCoach {
+        width: 20px;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+    
+    #mobile-coach-title {
+        text-decoration: underline;
+    }
+    
+/*  Comments Section */
+    
+    .mobileComments {
+        background-color: rgba(255, 101, 50, 0.819);
+        padding: 5px;
+        border-radius: 8px;
+        margin-top: 15px;
+        padding-bottom: 10px;
+        overflow-y: scroll;
+        max-height: 400px;
+    }
+    
+    .mobile-comment-header {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .mobile-comment-header > h1 {
+        text-decoration: underline;
+    }
+    
+    #mobileAddComment {
+        width: 12%;
+        position: relative;
+        left: 15px;
+        cursor: pointer;
+    }
+    
+    .mobileComment {
+        color: white;
+        position: relative;
+        background-color: rgb(19, 18, 75);
+        padding: 5px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    
+    .mobiledeleteComments{
+        background-color: rgba(255, 0, 0, 0.671);
+        border-radius: 8px;
+        position: absolute;
+        left: 21.75rem;
+        bottom: 5.26rem;
+        cursor: pointer;
+        
+    }
+    
+    .mobilecommentPencil {
+        width: 9%;
+        padding-left: 10px;
+        margin-bottom: 6px;
+        cursor: pointer;
+    }
+    
+    #mobile-comment-author {
+        text-decoration: underline;
+        font-size: 14px;
+    }
+    
+/*   Ratings stylings   */
+    
+    .mobileRatings {
+        margin-top: 15px;
+        background-color: rgba(255, 101, 50, 0.819);
+        padding: 5px;
+        border-radius: 8px;
+        width: 380px;
+        padding-bottom: 10px;
+        overflow-y: scroll;
+        display: flex;
+        justify-content: center;
+        max-height: 400px;
+    }
+    
+    .mobile-rating {
+        background-color: rgb(19, 18, 75);
+        color: white;
+        padding: 5px;
+        border-radius: 8px;
+        width: 340px;
+        margin-left: 15px;
+        
+    }
+    
+    .mobileRatingsHeader {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .mobileRatingsHeader > h1 {
+        text-decoration: underline;
+    }
+    
+    .mobile-rating-text > div {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .mobileDeleteRatingBtn {
+        width: 9.3%;
+        height: 20%;
+        background-color: rgba(255, 0, 0, 0.671);
+        border-radius: 8px;
+        position: relative;
+        left: 2.69rem;
+        bottom: .3rem;
+        cursor: pointer;
+    }
+    
+    #mobileAddRating {
+        width: 12%;
+        position: relative;
+        left: 15px;
+    }
+    
+    .mobile-actual-ratings {
+        text-align: center;
+        position: relative;
+        top: 5px;
+    }
+    
+    .mobile-actual-ratings > li {
+        font-size: 18px;
+    }
+    
+    .mobileRatingBottom {
+        margin-left: 40px;
+    }
+    
+    .mobileRatingPencil {
+        width: 11%;
+        position: relative;
+        bottom: 1.8rem;
+        margin-left: 12px;
+        cursor: pointer;
+    }
+    
+    #mobile-rating-author {
+        margin-left: 35px;
+        font-size: 22px;
+    }
+    
+/*   Popup Boxes   */
+    
+/*  Edit Coaches     */
+    
+    #mobileAssignCoachPopup {
+        position: absolute;
+        top: 150px; /* adjust as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        background-color: rgb(19, 18, 75);;
+        border: 1px solid #ccc;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 300px;
+        border-radius: 8px;
+        color: white;
+    }
+    
+    .mobile-assign-buttons {
+        margin-top: 35px;
+    }
+    
+    #mobile-assign-button {
+        width: 100px;
+        height: 60px;
+        background-color: lightgreen;
+        font-family: sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+    }
+    
+    #mobile-cancel-btn {
+        width: 100px;
+        height: 60px;
+        border: 0;
+        outline: none;
+        border-radius: 8px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 80px;
+    }
+    
+    #mobileCoachId {
+        height: 50px;
+    }
+    
+/* Edit Profile info */
+    
+    #mobile-popup-form{
+        position: fixed;
+        color: white;
+        top: 10rem;
+        left: 30%;
+        transform: translateX(-50%);
+        z-index: 5;
+        background-color: rgb(19, 18, 75);;
+        border: 1px solid #ccc;
+        padding: 1.6rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+        width: 300px;
+        border-radius: 8px;
+    }
+    
+    #mobile-popup-form > h2 {
+        text-align: center;
+        text-decoration: underline;
+    }
+    
+    .mobile-editfields {
+        margin-top: 6px;
+        margin-bottom: 6px;
+        height: 40px;
+        border-radius: 8px;
+        border: none;
+    }
+    
+    .mobile-popup-buttons {
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #mobileSaveBtn {
+        height: 50px;
+        width: 100px;
+        background-color: lightgreen;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    #mobileCancelEdit {
+        height: 50px;
+        width: 100px;
+        border-radius: 8px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+    
+/* Edit Comment Popups */
+    
+    .mobile-edit-comment-popup {
+        color: white;
+        position: fixed;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        z-index: 9999;
+        border: 2px solid gray;
+        background-color: rgb(19, 18, 75);
+        width: 20rem;
+        min-height: 12rem;
+        max-width: 90vw;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    
+    .mobile-edit-comment-popup h2 {
+        text-align: center;
+        text-decoration: underline;
+    }
+    
+    .mobile-edit-comment-popup textarea {
+        width: 99%;
+        height: 11rem;
+        margin-bottom: 10px;
+        outline: none;
+        resize: none;
+    }
+    
+    #mobileSaveCommentEdit {
+        height: 50px;
+        width: 100px;
+        background-color: lightgreen;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    #mobileCancelCommentEdit {
+        height: 50px;
+        width: 100px;
+        border-radius: 8px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+    
+/*   Add new comment   */
+    
+    #mobileCommentPopup {
+        position: fixed;
+        color: white;
+        top: 40%;
+        left: 30%;
+        transform: translate(-50%, -50%); /* real centering */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        background-color: rgb(19, 18, 75);
+        padding: 10px;
+        border-radius: 8px;
+        border: 2px solid gray;
+    }
+    
+    #mobileCommentPopup h2 {
+        text-decoration: underline;
+    }
+    
+    #mobileCommentPopup textarea {
+        width: 98%;
+        height: 15rem;
+        margin-bottom: 10px;
+        outline: none;
+        resize: none;
+    }
+    
+    #mobileSubmitComment {
+        height: 50px;
+        width: 100px;
+        background-color: lightgreen;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    #mobileCancelComment {
+        height: 50px;
+        width: 100px;
+        border-radius: 8px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .mobileCommentBtns {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+/* Delete comment */
+    
+    .mobileconfirmDeleteComment {
+        border: 3px solid gray;
+        border-radius: 8px;
+        background-color: lightgrey;
+        padding: 5px;
+        margin-left: 2px;
+        margin-top: 5px;
+        width: 360px;
+        margin-bottom: 8px;
+    }
+    
+    .mobileconfirmDeleteComment p {
+        text-align: center;
+    }
+    
+    .mobile-popup-actions {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .mobileconfirmComDelete {
+        height: 50px;
+        width: 100px;
+        background-color: lightgreen;
+        border: 2px solid black;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    .mobilecancelComDelete {
+        height: 50px;
+        width: 100px;
+        border-radius: 8px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        border: 2px solid black;
+        cursor: pointer;
+    }
+
+/* Ratings */
+    
+    .mobileConfirmDeleteRating {
+        border: 3px solid gray;
+        border-radius: 8px;
+        background-color: lightgrey;
+        padding: 5px;
+        margin-left: 2px;
+        margin-top: 5px;
+        width: 360px;
+        margin-bottom: 8px;
+    }
+    
+    .mobileConfirmDeleteRating p {
+        text-align: center;
+    }
+    
+    #mobileConfirmDelete {
+        height: 50px;
+        width: 100px;
+        background-color: lightgreen;
+        border: 2px solid black;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    .mobileCancelDelete {
+        height: 50px;
+        width: 100px;
+        border-radius: 8px;
+        background-color: rgb(243 127 127);
+        font-family: sans-serif;
+        border: 2px solid black;
+        cursor: pointer;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

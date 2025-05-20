@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/client_profiles.css">
     <script src="/scripts/editForm.js" defer></script>
     <script src="/scripts/errorScript.js" defer></script>
+    <script src="/scripts/mobileEditForm.js" defer></script>
     <title>Profile</title>
 </head>
 <body>
@@ -291,16 +292,100 @@
         </form>
     </div>
 
+    <!-- MOBILE RESPONSIVENESS -->
+
+     <div id="mobileCommentPopup" style="display: none;">
+        <form id="mobilePopupContent" action="/comment/<%= thisClient.clientid %>" method="POST">
+          <h2 class="mobile-comment-form-header">Add a New Comment</h2>
+          <textarea name="textcontent" id="mobileCommentInput" placeholder="Write your comment here..."></textarea>
+          <br>
+          <div class="mobileCommentBtns">
+              <button type="submit" id="mobileSubmitComment">Submit</button>
+              <button type="button" id="mobileCancelComment">Cancel</button>
+          </div>
+        </form>
+    </div>
+
+
+    <div id="mobile-popup-form" class="mobile-popup-form hidden" style="display: none;">
+              <h2>Edit Client Info</h2>
+                <form action="/edit/<%= thisClient.clientid %>" id="form-element" method="POST">
+                    <label for="firstname">First Name:</label>
+                    <input class="mobile-editfields" type="text" name="firstname" value="<%= thisClient.firstname %>">
+                
+                    <label for="lastname">Last Name:</label>
+                    <input class="mobile-editfields" type="text" name="lastname" value="<%= thisClient.lastname %>">
+                
+                    <label for="age">Age:</label>
+                    <input class="mobile-editfields" type="number" name="age" value="<%= thisClient.age %>">
+                
+                    <label for="email">Email:</label>
+                    <input class="mobile-editfields" type="email" name="email" value="<%= thisClient.email %>">
+                
+                    <label for="cellphone">Phone:</label>
+                    <input class="mobile-editfields" type="text" name="cellphone" value="<%= thisClient.cellphone %>">
+                
+                    <label for="parent">Parent:</label>
+                    <input class="mobile-editfields" type="text" name="parent" value="<%= thisClient.parent %>">
+                
+                    <div class="mobile-popup-buttons">
+                      <button type="submit" id="mobileSaveBtn">Save</button>
+                      <button type="button" id="mobileCancelEdit">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+    <div id="mobileAssignCoachPopup" class="mobile-assign-overlay" style="display: none;">
+                <form action="/assign-coach/<%= thisClient.clientid %>" method="POST" class="mobile-assign-coach-form">
+                  <label for="coachId" class="mobile-assign-label">Assign a Coach:</label>
+                  <select name="coachId" id="mobileCoachId" class="mobile-popup-select" required>
+                    <% coaches.forEach(coach => { %>
+                      <option value="<%= coach.id %>"><%= coach.firstname %> <%= coach.lastname %></option>
+                    <% }) %>
+                  </select>
+                  <div class="mobile-assign-buttons">
+                    <button type="submit" id="mobile-assign-button">Assign</button>
+                    <button type="button" id="mobile-cancel-btn">Cancel</button>
+                  </div>
+                </form>
+            </div>
+
     <div class="mobileContainer">
       <div class="mobileInfo">
         <h1><%= thisClient.firstname %> <%= thisClient.lastname %></h1>
+        <div class="mobile-edit-pencil">
+          <p>Edit Profile</p>
+          <img class="mobileprofilePencil" src="/images/pencil-svgrepo-com.svg"></img>
+        </div>
+        
+        <div class="mobile-coaches-div">
+              <div class="mobile-coaches-header-div">
+                <h2 id="mobile-coach-title">Trainer(s)</h2>
+                <img id="mobileAddCoach" src="/images/plus-svgrepo-com.svg" style="display: inline;">
+              </div>
+              <div class="mobileTrainerNameDiv">
+                  <% clientCoaches.forEach(trainer => { %>
+                    <div class="mobile-trainer-pair">
+                      <h3 class="mobile-trainers"><%= trainer.firstname %> <%= trainer.lastname %></h3>
+                      <form name="coachId" action="/delete-coach/<%= trainer.id %>/<%= thisClient.clientid %>" method="POST">
+                        <button class="mobileDelCoachBtn" type="submit">Delete</button>
+                      </form>
+                    </div>
+                  <% }) %>
+              </div>
+        </div>
+
         <p>Age: <span><%= thisClient.age %></span></p>
         <p>Parents: <span><%= thisClient.parent %></span></p>
         <p>Email: <span><%= thisClient.email %></span></p>
         <p>Cellphone: <span><%= thisClient.cellphone %></span></p>
       </div>
       <div class="mobileComments">
-        <h1>Comments</h1>
+        <div class="mobile-comment-header">
+          <h1>Comments</h1>
+          <img id="mobileAddComment" src="/images/plus-svgrepo-com.svg">
+        </div>
+        
         <% comments.forEach(comment => { %>
         <div class="mobileComment">
             <img class="mobiledeleteComments" src="/images/x_icon.png">
@@ -324,14 +409,100 @@
                 <h2>Edit Comment</h2>
                 <textarea name="textcontent" required><%= comment.text %></textarea>
                 <div class="mobile-popup-buttons">
-                    <button type="submit" id="mobilesaveCommentEdit">Save</button>
-                    <button type="button" id="mobilecancelCommentEdit" class="cancelEditComment">Cancel</button>
+                    <button type="submit" id="mobileSaveCommentEdit">Save</button>
+                    <button type="button" id="mobileCancelCommentEdit" class="cancelEditComment">Cancel</button>
                 </div>
               </form>
           </div>
         <% }) %>
       </div>
     </div>
+      <div class="mobileRatings">
+          <div class="mobile-ratings-display">
+            <div class="mobileRatingsHeader">
+                <h1>Ratings</h1>
+                <img id="mobileAddRating" src="/images/plus-svgrepo-com.svg">
+            </div>
+                        <% ratings.forEach(rating => { %>
+                            <div class="mobile-rating">
+                                <div class="mobile-rating-text">
+                                    <div>
+                                        <h3 id="mobile-rating-author"><%= rating.Coach.firstname %> <%= rating.Coach.lastname %></h3>
+                                        <img class="mobileDeleteRatingBtn" src="/images/x_icon.png">
+                                    </div>
+                                        <ul class="mobile-actual-ratings">
+                                            <li>Ball Handling: <span><%= rating.ball_handling %>/10</span></li>
+                                            <li>Finishing: <span><%= rating.finishing %>/10</span></li>
+                                            <li>Shooting: <span><%= rating.shooting %>/10</span></li>
+                                            <li>IQ: <span><%= rating.iq %>/10</span></li>
+                                            <li>Defense: <span><%= rating.defense %>/10</span></li>
+                                            <li>Passing: <span><%= rating.passing %>/10</span></li>
+                                        </ul>
+                                    <div class="mobileRatingBottom"style="display: flex;">
+                                        <p style="font-size: small; text-decoration: underline; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; position: relative; bottom: 1.7rem;">Created on: <%= rating.formattedDate %></p>
+                                        <img class="mobileRatingPencil" src="/images/pencil-svgrepo-com.svg"></img>
+                                    </div>
+                                        
+                                </div>
+                            </div>
+                            <div class="mobileConfirmDeleteRating" style="display: none;">
+                                <div class="mobile-delete-rating-box">
+                                  <p>Are you sure you want to delete this rating?</p>
+                                  <form  method="POST" action="/deleteRating/<%=rating.ratingid%>/<%=thisClient.clientid%>" class="mobile-popup-actions">
+                                    <button id="mobileConfirmDelete" type="submit">Yes</button>
+                                    <button class="mobileCancelDelete" type="reset">Cancel</button>
+                                  </form>
+                                </div>
+                            </div>
+
+                            <div class="mobile-edit-rating-popup" style="display: none;">
+                                <h2>Edit Current Rating</h2>
+                                <form action="/editRating/<%= rating.ratingid %>/<%= thisClient.clientid %>" method="POST">
+                                  <div style="display: inline-block;">
+                                    <label for="ballhandling">Ball Handling:</label>
+                                    <input class="mobile-ratefields" type="number" name="ballhandling" value="<%= rating.ball_handling %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="finishing">Finishing:</label>
+                                    <input class="mobile-ratefields" type="number" name="finishing" value="<%= rating.finishing %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="shooting">Shooting:</label>
+                                    <input class="mobile-ratefields" type="number" name="shooting" value="<%= rating.shooting %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="iq">IQ:</label>
+                                    <input style="position: relative; left: 2.3rem;"id="iq" class="mobile-ratefields" type="number" name="iq" value="<%= rating.iq %>" required>
+                                    <h3 style="color: white; display: inline; position: relative; left: 2.3rem;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="defense">Defense:</label>
+                                    <input class="mobile-ratefields" type="number" name="defense" value="<%= rating.defense %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div style="display: inline-block;">
+                                    <label for="passing">Passing:</label>
+                                    <input class="mobile-ratefields" type="number" name="passing" value="<%= rating.passing %>" required>
+                                    <h3 style="color: white; display: inline; margin-left: 4px;">/10</h3>
+                                  </div>
+                              
+                                  <div class="mobile-popup-buttons">
+                                    <button id="mobileConfirmEditRating" type="submit">Save</button>
+                                    <button id="mobileCancelEditRating" type="button" class="mobileCancelEditRating">Cancel</button>
+                                  </div>
+                                </form>
+                              </div>
+                        <% }) %>
+                    </div>
+      </div>
       
 </body>
 </html>
