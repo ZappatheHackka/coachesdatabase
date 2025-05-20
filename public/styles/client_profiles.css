@@ -1282,7 +1282,7 @@ form > span {
     #mobile-popup-form{
         position: fixed;
         color: white;
-        top: 10rem;
+        top: 7rem;
         left: 13rem;
         transform: translateX(-50%);
         z-index: 5;
@@ -1341,7 +1341,7 @@ form > span {
         color: white;
         position: fixed;
         top: 50%;
-        left: 40%;
+        left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
         justify-content: center;

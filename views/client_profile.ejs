@@ -357,7 +357,13 @@
           <p>Edit Profile</p>
           <img class="mobileprofilePencil" src="/images/pencil-svgrepo-com.svg"></img>
         </div>
-        
+
+        <p>Age: <span><%= thisClient.age %></span></p>
+        <p>Parents: <span><%= thisClient.parent %></span></p>
+        <p>Email: <span><%= thisClient.email %></span></p>
+        <p>Cellphone: <span><%= thisClient.cellphone %></span></p>
+
+
         <div class="mobile-coaches-div">
               <div class="mobile-coaches-header-div">
                 <h2 id="mobile-coach-title">Trainer(s)</h2>
@@ -375,11 +381,9 @@
               </div>
         </div>
 
-        <p>Age: <span><%= thisClient.age %></span></p>
-        <p>Parents: <span><%= thisClient.parent %></span></p>
-        <p>Email: <span><%= thisClient.email %></span></p>
-        <p>Cellphone: <span><%= thisClient.cellphone %></span></p>
       </div>
+
+
       <div class="mobileComments">
         <div class="mobile-comment-header">
           <h1>Comments</h1>
