@@ -978,9 +978,11 @@ form > span {
     }
     
     .mobileInfo > p {
-        margin-left: 20px;
+        margin-left: 0px;
         position: relative;
         bottom: .75rem;
+        text-align: center;
+        font-size: 20px;
     }
     
     .mobileInfo > p span{
@@ -994,8 +996,9 @@ form > span {
     
     .mobile-edit-pencil {
         display: flex;
-        margin-left: 20px;
-        margin-top: -10px;
+        justify-content: center;
+        margin-left: 34px;
+        margin-top: -30px;
     }
     
     .mobile-edit-pencil > p {
@@ -1157,7 +1160,7 @@ form > span {
         color: white;
         padding: 5px;
         border-radius: 8px;
-        min-width: 365px;
+        min-width: 358px;
     }
     
     .mobileRatingsHeader {
@@ -1280,7 +1283,7 @@ form > span {
         position: fixed;
         color: white;
         top: 10rem;
-        left: 30%;
+        left: 13rem;
         transform: translateX(-50%);
         z-index: 5;
         background-color: rgb(19, 18, 75);;
@@ -1338,7 +1341,7 @@ form > span {
         color: white;
         position: fixed;
         top: 50%;
-        left: 30%;
+        left: 40%;
         transform: translate(-50%, -50%);
         display: flex;
         justify-content: center;
