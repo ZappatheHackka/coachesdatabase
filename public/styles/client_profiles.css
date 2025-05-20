@@ -956,10 +956,6 @@ form > span {
     display: none;
 }
 
-#mobileAddRating {
-    display: none; 
-}
-
 
 /* Mobile MQs and Divs */
 .mobileContainer {
@@ -977,6 +973,8 @@ form > span {
     .mobileContainer {
         display: block;
         margin-top: 60px;
+        min-width: 380px;
+        
     }
     
     .mobileInfo > p {
@@ -1117,8 +1115,8 @@ form > span {
         background-color: rgba(255, 0, 0, 0.671);
         border-radius: 8px;
         position: absolute;
-        left: 21.75rem;
-        bottom: 5.26rem;
+        right: 0;
+        top: -.01rem;
         cursor: pointer;
         
     }
@@ -1138,12 +1136,11 @@ form > span {
 /*   Ratings stylings   */
     
     .mobileRatings {
-        display: block;
+        position: relative;
         margin-top: 15px;
         background-color: rgba(255, 101, 50, 0.819);
-        padding: 5px;
         border-radius: 8px;
-        width: 380px;
+        min-width: 380px; 
         padding-bottom: 10px;
         overflow-y: scroll;
         display: flex;
@@ -1152,7 +1149,7 @@ form > span {
     }
     
     .mobileRatings h1 {
-        display: block;
+      display: flex;
     }
     
     .mobile-rating {
@@ -1160,9 +1157,7 @@ form > span {
         color: white;
         padding: 5px;
         border-radius: 8px;
-        width: 330px;
-        margin-left: 3px;
-        
+        min-width: 365px;
     }
     
     .mobileRatingsHeader {
@@ -1178,24 +1173,24 @@ form > span {
     .mobile-rating-text > div {
         display: flex;
         justify-content: center;
+        position: relative;
     }
     
     .mobileDeleteRatingBtn {
-        width: 9.3%;
-        height: 20%;
         background-color: rgba(255, 0, 0, 0.671);
         border-radius: 8px;
-        position: relative;
-        left: 2.4rem;
-        bottom: .3rem;
+        position: absolute;
+        top: -0.3rem;
+        right: -.35rem;
         cursor: pointer;
     }
     
     #mobileAddRating {
         display: block;
-        width: 12%;
+        width: 45px;
         position: relative;
         left: 15px;
+        cursor: pointer;
     }
     
     .mobile-actual-ratings {

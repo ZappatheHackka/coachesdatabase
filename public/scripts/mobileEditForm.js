@@ -54,13 +54,19 @@ cancelEditButton.addEventListener('click', () => {
 
 // Edit comment contents
 
-editCommentPencil.addEventListener('click', () => {
-    editCommentForm.style.display="block";
-});
+if (editCommentPencil) {
+        editCommentPencil.addEventListener('click', () => {
+        editCommentForm.style.display="block";
+    });
+};
 
-cancelCommentEdit.addEventListener('click', () => {
-    editCommentForm.style.display='none';
-});
+
+if (cancelCommentEdit) {
+        cancelCommentEdit.addEventListener('click', () => {
+        editCommentForm.style.display='none';
+    });
+};
+
 
 addNewCommentBtn.addEventListener('click', () => {
     addNewCommentForm.style.display='block';
