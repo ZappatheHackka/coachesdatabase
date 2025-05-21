@@ -1140,6 +1140,8 @@ form > span {
     .mobilecommentPencil {
         width: 9%;
         margin-bottom: 6px;
+        position: relative;
+        right: 15px;
         cursor: pointer;
     }
     
@@ -1416,7 +1418,7 @@ form > span {
         position: fixed;
         color: white;
         top: 12rem;
-        right: 1rem;
+        left: 3rem;
         transform: translate(-50%, -50%); /* real centering */
         display: flex;
         justify-content: center;
