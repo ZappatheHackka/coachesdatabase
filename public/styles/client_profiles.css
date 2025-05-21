@@ -1141,6 +1141,7 @@ form > span {
         width: 9%;
         margin-bottom: 6px;
         position: relative;
+        left: 6px;
         cursor: pointer;
     }
     
