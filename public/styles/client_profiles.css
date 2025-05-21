@@ -1548,9 +1548,9 @@ form > span {
     }
     
     #mobile-rating-popup {
-        position: absolute;
-        top: .5rem;
-        right: 0.15rem;
+        position: fixed;
+        top: 20rem;
+        right: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1561,6 +1561,7 @@ form > span {
         border-radius: 8px;
         border: 2px solid gray;
         min-width: 340px;
+        max-width: 370px;
         text-align: center;
     }
     
@@ -1595,9 +1596,9 @@ form > span {
     }
     
     .mobile-edit-rating-popup {
-        position: absolute;
-        top: .5rem;
-        right: 0.15rem;
+        position: fixed;
+        top: 20rem;
+        right: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1608,6 +1609,7 @@ form > span {
         border-radius: 8px;
         border: 2px solid gray;
         min-width: 340px;
+        max-width: 370px;
         text-align: center;
     }
     
