@@ -1418,7 +1418,7 @@ form > span {
         position: fixed;
         color: white;
         top: 12rem;
-        left: 3rem;
+        left: 9rem;
         transform: translate(-50%, -50%); /* real centering */
         display: flex;
         justify-content: center;
