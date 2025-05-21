@@ -87,6 +87,7 @@ h1 {
 /* Mobile Responsiveness MQs */
 
 @media (max-width: 430px) {
+
     body {
         background-image: none;
         background-color: black;
@@ -123,10 +124,13 @@ h1 {
     
     .textfield {
         height: 50px;
-        position: relative;
-        top: 60px;
-    
-    }
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+        transform: translateY(60px);
+    }   
+
 
     .login-button {
         height: 40px;
