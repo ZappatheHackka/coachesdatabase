@@ -1549,7 +1549,7 @@ form > span {
     
     #mobile-rating-popup {
         position: fixed;
-        top: 20rem;
+        top: 15rem;
         right: 1rem;
         display: flex;
         justify-content: center;
@@ -1597,7 +1597,7 @@ form > span {
     
     .mobile-edit-rating-popup {
         position: fixed;
-        top: 20rem;
+        top: 15rem;
         right: 1rem;
         display: flex;
         justify-content: center;
